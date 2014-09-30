@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+{% block title %}{% trans "Home" %}{% endblock %}
+
+{% block breadcrumb_menu %}
+<li class="active">{% trans "Home" %}</li>
+{% endblock %}
+
+{% block main %}
+{% blocktrans %}
+<h2>Welcome to Ingraham Robotics</h2>
+<p>
+We are NullPointerException, FIRST Team 4030, from Seattle, Washington. Our team is composed of students around the Ingraham Area. Together, we follow the guiding hand of FIRST and build a robot each year that educates and establishes ingenuity in our students. We set goals for the team, but we also like to pursue personal goals, on how we can better ourselves for competition and later in life. While we build our robot we are building our confidence and knowledge about all forms of STEM. Though we can only build up our robot for six week, we are always building ourselves to be ready and excited about the world after high-school and higher education.
+</p>
+{% endblocktrans %}
+{% endblock %}
