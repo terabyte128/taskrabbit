@@ -18,7 +18,13 @@
 {% compress css %}
 <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
 <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
-<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
+{#<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">#}
+<link rel="stylesheet" href="{% static "css/superhero.theme.min.css" %}">
+<link rel="stylesheet" href="{% static "css/style.css" %}">
+
+<link rel="stylesheet" href="{% static "css/fullcalendar.min.css" %}">
+<link rel="stylesheet" href="{% static "css/fullcalendar.print.css" %}">
+
 {% if LANGUAGE_BIDI %}
 <link rel="stylesheet" href="{% static "css/rtl.css" %}">
 {% endif %}
@@ -35,6 +41,10 @@
 <script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
 <script src="{% static "js/bootstrap.js" %}"></script>
 <script src="{% static "js/bootstrap-extras.js" %}"></script>
+
+<script src="{% static "js/moment.min.js" %}"></script>
+<script src="{% static "js/fullcalendar.min.js" %}"></script>
+<script src="{% static "js/gcal.js" %}"></script>
 {% block extra_js %}{% endblock %}
 {% endcompress %}
 
@@ -47,7 +57,7 @@
 </head>
 
 <body id="{% block body_id %}body{% endblock %}">
-
+<div class="wrapper">
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
 <div class="container">
 <div class="navbar-header">
@@ -95,13 +105,13 @@
 <div class="container">
 <div class="row">
 
-<div class="col-md-2 left">
-    {% block left_panel %}
-    <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
-    {% endblock %}
-</div>
+{#<div class="col-md-2 left">#}
+{#    {% block left_panel %}#}
+{#    <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>#}
+{#    {% endblock %}#}
+{#</div>#}
 
-<div class="col-md-10 middle">
+<div class="col-md-12 middle">
     {% block main %}{% endblock %}
 </div>
 
@@ -122,28 +132,37 @@
 
 </div>
 </div>
-
-<footer>
-<div class="container">
+<div class="push"></div>
+</div>
+<div class="footer">
+{#<footer>#}
+{#<div class="container">#}
 {#{% page_menu "pages/menus/footer.html" %}#}
+{##}
+{#<div class="row">#}
+{#<p class="site-info text-center">#}
+{#    {% trans "Powered by" %}#}
+{#    <a href="http://mezzanine.jupo.org">Mezzanine</a>{% ifinstalled cartridge.shop %},#}
+{#    <a href="http://cartridge.jupo.org">Cartridge</a>{% endifinstalled %}#}
+{#    {% trans "and" %}#}
+{#    <a href="http://www.djangoproject.com">Django</a>#}
+{#    <span class="separator">|</span>#}
+{#    {% trans "Theme by" %} <a target="_blank" href="http://getbootstrap.com">Bootstrap</a>#}
+{#    {% ifinstalled mezzanine.mobile %}#}
+{#    <span class="separator">|</span>#}
+{#    <a href="{% url "set_device" "mobile" %}?next={{ request.path }}">{% trans "View Mobile Site" %}</a>#}
+{#    {% endifinstalled %}#}
+{#</p>#}
+{#</div>#}
+{#</div>#}
+{#</footer>#}
 
-<div class="row">
-<p class="site-info text-center">
-    {% trans "Powered by" %}
-    <a href="http://mezzanine.jupo.org">Mezzanine</a>{% ifinstalled cartridge.shop %},
-    <a href="http://cartridge.jupo.org">Cartridge</a>{% endifinstalled %}
-    {% trans "and" %}
-    <a href="http://www.djangoproject.com">Django</a>
-    <span class="separator">|</span>
-    {% trans "Theme by" %} <a target="_blank" href="http://getbootstrap.com">Bootstrap</a>
-    {% ifinstalled mezzanine.mobile %}
-    <span class="separator">|</span>
-    <a href="{% url "set_device" "mobile" %}?next={{ request.path }}">{% trans "View Mobile Site" %}</a>
-    {% endifinstalled %}
-</p>
+{#    <div class="container">#}
+{#        <div class="col-md-12 left" style="margin-top: .4em;">#}
+{#            <p>&copy 2014 Ingraham Robotics</p>#}
+{#        </div>#}
+{#    </div>#}
 </div>
-</div>
-</footer>
 
 {% include "includes/footer_scripts.html" %}
 
