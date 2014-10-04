@@ -1,0 +1,41 @@
+{% extends "taskrabbit/base.html" %}
+
+{% block title %}Add Task{% endblock %}
+
+{% block main_content %}
+    <h1>Add Task</h1>
+<div class="row">
+    <div class="col-md-6">
+        <form role="form" action="" method="post">
+        {% csrf_token %}
+            <label>Name</label>
+            <input type="text" name="name" class="form-control" required="true">
+            <br>
+            <label>Description (optional)</label>
+            <textarea name="description" class="form-control" rows="3"></textarea>
+            <br>
+            <label>Due Date (optional)</label>
+            <input type="date" name="due_date" placeholder="Due Date" class="form-control">
+            <br>
+            <label>Team</label>
+            <select name="team" class="form-control">
+                {% for team in teams %}
+                    <option value="{{ team.id }}">{{ team.name }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <label>Owner (optional)</label>
+            <select name="owner" class="form-control">
+                <option value="">-- None --</option>
+                {% for user in users %}
+                    <option value="{{ user.id }}">{{ user.first_name }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <br>
+            <button class="btn btn-success form-control">Add</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

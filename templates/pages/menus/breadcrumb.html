@@ -4,8 +4,8 @@
 <li>{% trans "Home" %}</li>
 {% else %}
 {% for page in page_branch %}
-
-    {% if not has_home and page.is_primary and forloop.first %}
+{# if you don't want home to appear: not has_home and #}
+    {% if page.is_primary and forloop.first %}
     <li id="breadcrumb-menu-home">
         <a href="{% url "home" %}">{% trans "Home" %}</a>
     </li>

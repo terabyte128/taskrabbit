@@ -2,11 +2,12 @@
 from __future__ import unicode_literals
 
 import os
+import unittest
+from unittest import skipUnless
+
 from django.conf import settings
 from django.contrib.gis.geos import HAS_GEOS
 from django.contrib.gis.geoip import HAS_GEOIP
-from django.utils import unittest
-from django.utils.unittest import skipUnless
 
 from django.utils import six
 
@@ -29,10 +30,10 @@ class GeoIPTest(unittest.TestCase):
 
     def test01_init(self):
         "Testing GeoIP initialization."
-        g1 = GeoIP() # Everything inferred from GeoIP path
+        g1 = GeoIP()  # Everything inferred from GeoIP path
         path = settings.GEOIP_PATH
-        g2 = GeoIP(path, 0) # Passing in data path explicitly.
-        g3 = GeoIP.open(path, 0) # MaxMind Python API syntax.
+        g2 = GeoIP(path, 0)  # Passing in data path explicitly.
+        g3 = GeoIP.open(path, 0)  # MaxMind Python API syntax.
 
         for g in (g1, g2, g3):
             self.assertEqual(True, bool(g._country))
@@ -79,7 +80,7 @@ class GeoIPTest(unittest.TestCase):
                 self.assertEqual('US', func(query))
             for func in (g.country_name, g.country_name_by_addr, g.country_name_by_name):
                 self.assertEqual('United States', func(query))
-            self.assertEqual({'country_code' : 'US', 'country_name' : 'United States'},
+            self.assertEqual({'country_code': 'US', 'country_name': 'United States'},
                              g.country(query))
 
     @skipUnless(HAS_GEOS, "Geos is required")
@@ -95,7 +96,7 @@ class GeoIPTest(unittest.TestCase):
                 self.assertEqual('US', func(query))
             for func in (g.country_name, g.country_name_by_addr, g.country_name_by_name):
                 self.assertEqual('United States', func(query))
-            self.assertEqual({'country_code' : 'US', 'country_name' : 'United States'},
+            self.assertEqual({'country_code': 'US', 'country_name': 'United States'},
                              g.country(query))
 
             # City information dictionary.

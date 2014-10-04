@@ -1,0 +1,27 @@
+{% extends "robomanage/base.html" %}
+
+{% block title %}{{ user.get_full_name }}{% endblock %}
+{% block page_id %}auth_home{% endblock %}
+
+{% block header_text %}All Users{% endblock %}
+
+{% block main_content %}
+    <table data-role="table" data-mode="columntoggle" class="ui-responsive table-stroke">
+    <thead>
+    <tr>
+        <th data-priority="1">Name</th>
+        <th data-priority="1">Total Hours</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user_data in all_user_data %}
+    <tr>
+    <td><a href="{% url 'robomanage:history_view' %}{{ user_data.0.username }}/">{{ user_data.0.get_full_name }}</a></td>
+    <td>{{ user_data.1 }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}
+
+{% block footer_text %}Ingraham Robotics{% endblock %}

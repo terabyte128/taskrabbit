@@ -1,0 +1,29 @@
+{% extends "taskrabbit/base.html" %}
+
+{% block title %}My Tasks{% endblock %}
+
+{% block main_content %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>My Tasks</h1>
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for task in tasks %}
+                    <tr>
+                        <td>{{ task.name }}</td>
+                        <td>{{ task.team }}</td>
+                        <td>{{ task.status }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

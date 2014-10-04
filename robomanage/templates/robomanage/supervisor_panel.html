@@ -1,0 +1,14 @@
+{% extends "robomanage/base.html" %}
+
+{% block title %}{{ user.get_full_name }}{% endblock %}
+{% block page_id %}auth_home{% endblock %}
+
+{% block header_text %}Supervisor Panel{% endblock %}
+
+{% block main_content %}
+    <h2>Actions</h2>
+    <a href="{% url 'robomanage:supervisor_clock_all_out' %}" class="ui-btn ui-btn-inline">Clock Everyone Out</a>
+    <a href="{% url 'robomanage:supervisor_all_users_view' %}" class="ui-btn ui-btn-inline">View All Users</a>
+{% endblock %}
+
+{% block footer_text %}Ingraham Robotics{% endblock %}

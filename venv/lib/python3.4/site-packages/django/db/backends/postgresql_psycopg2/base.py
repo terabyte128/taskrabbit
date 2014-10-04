@@ -4,14 +4,16 @@ PostgreSQL database backend for Django.
 Requires psycopg 2: http://initd.org/projects/psycopg2
 """
 
-import sys
-
-from django.db.backends import *
+from django.conf import settings
+from django.db.backends import (BaseDatabaseFeatures, BaseDatabaseWrapper,
+    BaseDatabaseValidation)
 from django.db.backends.postgresql_psycopg2.operations import DatabaseOperations
 from django.db.backends.postgresql_psycopg2.client import DatabaseClient
 from django.db.backends.postgresql_psycopg2.creation import DatabaseCreation
 from django.db.backends.postgresql_psycopg2.version import get_version
 from django.db.backends.postgresql_psycopg2.introspection import DatabaseIntrospection
+from django.db.backends.postgresql_psycopg2.schema import DatabaseSchemaEditor
+from django.db.utils import InterfaceError
 from django.utils.encoding import force_str
 from django.utils.functional import cached_property
 from django.utils.safestring import SafeText, SafeBytes
@@ -28,13 +30,16 @@ DatabaseError = Database.DatabaseError
 IntegrityError = Database.IntegrityError
 
 psycopg2.extensions.register_type(psycopg2.extensions.UNICODE)
+psycopg2.extensions.register_type(psycopg2.extensions.UNICODEARRAY)
 psycopg2.extensions.register_adapter(SafeBytes, psycopg2.extensions.QuotedString)
 psycopg2.extensions.register_adapter(SafeText, psycopg2.extensions.QuotedString)
+
 
 def utc_tzinfo_factory(offset):
     if offset != 0:
         raise AssertionError("database connection isn't set to UTC")
     return utc
+
 
 class DatabaseFeatures(BaseDatabaseFeatures):
     needs_datetime_string_cast = False
@@ -48,8 +53,16 @@ class DatabaseFeatures(BaseDatabaseFeatures):
     uses_savepoints = True
     supports_tablespaces = True
     supports_transactions = True
+    can_introspect_ip_address_field = True
+    can_introspect_small_integer_field = True
     can_distinct_on_fields = True
     can_rollback_ddl = True
+    supports_combined_alters = True
+    nulls_order_largest = True
+    closed_cursor_error_class = InterfaceError
+    has_case_insensitive_like = False
+    requires_sqlparse_for_splitting = False
+
 
 class DatabaseWrapper(BaseDatabaseWrapper):
     vendor = 'postgresql'
@@ -70,6 +83,11 @@ class DatabaseWrapper(BaseDatabaseWrapper):
         'iendswith': 'LIKE UPPER(%s)',
     }
 
+    pattern_ops = {
+        'startswith': "LIKE %s || '%%%%'",
+        'istartswith': "LIKE UPPER(%s) || '%%%%'",
+    }
+
     Database = Database
 
     def __init__(self, *args, **kwargs):
@@ -88,13 +106,14 @@ class DatabaseWrapper(BaseDatabaseWrapper):
 
     def get_connection_params(self):
         settings_dict = self.settings_dict
-        if not settings_dict['NAME']:
+        # None may be used to connect to the default 'postgres' db
+        if settings_dict['NAME'] == '':
             from django.core.exceptions import ImproperlyConfigured
             raise ImproperlyConfigured(
                 "settings.DATABASES is improperly configured. "
                 "Please supply the NAME value.")
         conn_params = {
-            'database': settings_dict['NAME'],
+            'database': settings_dict['NAME'] or 'postgres',
         }
         conn_params.update(settings_dict['OPTIONS'])
         if 'autocommit' in conn_params:
@@ -128,11 +147,14 @@ class DatabaseWrapper(BaseDatabaseWrapper):
                 conn_tz = get_parameter_status('TimeZone')
 
             if conn_tz != tz:
-                self.connection.cursor().execute(
-                        self.ops.set_time_zone_sql(), [tz])
+                cursor = self.connection.cursor()
+                try:
+                    cursor.execute(self.ops.set_time_zone_sql(), [tz])
+                finally:
+                    cursor.close()
                 # Commit after setting the time zone (see #17062)
-                self.connection.commit()
-        self.connection.set_isolation_level(self.isolation_level)
+                if not self.get_autocommit():
+                    self.connection.commit()
 
     def create_cursor(self):
         cursor = self.connection.cursor()
@@ -173,6 +195,10 @@ class DatabaseWrapper(BaseDatabaseWrapper):
             return False
         else:
             return True
+
+    def schema_editor(self, *args, **kwargs):
+        "Returns a new instance of this backend's SchemaEditor"
+        return DatabaseSchemaEditor(self, *args, **kwargs)
 
     @cached_property
     def psycopg2_version(self):
