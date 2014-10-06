@@ -1,0 +1,36 @@
+{% extends 'taskrabbit/base.html' %}
+
+{% block title %}{{ task.name }}{% endblock %}
+
+{% block main_content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{{ task.name }} &nbsp;<small>{{ task.team }}</small></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table table-striped table-bordered table-condensed">
+                <thead>
+                <tr>
+                    <th>Owner</th>
+                    <th>Status</th>
+                    <th>Creation Date</th>
+                    <th>Due Date</th>
+                    <th>Last Worked On</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{% if task.owner %}{{ task.owner.first_name }}{% else %}--{% endif %}</td>
+                        <td>{{ task.status }}</td>
+                        <td>{{ task.creation_date }}</td>
+                        <td>{% if task.due_date %}{{ task.due_date }}{% else %}--{% endif %}</td>
+                        <td>{% if task.last_worked_on %}{{ task.last_worked_on }}{% else %}--{% endif %}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
