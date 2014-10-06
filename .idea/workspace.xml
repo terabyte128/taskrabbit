@@ -1,94 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd358e72-bb70-42de-8055-56eae5daf036" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/Django-1.6.7.dist-info/DESCRIPTION.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/Django-1.6.7.dist-info/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/Django-1.6.7.dist-info/METADATA" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/Django-1.6.7.dist-info/RECORD" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/Django-1.6.7.dist-info/WHEEL" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/Django-1.6.7.dist-info/pydist.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/Django-1.6.7.dist-info/top_level.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/bin/daily_cleanup.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/bin/django-2to3.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/bin/profiling/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/bin/profiling/gather_profile_stats.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/bin/unique-messages.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/conf/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/conf/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/conf/locale/fy_NL/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/conf/locale/fy_NL/formats.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/bin/compress.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/locale/fy_NL/LC_MESSAGES/djangojs.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/locale/fy_NL/LC_MESSAGES/djangojs.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/chooser-bg.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/chooser_stacked-bg.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/tool-left.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/tool-left_over.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/tool-right.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/tool-right_over.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/tooltag-add.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/tooltag-add_over.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/tooltag-arrowright.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/tooltag-arrowright_over.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admindocs/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admindocs/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admindocs/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/auth/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/auth/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/comments/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/comments/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/contenttypes/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/contenttypes/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/contenttypes/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/flatpages/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/flatpages/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/formtools/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/formtools/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/gis/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/gis/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/humanize/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/humanize/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/humanize/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/messages/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/messages/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/messages/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/redirects/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/redirects/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/sessions/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/sessions/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/sites/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/sites/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/staticfiles/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/webdesign/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/core/checks/compatibility/base.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/core/management/commands/cleanup.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/core/management/validation.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/dispatch/saferef.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/shortcuts/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/simplejson.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/__main__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/case.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/collector.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/compatibility.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/loader.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/main.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/result.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/runner.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/signals.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/suite.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/util.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/taskrabbit/base.html" afterPath="$PROJECT_DIR$/templates/taskrabbit/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/taskrabbit/index.html" afterPath="$PROJECT_DIR$/templates/taskrabbit/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.py" afterPath="$PROJECT_DIR$/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/taskrabbit/teams.html" afterPath="$PROJECT_DIR$/templates/taskrabbit/teams.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/taskrabbit/urls.py" afterPath="$PROJECT_DIR$/taskrabbit/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/taskrabbit/views.py" afterPath="$PROJECT_DIR$/taskrabbit/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="cd358e72-bb70-42de-8055-56eae5daf036" name="Default" comment="" />
     <ignored path="IngrahamRobotics.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -641,12 +554,22 @@
       <created>1410910123984</created>
       <updated>1410910123984</updated>
     </task>
+    <task id="LOCAL-00001" summary="Updates.">
+      <created>1412561318052</created>
+      <updated>1412561318052</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Updates.">
+      <created>1412561351124</created>
+      <updated>1412561351124</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="2560" height="1574" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -679,6 +602,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="Updates." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -790,21 +715,27 @@
     <entry file="file://$PROJECT_DIR$/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="7" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="5700">
-          <folding />
+          <folding>
+            <element signature="e#0#56#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="7" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="5700">
-          <folding />
+          <folding>
+            <element signature="e#0#56#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="7" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="5700">
-          <folding />
+          <folding>
+            <element signature="e#0#56#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -961,7 +892,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/taskrabbit/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="18" selection-start="309" selection-end="309" vertical-scroll-proportion="0.13068731" vertical-offset="0" max-vertical-offset="1033" />
+        <state line="9" column="18" selection-start="309" selection-end="309" vertical-scroll-proportion="0.13068731" vertical-offset="0" max-vertical-offset="1033">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/taskrabbit/view_task.html">
