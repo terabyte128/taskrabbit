@@ -76,6 +76,12 @@
                     </ul>
                 </li>
                 <li class="{% if page == "add_task" %}active{% endif %}"><a href="{% url 'taskrabbit:add_task' %}">Add Task</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{% url 'taskrabbit:log_out' %}">Sign Out</a></li>
+                    </ul>
+                </li>
             </ul>
             <p class="navbar-text navbar-right">Welcome, {{ user.first_name }}</p>
         </div><!-- /.navbar-collapse -->

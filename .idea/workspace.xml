@@ -1,7 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd358e72-bb70-42de-8055-56eae5daf036" name="Default" comment="" />
+    <list default="true" id="cd358e72-bb70-42de-8055-56eae5daf036" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/Django-1.6.7.dist-info/DESCRIPTION.rst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/Django-1.6.7.dist-info/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/Django-1.6.7.dist-info/METADATA" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/Django-1.6.7.dist-info/RECORD" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/Django-1.6.7.dist-info/WHEEL" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/Django-1.6.7.dist-info/pydist.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/Django-1.6.7.dist-info/top_level.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/bin/daily_cleanup.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/bin/django-2to3.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/bin/profiling/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/bin/profiling/gather_profile_stats.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/bin/unique-messages.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/conf/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/conf/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/conf/locale/fy_NL/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/conf/locale/fy_NL/formats.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/bin/compress.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/locale/fy_NL/LC_MESSAGES/djangojs.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/locale/fy_NL/LC_MESSAGES/djangojs.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/chooser-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/chooser_stacked-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/tool-left.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/tool-left_over.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/tool-right.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/tool-right_over.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/tooltag-add.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/tooltag-add_over.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/tooltag-arrowright.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admin/static/admin/img/tooltag-arrowright_over.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admindocs/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admindocs/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/admindocs/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/auth/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/auth/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/comments/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/comments/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/contenttypes/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/contenttypes/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/contenttypes/tests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/flatpages/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/flatpages/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/formtools/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/formtools/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/gis/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/gis/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/humanize/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/humanize/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/humanize/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/messages/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/messages/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/messages/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/redirects/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/redirects/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/sessions/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/sessions/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/sites/locale/fy_NL/LC_MESSAGES/django.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/sites/locale/fy_NL/LC_MESSAGES/django.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/staticfiles/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/contrib/webdesign/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/core/checks/compatibility/base.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/core/management/commands/cleanup.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/core/management/validation.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/dispatch/saferef.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/shortcuts/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/simplejson.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/__main__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/case.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/collector.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/compatibility.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/loader.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/main.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/result.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/runner.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/signals.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/suite.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/utils/unittest/util.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/taskrabbit/base.html" afterPath="$PROJECT_DIR$/templates/taskrabbit/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/taskrabbit/index.html" afterPath="$PROJECT_DIR$/templates/taskrabbit/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.py" afterPath="$PROJECT_DIR$/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/taskrabbit/teams.html" afterPath="$PROJECT_DIR$/templates/taskrabbit/teams.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/taskrabbit/urls.py" afterPath="$PROJECT_DIR$/taskrabbit/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/taskrabbit/views.py" afterPath="$PROJECT_DIR$/taskrabbit/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="IngrahamRobotics.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,16 +117,16 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/taskrabbit/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="52" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+            <state line="16" column="55" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="360">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_task.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/taskrabbit/add_task.html">
+      <file leaf-file-name="teams.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/taskrabbit/teams.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="21" selection-start="243" selection-end="243" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="690">
+            <state line="8" column="50" selection-start="273" selection-end="273" vertical-scroll-proportion="0.08258775" vertical-offset="0" max-vertical-offset="1453">
               <folding />
             </state>
           </provider>
@@ -48,43 +135,35 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/taskrabbit/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="45" selection-start="233" selection-end="233" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="510">
+            <state line="8" column="50" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="255">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teams.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/taskrabbit/teams.html">
+      <file leaf-file-name="task_table.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/taskrabbit/task_table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="10" selection-start="1020" selection-end="1020" vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="780">
-              <folding>
-                <marker date="1412409799000" expanded="true" signature="136:1019" placeholder="..." />
-                <marker date="1412409799000" expanded="true" signature="168:1008" placeholder="..." />
-                <marker date="1412409799000" expanded="true" signature="284:993" placeholder="..." />
-                <marker date="1412409799000" expanded="true" signature="308:481" placeholder="..." />
-                <marker date="1412409799000" expanded="true" signature="329:456" placeholder="..." />
-                <marker date="1412409799000" expanded="true" signature="505:972" placeholder="..." />
-                <marker date="1412409799000" expanded="true" signature="570:918" placeholder="..." />
-                <marker date="1412409799000" expanded="true" signature="648:841" placeholder="..." />
-                <marker date="1412409799000" expanded="true" signature="1055:1638" placeholder="..." />
-                <marker date="1412409799000" expanded="true" signature="1091:1625" placeholder="{...}" />
-                <marker date="1412409799000" expanded="true" signature="1162:1615" placeholder="{...}" />
-                <marker date="1412409799000" expanded="true" signature="1187:1599" placeholder="{&quot;url&quot;: &quot;{% url 'taskrabbit:claim_task' %}&quot;...}" />
-                <marker date="1412409799000" expanded="true" signature="1277:1408" placeholder="{...}" />
-                <marker date="1412409799000" expanded="true" signature="1484:1581" placeholder="{...}" />
-              </folding>
+            <state line="15" column="23" selection-start="455" selection-end="455" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="480">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/taskrabbit/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="8" selection-start="808" selection-end="808" vertical-scroll-proportion="0.30463576" vertical-offset="248" max-vertical-offset="1575">
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
+            <state line="158" column="63" selection-start="3919" selection-end="3919" vertical-scroll-proportion="0.0" vertical-offset="608" max-vertical-offset="2460">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view_task.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/taskrabbit/view_task.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="109" selection-start="1044" selection-end="1154" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="615">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -92,7 +171,7 @@
       <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/taskrabbit/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="60" selection-start="2463" selection-end="2463" vertical-scroll-proportion="-19.916666" vertical-offset="377" max-vertical-offset="1410">
+            <state line="92" column="6" selection-start="4671" selection-end="4671" vertical-scroll-proportion="0.0" vertical-offset="467" max-vertical-offset="1500">
               <folding />
             </state>
           </provider>
@@ -104,6 +183,9 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -121,16 +203,19 @@
         <option value="$PROJECT_DIR$/static/responsiveslides/responsiveslides.min.js" />
         <option value="$PROJECT_DIR$/templates/includes/standard_slides.html" />
         <option value="$PROJECT_DIR$/urls.py" />
-        <option value="$PROJECT_DIR$/settings.py" />
         <option value="$PROJECT_DIR$/taskrabbit/admin.py" />
         <option value="$PROJECT_DIR$/taskrabbit/models.py" />
-        <option value="$PROJECT_DIR$/taskrabbit/urls.py" />
         <option value="$PROJECT_DIR$/static/js/jquery.cookie.js" />
-        <option value="$PROJECT_DIR$/templates/taskrabbit/base.html" />
-        <option value="$PROJECT_DIR$/templates/taskrabbit/index.html" />
-        <option value="$PROJECT_DIR$/templates/taskrabbit/teams.html" />
         <option value="$PROJECT_DIR$/templates/taskrabbit/add_task.html" />
+        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/templates/taskrabbit/login.html" />
+        <option value="$PROJECT_DIR$/taskrabbit/urls.py" />
         <option value="$PROJECT_DIR$/taskrabbit/views.py" />
+        <option value="$PROJECT_DIR$/templates/taskrabbit/base.html" />
+        <option value="$PROJECT_DIR$/templates/taskrabbit/view_task.html" />
+        <option value="$PROJECT_DIR$/templates/taskrabbit/index.html" />
+        <option value="$PROJECT_DIR$/templates/taskrabbit/task_table.html" />
+        <option value="$PROJECT_DIR$/templates/taskrabbit/teams.html" />
       </list>
     </option>
   </component>
@@ -176,7 +261,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -559,20 +644,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="2560" height="1574" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="22" width="2560" height="1574" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10039063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.175" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27906978" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.289441" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -581,26 +666,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20208333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2795031" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -619,6 +684,76 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/task_table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="23" selection-start="455" selection-end="455" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taskrabbit/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="158" column="63" selection-start="3919" selection-end="3919" vertical-scroll-proportion="0.0" vertical-offset="608" max-vertical-offset="2460">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/view_task.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="109" selection-start="1044" selection-end="1154" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="6" selection-start="4671" selection-end="4671" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taskrabbit/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="52" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/add_task.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="21" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="45" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/teams.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="10" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taskrabbit/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="8" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="1575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="60" selection-start="2463" selection-end="2463" vertical-scroll-proportion="0.0" vertical-offset="377" max-vertical-offset="1410">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/taskrabbit/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="1" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="195">
@@ -635,9 +770,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/taskrabbit/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="34" selection-start="1176" selection-end="1176" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="675">
-          <folding />
-        </state>
+        <state line="39" column="34" selection-start="1176" selection-end="1176" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="675" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/taskrabbit/base.html">
@@ -650,9 +783,7 @@
     <entry file="file://$PROJECT_DIR$/taskrabbit/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="59" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="240">
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -714,9 +845,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/responsiveslides/responsiveslides.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="1" selection-start="684" selection-end="684" vertical-scroll-proportion="0.6385998" vertical-offset="0" max-vertical-offset="1057">
-          <folding />
-        </state>
+        <state line="45" column="1" selection-start="684" selection-end="684" vertical-scroll-proportion="0.6385998" vertical-offset="0" max-vertical-offset="1057" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/responsiveslides/responsiveslides.min.js">
@@ -756,64 +885,41 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1057" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/local_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="855" selection-end="855" vertical-scroll-proportion="0.32639545" vertical-offset="0" max-vertical-offset="1057">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/robomanage/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1057">
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="261" column="17" selection-start="8565" selection-end="8565" vertical-scroll-proportion="0.0" vertical-offset="3225" max-vertical-offset="5730">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1057" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.4/site-packages/django/conf/urls/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.31220436" vertical-offset="0" max-vertical-offset="1057">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="73" selection-start="681" selection-end="691" vertical-scroll-proportion="0.18448439" vertical-offset="0" max-vertical-offset="1425">
-          <folding />
-        </state>
+        <state line="27" column="0" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.31220436" vertical-offset="0" max-vertical-offset="1057" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/taskrabbit/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-          <folding />
-        </state>
+        <state line="9" column="0" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/taskrabbit/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="66" selection-start="1341" selection-end="1341" vertical-scroll-proportion="0.6385998" vertical-offset="0" max-vertical-offset="1057">
-          <folding>
-            <element signature="e#0#28#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="45" column="66" selection-start="1341" selection-end="1341" vertical-scroll-proportion="0.6385998" vertical-offset="0" max-vertical-offset="1057" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/jquery.cookie.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="2" selection-start="4246" selection-end="4246" vertical-scroll-proportion="0.97161776" vertical-offset="398" max-vertical-offset="1515">
+        <state line="95" column="2" selection-start="4246" selection-end="4246" vertical-scroll-proportion="0.97161776" vertical-offset="398" max-vertical-offset="1515" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="855" selection-end="855" vertical-scroll-proportion="0.32639545" vertical-offset="0" max-vertical-offset="1057" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="379" column="19" selection-start="12894" selection-end="12894" vertical-scroll-proportion="0.90066224" vertical-offset="4733" max-vertical-offset="5790">
           <folding>
-            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#0#56#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -825,45 +931,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/base.html">
+    <entry file="file://$PROJECT_DIR$/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="60" selection-start="2463" selection-end="2463" vertical-scroll-proportion="-19.916666" vertical-offset="377" max-vertical-offset="1410">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/teams.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="10" selection-start="1020" selection-end="1020" vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="780">
-          <folding>
-            <marker date="1412409799000" expanded="true" signature="136:1019" placeholder="..." />
-            <marker date="1412409799000" expanded="true" signature="168:1008" placeholder="..." />
-            <marker date="1412409799000" expanded="true" signature="284:993" placeholder="..." />
-            <marker date="1412409799000" expanded="true" signature="308:481" placeholder="..." />
-            <marker date="1412409799000" expanded="true" signature="329:456" placeholder="..." />
-            <marker date="1412409799000" expanded="true" signature="505:972" placeholder="..." />
-            <marker date="1412409799000" expanded="true" signature="570:918" placeholder="..." />
-            <marker date="1412409799000" expanded="true" signature="648:841" placeholder="..." />
-            <marker date="1412409799000" expanded="true" signature="1055:1638" placeholder="..." />
-            <marker date="1412409799000" expanded="true" signature="1091:1625" placeholder="{...}" />
-            <marker date="1412409799000" expanded="true" signature="1162:1615" placeholder="{...}" />
-            <marker date="1412409799000" expanded="true" signature="1187:1599" placeholder="{&quot;url&quot;: &quot;{% url 'taskrabbit:claim_task' %}&quot;...}" />
-            <marker date="1412409799000" expanded="true" signature="1277:1408" placeholder="{...}" />
-            <marker date="1412409799000" expanded="true" signature="1484:1581" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/taskrabbit/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="52" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="45" selection-start="233" selection-end="233" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="510">
+        <state line="32" column="14" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.36896878" vertical-offset="0" max-vertical-offset="1425">
           <folding />
         </state>
       </provider>
@@ -875,12 +945,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/taskrabbit/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="55" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="6" selection-start="4671" selection-end="4671" vertical-scroll-proportion="0.0" vertical-offset="467" max-vertical-offset="1500">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="18" selection-start="309" selection-end="309" vertical-scroll-proportion="0.13068731" vertical-offset="0" max-vertical-offset="1033" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/view_task.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="109" selection-start="1044" selection-end="1154" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/taskrabbit/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="8" selection-start="808" selection-end="808" vertical-scroll-proportion="0.30463576" vertical-offset="248" max-vertical-offset="1575">
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
+        <state line="158" column="63" selection-start="3919" selection-end="3919" vertical-scroll-proportion="0.0" vertical-offset="1373" max-vertical-offset="2460">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/task_table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="23" selection-start="455" selection-end="455" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="50" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/teams.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="50" selection-start="273" selection-end="273" vertical-scroll-proportion="0.08258775" vertical-offset="0" max-vertical-offset="1453">
+          <folding />
         </state>
       </provider>
     </entry>

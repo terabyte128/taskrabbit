@@ -1,3 +1,6 @@
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.core.urlresolvers import reverse
 from django.http.response import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render
@@ -9,15 +12,43 @@ from taskrabbit.models import Task, Note, Team, UserProfile, Status
 # Create your views here.
 def index(request):
 
-    context = {
-        'page': "index"
-    }
+    if request.user.is_authenticated():
 
-    context['tasks'] = Task.objects.filter(owner=request.user)
+        context = {
+            'page': 'index',
+            'tasks': Task.objects.filter(owner=request.user)
+        }
 
-    add_context(context, request)
+        add_context(context, request)
 
-    return render(request, 'taskrabbit/index.html', context)
+        return render(request, 'taskrabbit/index.html', context)
+
+
+    elif 'username' and 'password' in request.POST:
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return HttpResponseRedirect(reverse('taskrabbit:index'))
+            else:
+                messages.error(request, "Your account has been deactivated.")
+        else:
+            messages.error(request, "Account not found. Make sure your credentials are entered correctly.")
+
+        return render(request, 'taskrabbit/login.html')
+
+    else:
+        return render(request, 'taskrabbit/login.html')
+
+
+def log_out(request):
+    logout(request)
+    messages.success(request, "Signed out successfully.")
+    return render(request, 'taskrabbit/login.html')
 
 
 def add_context(context, request):
@@ -30,7 +61,11 @@ def add_context(context, request):
     return context
 
 
-def teams(request, team_id):
+@login_required
+def teams(request, team_id=None):
+
+    if not team_id:
+        raise Http404
 
     context = {
         'page': 'teams'
@@ -52,6 +87,7 @@ def teams(request, team_id):
     return render(request, 'taskrabbit/teams.html', context)
 
 
+@login_required
 def add_task(request):
 
     if 'name' and 'team' in request.POST:
@@ -83,6 +119,7 @@ def add_task(request):
     return render(request, 'taskrabbit/add_task.html', context)
 
 
+@login_required
 def claim_task(request):
 
     if 'task_id' in request.POST:
@@ -98,3 +135,25 @@ def claim_task(request):
         return HttpResponseRedirect(reverse('taskrabbit:index'))
 
     raise Http404
+
+
+@login_required
+def view_task(request, task_id=None):
+    if not task_id:
+        raise Http404
+
+    try:
+        task = Task.objects.get(id=task_id)
+
+
+
+    except Task.DoesNotExist:
+        raise Http404
+
+    context = {
+        'task': task
+    }
+
+    add_context(context, request)
+
+    return render(request, 'taskrabbit/view_task.html', context)

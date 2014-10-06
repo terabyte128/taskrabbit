@@ -1,4 +1,5 @@
 from __future__ import absolute_import, unicode_literals
+from django.contrib import messages
 
 ######################
 # MEZZANINE SETTINGS #
@@ -374,3 +375,7 @@ except ImportError:
     pass
 else:
     set_dynamic_settings(globals())
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
