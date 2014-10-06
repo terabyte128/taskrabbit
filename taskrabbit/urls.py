@@ -15,5 +15,9 @@ urlpatterns = patterns('',
     url(r'^add/$', views.add_task, name='add_task'),
 
     url(r'^task/$', views.view_task, name='view_task'),
-    url(r'^task/(?P<task_id>[0-9]+)/$', views.view_task, name='view_task')
+    url(r'^task/(?P<task_id>[0-9]+)/$', views.view_task, name='view_task'),
+
+
+    # get things
+    url(r'^get/statuses', views.get_statuses, name='get_statuses')
 )

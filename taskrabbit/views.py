@@ -1,3 +1,4 @@
+import json
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -151,9 +152,26 @@ def view_task(request, task_id=None):
         raise Http404
 
     context = {
-        'task': task
+        'task': task,
+        'notes': Note.objects.filter(task=task).order_by('-timestamp')
     }
 
     add_context(context, request)
 
     return render(request, 'taskrabbit/view_task.html', context)
+
+
+@login_required
+def get_statuses(request):
+    status = Status.objects.all()
+
+    json_status = []
+
+    for a_status in status:
+        status_package = {
+            'value': a_status.id,
+            'text': a_status.name
+        }
+        json_status.append(status_package)
+
+    return HttpResponse(json.dumps(json_status), content_type='application/json')
