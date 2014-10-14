@@ -1,12 +1,251 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd358e72-bb70-42de-8055-56eae5daf036" name="Default" comment="Updates.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/clear.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/bootstrap-editable.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/bootstrap-editable.min.js" />
+    <list default="true" id="cd358e72-bb70-42de-8055-56eae5daf036" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/action-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/action-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/ajax-loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/alert-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/alert-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/arrow-d-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/arrow-d-l-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/arrow-d-l-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/arrow-d-r-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/arrow-d-r-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/arrow-d-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/arrow-l-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/arrow-l-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/arrow-r-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/arrow-r-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/arrow-u-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/arrow-u-l-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/arrow-u-l-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/arrow-u-r-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/arrow-u-r-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/arrow-u-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/asc.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/audio-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/audio-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/back-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/back-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/bars-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/bars-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/bullets-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/bullets-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/calendar-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/calendar-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/camera-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/camera-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/carat-d-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/carat-d-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/carat-l-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/carat-l-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/carat-r-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/carat-r-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/carat-u-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/carat-u-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/check-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/check-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/clock-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/clock-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/cloud-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/cloud-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/comment-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/comment-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/delete-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/delete-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/desc.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/edit-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/edit-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/eye-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/eye-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/forbidden-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/forbidden-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/forward-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/forward-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/gear-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/gear-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/grid-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/grid-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/heart-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/heart-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/home-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/home-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/info-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/info-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/location-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/location-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/lock-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/lock-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/img/logo_earfuzz_hat.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/mail-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/mail-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/minus-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/minus-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/navigation-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/navigation-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/img/nfc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/phone-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/phone-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/plus-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/plus-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/power-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/power-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/recycle-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/recycle-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/refresh-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/refresh-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/search-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/search-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/shop-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/shop-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/star-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/star-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/tag-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/tag-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/user-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/user-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/video-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-png/video-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/action-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/action-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/taskrabbit/templates/taskrabbit/add_task.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/alert-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/alert-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/taskrabbit/templates/taskrabbit/all_tasks.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/taskrabbit/all_tasks.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/arrow-d-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/arrow-d-l-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/arrow-d-l-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/arrow-d-r-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/arrow-d-r-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/arrow-d-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/arrow-l-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/arrow-l-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/arrow-r-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/arrow-r-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/arrow-u-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/arrow-u-l-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/arrow-u-l-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/arrow-u-r-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/arrow-u-r-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/arrow-u-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/audio-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/audio-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/robomanage/auth_home.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/back-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/back-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/bars-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/bars-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/taskrabbit/templates/taskrabbit/base.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/robomanage/base.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/bullets-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/bullets-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/calendar-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/calendar-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/camera-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/camera-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/carat-d-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/carat-d-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/carat-l-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/carat-l-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/carat-r-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/carat-r-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/carat-u-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/carat-u-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/check-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/check-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/clock-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/clock-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/cloud-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/cloud-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/comment-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/comment-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/delete-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/delete-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/edit-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/edit-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/eye-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/eye-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/forbidden-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/forbidden-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/forward-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/forward-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/css/fullcalendar.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/fullcalendar.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/gear-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/gear-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/grid-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/grid-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/heart-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/heart-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/robomanage/history.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/home-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/home-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/taskrabbit/templates/taskrabbit/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/robomanage/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/info-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/info-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/jquery-1.11.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/css/jquery.mobile-1.4.3.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/jquery.mobile-1.4.3.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/jquery.tablesorter.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/location-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/location-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/lock-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/lock-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/taskrabbit/templates/taskrabbit/login.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/mail-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/mail-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/minus-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/minus-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/moment.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/navigation-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/navigation-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/phone-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/phone-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/plus-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/plus-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/power-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/power-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/recycle-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/recycle-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/refresh-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/refresh-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/search-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/search-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/taskrabbit/templates/taskrabbit/search_results.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/taskrabbit/search_results.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/shop-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/shop-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/star-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/star-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/taskrabbit/templates/taskrabbit/statuses.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/taskrabbit/statuses.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/robomanage/supervisor_all_users.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/robomanage/supervisor_panel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/tablesorter.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/tag-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/tag-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/taskrabbit/templates/taskrabbit/task_table.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/taskrabbit/templates/taskrabbit/teams.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/user-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/user-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/video-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/RoboManage/js/images/icons-svg/video-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/taskrabbit/templates/taskrabbit/view_task.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/media/uploads/slides/glacier-peak-3-8-15.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/taskrabbit/base.html" afterPath="$PROJECT_DIR$/templates/taskrabbit/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/taskrabbit/index.html" afterPath="$PROJECT_DIR$/templates/taskrabbit/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/taskrabbit/login.html" afterPath="$PROJECT_DIR$/templates/taskrabbit/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/taskrabbit/models.py" afterPath="$PROJECT_DIR$/taskrabbit/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.py" afterPath="$PROJECT_DIR$/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/taskrabbit/task_table.html" afterPath="$PROJECT_DIR$/templates/taskrabbit/task_table.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/taskrabbit/teams.html" afterPath="$PROJECT_DIR$/templates/taskrabbit/teams.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urls.py" afterPath="$PROJECT_DIR$/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/taskrabbit/urls.py" afterPath="$PROJECT_DIR$/taskrabbit/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/taskrabbit/view_task.html" afterPath="$PROJECT_DIR$/templates/taskrabbit/view_task.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/taskrabbit/views.py" afterPath="$PROJECT_DIR$/taskrabbit/views.py" />
@@ -36,86 +275,7 @@
     <favorites_list name="IngrahamRobotics" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/taskrabbit/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="75" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/taskrabbit/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="50" selection-start="238" selection-end="238" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="255">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="task_table.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/taskrabbit/task_table.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="23" selection-start="455" selection-end="455" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="480">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/taskrabbit/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="166" column="0" selection-start="4084" selection-end="4084" vertical-scroll-proportion="0.7696737" vertical-offset="1688" max-vertical-offset="2730">
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap-editable.min.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/bootstrap-editable.min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap-editable.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/bootstrap-editable.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10035">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view_task.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/taskrabbit/view_task.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="128" selection-start="958" selection-end="958" vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="885">
-              <folding>
-                <element signature="e#1450#1476#0" expanded="true" />
-                <element signature="e#1520#1560#0" expanded="true" />
-                <element signature="e#1625#1652#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/taskrabbit/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="46" selection-start="899" selection-end="899" vertical-scroll-proportion="8.208333" vertical-offset="512" max-vertical-offset="1530">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -132,7 +292,6 @@
         <option value="$PROJECT_DIR$/static/css/superhero.theme.min.css" />
         <option value="$PROJECT_DIR$/templates/pages/calendarpage.html" />
         <option value="$PROJECT_DIR$/static/css/fullcalendar.min.css" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/pages/menus/breadcrumb.html" />
@@ -140,27 +299,32 @@
         <option value="$PROJECT_DIR$/static/responsiveslides/responsiveslides.css" />
         <option value="$PROJECT_DIR$/static/responsiveslides/responsiveslides.min.js" />
         <option value="$PROJECT_DIR$/templates/includes/standard_slides.html" />
-        <option value="$PROJECT_DIR$/urls.py" />
         <option value="$PROJECT_DIR$/taskrabbit/admin.py" />
-        <option value="$PROJECT_DIR$/taskrabbit/models.py" />
         <option value="$PROJECT_DIR$/static/js/jquery.cookie.js" />
         <option value="$PROJECT_DIR$/templates/taskrabbit/add_task.html" />
-        <option value="$PROJECT_DIR$/settings.py" />
         <option value="$PROJECT_DIR$/templates/taskrabbit/login.html" />
-        <option value="$PROJECT_DIR$/templates/taskrabbit/index.html" />
-        <option value="$PROJECT_DIR$/templates/taskrabbit/task_table.html" />
-        <option value="$PROJECT_DIR$/templates/taskrabbit/teams.html" />
-        <option value="$PROJECT_DIR$/templates/taskrabbit/base.html" />
-        <option value="$PROJECT_DIR$/taskrabbit/urls.py" />
+        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
+        <option value="$PROJECT_DIR$/templates/taskrabbit/statuses.html" />
+        <option value="$PROJECT_DIR$/static/css/tablesorter.css" />
+        <option value="$PROJECT_DIR$/templates/taskrabbit/search_results.html" />
         <option value="$PROJECT_DIR$/templates/taskrabbit/view_task.html" />
+        <option value="$PROJECT_DIR$/urls.py" />
+        <option value="$PROJECT_DIR$/taskrabbit/urls.py" />
+        <option value="$PROJECT_DIR$/templates/taskrabbit/base.html" />
         <option value="$PROJECT_DIR$/taskrabbit/views.py" />
+        <option value="$PROJECT_DIR$/taskrabbit/models.py" />
+        <option value="$PROJECT_DIR$/templates/taskrabbit/task_table.html" />
+        <option value="$PROJECT_DIR$/templates/taskrabbit/all_tasks.html" />
+        <option value="$PROJECT_DIR$/templates/taskrabbit/teams.html" />
+        <option value="$PROJECT_DIR$/templates/taskrabbit/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="2560" />
-    <option name="height" value="1574" />
+    <option name="width" value="1440" />
+    <option name="height" value="874" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -253,52 +417,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IngrahamRobotics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IngrahamRobotics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="taskrabbit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IngrahamRobotics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IngrahamRobotics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="taskrabbit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IngrahamRobotics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IngrahamRobotics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -317,43 +435,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IngrahamRobotics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IngrahamRobotics" />
+              <option name="myItemId" value="media" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
+              <option name="myItemId" value="uploads" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IngrahamRobotics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IngrahamRobotics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="slides" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -382,10 +472,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static/css" />
+      <recent name="$PROJECT_DIR$/taskrabbit/static" />
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/static/js" />
-      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/taskrabbit/templates" />
+      <recent name="$PROJECT_DIR$/static/css" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.IngrahamRobotics">
@@ -624,11 +719,15 @@
       <created>1412561351124</created>
       <updated>1412561351124</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Began adding editable fields to task view page. &#10;&#10;Added bootstrap-editable plugin.">
+      <created>1412573398544</created>
+      <updated>1412573398544</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="2560" height="1574" extended-state="6" />
+    <frame x="0" y="22" width="1440" height="874" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -636,11 +735,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.175" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26180556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28903654" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24099378" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -665,133 +764,36 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Updates." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates." />
+    <MESSAGE value="Began adding editable fields to task view page. &#10;&#10;Added bootstrap-editable plugin." />
+    <option name="LAST_COMMIT_MESSAGE" value="Began adding editable fields to task view page. &#10;&#10;Added bootstrap-editable plugin." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/view_task.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="109" selection-start="1044" selection-end="1154" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="615">
-          <folding>
-            <element signature="e#1450#1476#0" expanded="true" />
-            <element signature="e#1520#1560#0" expanded="true" />
-            <element signature="e#1625#1652#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="6" selection-start="4671" selection-end="4671" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/taskrabbit/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="52" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="300">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/add_task.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="21" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="690">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="45" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/teams.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="10" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="780">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/taskrabbit/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="8" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="1575">
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="10" column="59" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="240" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/base.html">
+    <entry file="file://$PROJECT_DIR$/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="60" selection-start="2463" selection-end="2463" vertical-scroll-proportion="0.0" vertical-offset="377" max-vertical-offset="1410">
+        <state line="19" column="7" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="5700">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/taskrabbit/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="1" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="195">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="14" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="180">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/taskrabbit/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="34" selection-start="1176" selection-end="1176" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="675" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="6" selection-start="3872" selection-end="3872" vertical-scroll-proportion="0.0" vertical-offset="302" max-vertical-offset="1335">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/taskrabbit/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="59" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="240">
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="7" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="5700">
-          <folding>
-            <element signature="e#0#56#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="7" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="5700">
-          <folding>
-            <element signature="e#0#56#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="7" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="5700">
-          <folding>
-            <element signature="e#0#56#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -862,9 +864,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1044">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1044" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/pages/menus/primary.html">
@@ -887,11 +887,6 @@
         <state line="9" column="0" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/taskrabbit/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="66" selection-start="1341" selection-end="1341" vertical-scroll-proportion="0.6385998" vertical-offset="0" max-vertical-offset="1057" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/jquery.cookie.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="95" column="2" selection-start="4246" selection-end="4246" vertical-scroll-proportion="0.97161776" vertical-offset="398" max-vertical-offset="1515" />
@@ -902,110 +897,141 @@
         <state line="23" column="0" selection-start="855" selection-end="855" vertical-scroll-proportion="0.32639545" vertical-offset="0" max-vertical-offset="1057" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="379" column="19" selection-start="12894" selection-end="12894" vertical-scroll-proportion="0.90066224" vertical-offset="4733" max-vertical-offset="5790">
-          <folding>
-            <element signature="e#0#56#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="0" selection-start="4230" selection-end="4230" vertical-scroll-proportion="0.34753147" vertical-offset="1471" max-vertical-offset="2790">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="14" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.36896878" vertical-offset="0" max-vertical-offset="1425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/taskrabbit/add_task.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="21" selection-start="243" selection-end="243" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="690">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="18" selection-start="309" selection-end="309" vertical-scroll-proportion="0.13068731" vertical-offset="0" max-vertical-offset="1033">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/teams.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="14" selection-start="937" selection-end="937" vertical-scroll-proportion="0.41257367" vertical-offset="0" max-vertical-offset="1018">
-          <folding />
-        </state>
+        <state line="9" column="21" selection-start="243" selection-end="243" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="690" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/bootstrap-editable.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1029">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1029" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/bootstrap-editable.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10035">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10035" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/base.html">
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="46" selection-start="899" selection-end="899" vertical-scroll-proportion="8.208333" vertical-offset="512" max-vertical-offset="1530">
-          <folding />
-        </state>
+        <state line="52" column="147" selection-start="2255" selection-end="2255" vertical-scroll-proportion="0.9153543" vertical-offset="315" max-vertical-offset="1005" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/task_table.html">
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="23" selection-start="455" selection-end="455" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="480">
-          <folding />
-        </state>
+        <state line="122" column="0" selection-start="4230" selection-end="4230" vertical-scroll-proportion="-0.7081851" vertical-offset="2228" max-vertical-offset="2790" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/view_task.html">
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="128" selection-start="958" selection-end="958" vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="885">
-          <folding>
-            <element signature="e#1450#1476#0" expanded="true" />
-            <element signature="e#1520#1560#0" expanded="true" />
-            <element signature="e#1625#1652#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="29" column="22" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/index.html">
+    <entry file="file://$PROJECT_DIR$/static/js/jquery.tablesorter.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="50" selection-start="238" selection-end="238" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/img/asc.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/img/desc.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/img/bg.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/tablesorter.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="34" selection-start="286" selection-end="286" vertical-scroll-proportion="0.19305019" vertical-offset="0" max-vertical-offset="777" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/search_results.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="41" selection-start="196" selection-end="196" vertical-scroll-proportion="0.16100179" vertical-offset="0" max-vertical-offset="559" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/taskrabbit/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="75" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-          <folding />
-        </state>
+        <state line="9" column="51" selection-start="326" selection-end="326" vertical-scroll-proportion="0.18010291" vertical-offset="0" max-vertical-offset="585" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/taskrabbit/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="0" selection-start="4084" selection-end="4084" vertical-scroll-proportion="0.7696737" vertical-offset="1688" max-vertical-offset="2730">
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+        <state line="307" column="29" selection-start="7713" selection-end="7713" vertical-scroll-proportion="0.7169811" vertical-offset="4022" max-vertical-offset="4605" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/view_task.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="69" selection-start="2857" selection-end="2857" vertical-scroll-proportion="0.7234432" vertical-offset="340" max-vertical-offset="1515" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/robomanage/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="775" selection-end="775" vertical-scroll-proportion="0.4116638" vertical-offset="0" max-vertical-offset="1440" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="0" selection-start="4089" selection-end="4089" vertical-scroll-proportion="-0.6981132" vertical-offset="2087" max-vertical-offset="5775">
+          <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taskrabbit/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="64" selection-start="869" selection-end="869" vertical-scroll-proportion="0.4373928" vertical-offset="180" max-vertical-offset="960" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/all_tasks.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="14" selection-start="368" selection-end="368" vertical-scroll-proportion="0.29516995" vertical-offset="0" max-vertical-offset="559" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/teams.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="69" selection-start="217" selection-end="300" vertical-scroll-proportion="0.18783543" vertical-offset="0" max-vertical-offset="559" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="120" selection-start="3108" selection-end="3108" vertical-scroll-proportion="-0.23434705" vertical-offset="1136" max-vertical-offset="1695" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="64" selection-start="184" selection-end="267" vertical-scroll-proportion="0.21466905" vertical-offset="0" max-vertical-offset="559" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/statuses.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="33" selection-start="203" selection-end="203" vertical-scroll-proportion="0.16100179" vertical-offset="0" max-vertical-offset="559" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/taskrabbit/task_table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="148" selection-start="1246" selection-end="1246" vertical-scroll-proportion="0.53296703" vertical-offset="99" max-vertical-offset="645" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="583" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taskrabbit/templates/taskrabbit/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1695" />
       </provider>
     </entry>
   </component>

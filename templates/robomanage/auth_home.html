@@ -1,0 +1,54 @@
+{% extends "robomanage/base.html" %}
+
+{% block title %}{{ user.get_full_name }}{% endblock %}
+{% block page_id %}auth_home{% endblock %}
+
+{% block header_text %}Welcome, {{ user.get_full_name }}{% endblock %}
+
+{% block main_content %}
+{% if not currently_timed_in %}
+    <a href="{% url 'robomanage:clock_in_view' %}" class="ui-btn ui-icon-check ui-btn-icon-left">Clock In</a>
+{% else %}
+    <a href="{% url 'robomanage:clock_out_view' %}" class="ui-btn ui-icon-arrow-u-l ui-btn-icon-left">Clock Out</a>
+{% endif %}
+{% if grand_total_time %}
+    <h3>Entries {{ begin_entries }}-{{ end_entries }}<span style="float: right;">{{ grand_total_time }} total</span></h3>
+{% else %}
+    <h3>No entries yet - get to work!</h3>
+{% endif %}
+
+<table data-role="table" data-mode="columntoggle" class="ui-responsive table-stroke" id="time_table">
+    <thead>
+    <tr>
+        <th data-priority="1">Date</th>
+        <th data-priority="2">Time In</th>
+        <th data-priority="2">Time Out</th>
+        <th data-priority="1">Total Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for time in time_logs %}
+        <tr>
+            <td>{{ time.date }}</td>
+            <td>{{ time.entry_time }}</td>
+            <td>{{ time.exit_time }}</td>
+            <td>{{ time.total_time }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+<a href="/{{ back_page }}" class="ui-btn ui-icon-arrow-l ui-btn-icon-left{% if first_page %} ui-state-disabled{% endif %}" style="display:inline-block;">Newer</a>
+<a href="/{{ next_page }}" class="ui-btn ui-icon-arrow-r ui-btn-icon-right{% if last_page %} ui-state-disabled{% endif %}" style="display:inline-block; float: right;">Older</a>
+<br>
+<a href="{% url 'robomanage:history_view' %}" class="ui-btn ui-icon-action ui-btn-icon-left">History</a>
+
+{% if user.is_superuser %}
+    <a href="{% url 'robomanage:supervisor_view' %}" class="ui-btn ui-icon-gear  ui-btn-icon-left">Supervisor Panel</a>
+{% endif %}
+
+<br>
+<a href="{% url 'robomanage:logout_view' %}" class="ui-btn ui-icon-back ui-btn-icon-left">Log Out</a>
+{% endblock %}
+
+{% block footer_text %}Ingraham Robotics{% endblock %}

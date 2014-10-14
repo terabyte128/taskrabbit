@@ -3,9 +3,11 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.urlresolvers import reverse
+from django.db.models.query_utils import Q
 from django.http.response import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth.models import User
+import datetime
 
 from taskrabbit.models import Task, Note, Team, UserProfile, Status
 
@@ -17,7 +19,8 @@ def index(request):
 
         context = {
             'page': 'index',
-            'tasks': Task.objects.filter(owner=request.user)
+            'tasks': Task.objects.filter(owner=request.user),
+            'hide_statuses': Status.objects.filter(show_in_table=False)
         }
 
         add_context(context, request)
@@ -55,6 +58,7 @@ def log_out(request):
 def add_context(context, request):
     try:
         context['teams'] = Team.objects.all()
+        context['statuses'] = Status.objects.all()
         context['user'] = request.user
     except Team.DoesNotExist:
         pass
@@ -69,7 +73,8 @@ def teams(request, team_id=None):
         raise Http404
 
     context = {
-        'page': 'teams'
+        'page': 'teams',
+        'hide_statuses': Status.objects.filter(show_in_table=False)
     }
 
     try:
@@ -83,9 +88,37 @@ def teams(request, team_id=None):
     except Task.DoesNotExist:
         context['errors'] = "No tasks found."
 
+
     add_context(context, request)
 
     return render(request, 'taskrabbit/teams.html', context)
+
+
+@login_required
+def statuses(request, status_id=None):
+
+    if not status_id:
+        raise Http404
+
+    context = {
+        'page': 'statuses',
+        'hide_statuses': Status.objects.filter(show_in_table=False)
+    }
+
+    try:
+        status = Status.objects.get(id=status_id)
+        context['status'] = status
+    except Status.DoesNotExist:
+        raise Http404
+
+    try:
+        context['tasks'] = Task.objects.filter(status=status)
+    except Task.DoesNotExist:
+        context['errors'] = "No tasks found."
+
+    add_context(context, request)
+
+    return render(request, 'taskrabbit/statuses.html', context)
 
 
 @login_required
@@ -146,8 +179,6 @@ def view_task(request, task_id=None):
     try:
         task = Task.objects.get(id=task_id)
 
-
-
     except Task.DoesNotExist:
         raise Http404
 
@@ -175,3 +206,108 @@ def get_statuses(request):
         json_status.append(status_package)
 
     return HttpResponse(json.dumps(json_status), content_type='application/json')
+
+
+@login_required
+def get_users(request):
+    users = User.objects.filter(is_active=True)
+
+    json_user = []
+
+    for a_user in users:
+        user_package = {
+            'value': a_user.id,
+            'text': a_user.first_name
+        }
+        json_user.append(user_package)
+
+    return HttpResponse(json.dumps(json_user), content_type='application/json')
+
+
+@login_required
+def update_task(request):
+    name = request.POST['name']
+    pk = request.POST['pk']
+    value = request.POST['value']
+
+    try:
+        task = Task.objects.get(id=pk)
+
+        if name == "owner":
+            value_as_object = User.objects.get(id=value)
+            note_description = "Owner changed to " + value_as_object.first_name + "."
+
+        elif name == "status":
+            value_as_object = Status.objects.get(id=value)
+            note_description = "Status changed to " + str(value_as_object).lower() + "."
+
+        else:
+            value_as_object = value
+            note_description = None
+
+        if note_description is not None:
+            note_update = Note(task=task, user=request.user, status=task.status, content=note_description,
+                               timestamp=datetime.datetime.now(), automatic_note=True)
+            note_update.save()
+
+        setattr(task, name, value_as_object)
+        task.save()
+
+    except Task.DoesNotExist:
+        raise Http404
+
+    return HttpResponse(status=200)
+
+
+@login_required
+def add_note(request):
+    task_id = request.POST['task_id']
+    content = request.POST['content']
+
+    task = Task.objects.get(id=task_id)
+
+    new_note = Note(task=task, user=request.user, status=task.status, content=content, timestamp=datetime.datetime.now())
+
+    new_note.save()
+
+    task.last_worked_on = datetime.datetime.now()
+
+    task.save()
+
+    return HttpResponseRedirect(reverse('taskrabbit:view_task') + task_id)
+
+
+@login_required
+def search(request):
+    query = request.GET['query']
+
+    context = {
+        'page': 'search',
+        'query': query
+    }
+
+    results = Task.objects.filter(Q(name__contains=query) | Q(description__contains=query))
+
+    context['tasks'] = results
+
+    add_context(context, request)
+
+    return render(request, 'taskrabbit/search_results.html', context)
+
+
+@login_required
+def all_tasks(request):
+
+    context = {
+        'page': 'all_tasks',
+        'hide_statuses': Status.objects.filter(show_in_table=False)
+    }
+
+    try:
+        context['tasks'] = Task.objects.all()
+    except Task.DoesNotExist:
+        context['errors'] = "No tasks found."
+
+    add_context(context, request)
+
+    return render(request, 'taskrabbit/all_tasks.html', context)

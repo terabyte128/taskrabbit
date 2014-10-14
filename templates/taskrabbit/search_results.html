@@ -1,12 +1,10 @@
 {% extends "taskrabbit/base.html" %}
-{% block title %}{{ team.name }} Tasks{% endblock %}
+{% block title %}Search{% endblock %}
 
 {% block main_content %}
     <div class="row">
         <div class="col-lg-12">
-            <h1>Tasks for {{ team.name }} Team
-{#                <small>(excluding {{ hide_statuses|join:", "|lower }})</small>#}
-            </h1>
+            <h1>Results for "{{ query }}"</h1>
 
             {% include 'taskrabbit/task_table.html' %}
         </div>

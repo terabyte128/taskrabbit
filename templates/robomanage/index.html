@@ -1,0 +1,22 @@
+{% extends "robomanage/base.html" %}
+{% load staticfiles %}
+
+{% block title %}Log In{% endblock %}
+{% block page_id %}login_page{% endblock %}
+
+{% block header_text %}RoboManage - Login{% endblock %}
+
+{% block main_content %}
+    <img src="{% static 'RoboManage/img/logo_earfuzz_hat.png' %}" style="width: 300px; margin:30px auto 30px auto; display: block;">
+    <form action="{% url 'robomanage:login_view' %}" method="post">
+        {% csrf_token %}
+
+        <input placeholder="{{ login_form.username.label }}" type="text" maxlength="{{ login_form.username.maxlength }}" name="{{ login_form.username.name }}" required="{{ login_form.username.required }}">
+        <br>
+        <input placeholder="{{ login_form.password.label }}" type="password" maxlength="{{ login_form.password.maxlength }}" name="{{ login_form.password.name }}" required="{{ login_form.password.required }}">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
+
+{% block footer_text %}&copy; 2014 Ingraham Robotics{% endblock %}

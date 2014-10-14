@@ -1,0 +1,37 @@
+{% extends "robomanage/base.html" %}
+
+{% block page_id %}auth_home{% endblock %}
+
+{% block header_text %}History for {{ user.get_full_name }}{% endblock %}
+
+{% block header %}
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'RoboManage/css/fullcalendar.min.css' %}">
+{% endblock %}
+
+{% block main_content %}
+    <div id="calendar"></div>
+    {{ calendar_logs }}
+{% endblock %}
+
+{% block scripts %}
+   <script type="text/javascript" src="{% static 'RoboManage/js/moment.min.js' %}"></script>
+   <script type="text/javascript" src="{% static 'RoboManage/js/fullcalendar.min.js' %}"></script>
+
+   <script type="text/javascript">
+   $(document).ready(function() {
+
+        // page is now ready, initialize the calendar...
+
+       var someEvents = jQuery.unser("{{ calendar_logs }}")
+       console.log(someEvents)
+
+        $('#calendar').fullCalendar({
+
+        })
+
+    });
+   </script>
+{% endblock %}
+
+{% block footer_text %}Ingraham Robotics{% endblock %}
