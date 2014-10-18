@@ -7,7 +7,7 @@
         <ul class="rslides">
           {% for image in page.slide_set.all %}
             <li>
-              <img src="{{ MEDIA_URL }}{% thumbnail image.file 940 300 %}" alt="{{ image.description }}"/>
+              <img src="{{ MEDIA_URL }}{% thumbnail image.file 940 250 %}" alt="{{ image.description }}"/>
               {% if image.caption %}
                 <p class="caption">{{ image.caption|safe }}</p>
               {% endif %}
