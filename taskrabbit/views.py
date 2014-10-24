@@ -283,10 +283,10 @@ def search(request):
 
     context = {
         'page': 'search',
-        'query': query
+        'query': query,
     }
 
-    results = Task.objects.filter(Q(name__contains=query) | Q(description__contains=query))
+    results = Task.objects.filter(Q(name__icontains=query) | Q(description__icontains=query))
 
     context['tasks'] = results
 
