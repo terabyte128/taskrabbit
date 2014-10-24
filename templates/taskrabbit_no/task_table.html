@@ -1,0 +1,38 @@
+<table class="table table-striped table-bordered tablesorter" id="task_table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        {% if page != "index" %}<th>Owner</th>{% endif %}
+        <th>Category</th>
+        <th>Status</th>
+        <th>Last Worked On</th>
+        <th>Created</th>
+        <th>Due</th>
+{#        <th>Latest Note</th>#}
+    </tr>
+    </thead>
+    <tbody>
+    {% for task in tasks %}
+        {% if task.status.show_in_table or page == "statuses" or page == "search" %}
+        <tr>
+            <td><a href="{% url 'taskrabbit:view_task' %}{{ task.id }}">{{ task.name }}</a></td>
+            {% if page != "index" %}
+                <td>{% if task.owner %}{{ task.owner.first_name }}{% else %}<i>None</i>
+                            <a href="#" onclick="confirmClaim({{ task.id }}); return false;">(claim task)</a>{% endif %}
+                </td>{% endif %}
+            <td>{{ task.team }}</td>
+            <td>{{ task.status }}</td>
+            <td>{% if task.last_worked_on %}{{ task.last_worked_on }}{% else %}--{% endif %}</td>
+            <td>{{ task.creation_date }}</td>
+            <td>{% if task.due_date %}{% if task.overdue %}<span style="color: firebrick">{% endif %}{{ task.due_date }}{% if task.overdue %}</span>{% endif %}{% else %}--{% endif %}</td>
+        </tr>
+        {% endif %}
+    {% endfor %}
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+       $("#task_table").tablesorter();
+    });
+</script>

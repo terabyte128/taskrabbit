@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% load pages_tags mezzanine_tags i18n future staticfiles %}
+
+    <title>Sign In</title>
+    {% compress css %}
+
+        {#        <link rel="stylesheet" href="{% static "responsiveslides/responsiveslides.css" %}"/>#}
+
+        <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+        <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
+        {#<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">#}
+
+        {# additional styles #}
+        <link rel="stylesheet" href="{% static "css/darkly.theme.min.css" %}">
+        <link rel="stylesheet" href="{% static "css/fullcalendar.min.css" %}">
+        <link rel="stylesheet" href="{% static "css/style.css" %}">
+
+
+    {% endcompress %}
+
+    {% compress js %}
+        <script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
+        <script src="{% static "js/bootstrap.js" %}"></script>
+        <script src="{% static "js/bootstrap-extras.js" %}"></script>
+
+        <script src="{% static "js/jquery.cookie.js" %}"></script>
+
+        {#        <script src="{% static "js/moment.min.js" %}"></script>#}
+        {#        <script src="{% static "js/fullcalendar.min.js" %}"></script>#}
+        {#        <script src="{% static "js/gcal.js" %}"></script>#}
+        {##}
+        {#        <script src="{% static "responsiveslides/responsiveslides.min.js" %}"></script>#}
+
+        {% block extra_js %}{% endblock %}
+    {% endcompress %}
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <h1><small>sign in to </small>TaskRabbit</h1>
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+            <form method="post" action="{% url 'taskrabbit:index' %}" role="form">
+                {% csrf_token %}
+                <input style="border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; margin-bottom: 0px; border-bottom: 1px solid #464545;" type="text" placeholder="Username" name="username" class="form-control" required="true">
+                <input style="border-top-left-radius: 0px; border-top-right-radius: 0px; margin-bottom: 10px;" type="password" placeholder="Password" name="password" class="form-control" required="true">
+                <button class="btn btn-info form-control">Sign In</button>
+                <a class="btn btn-default form-control" style="margin-top: 20px;" href="{% url 'home' %}"><span class="glyphicon glyphicon-arrow-left"></span> Back to Ingraham Robotics</a></button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
