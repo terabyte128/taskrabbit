@@ -1,10 +1,10 @@
 {% extends "taskrabbit/base.html" %}
-{% block title %}{{ team.name }} Tasks{% endblock %}
+{% block title %}{{ status.name }} Tasks{% endblock %}
 
 {% block main_content %}
     <div class="row">
         <div class="col-lg-12">
-            <h1>{{ status.name }}</h1>
+            <h1>Tasks: {{ status.name }}</h1>
 
             {% include 'taskrabbit/task_table.html' %}
         </div>
