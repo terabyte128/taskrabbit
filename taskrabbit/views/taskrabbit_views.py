@@ -18,6 +18,7 @@ def index(request):
 
     if request.user.is_authenticated():
         context = {
+            'page': 'index'
         }
 
         add_context(context, request)
