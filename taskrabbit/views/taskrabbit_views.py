@@ -11,22 +11,31 @@ import datetime
 
 from taskrabbit.models import Task, Note, Team, UserProfile, Status
 
-
 # Create your views here.
+
+
 def index(request):
 
     if request.user.is_authenticated():
-
         context = {
-            'page': 'index',
-            'tasks': Task.objects.filter(owner=request.user),
-            'hide_statuses': Status.objects.filter(show_in_table=False)
         }
 
         add_context(context, request)
 
-        return render(request, 'taskrabbit/index.html', context)
+        statuses = Status.objects.all()
 
+        tiny_package = []
+
+        for a_status in statuses:
+            tiny_package.append({
+                'name': a_status.name,
+                'count': Task.objects.filter(owner=request.user, status=a_status).count()
+            })
+
+        context['user_statuses'] = tiny_package
+
+
+        return render(request, 'taskrabbit/index.html', context)
 
     elif 'username' and 'password' in request.POST:
         username = request.POST['username']
@@ -49,6 +58,20 @@ def index(request):
         return render(request, 'taskrabbit/login.html')
 
 
+@login_required
+def my_tasks(request):
+    context = {
+        'page': 'my_tasks',
+        'tasks': Task.objects.filter(owner=request.user),
+        'hide_statuses': Status.objects.filter(show_in_table=False)
+    }
+
+    add_context(context, request)
+
+    return render(request, 'taskrabbit/my_tasks.html', context)
+
+
+@login_required
 def log_out(request):
     logout(request)
     messages.success(request, "Signed out successfully.")

@@ -4,11 +4,28 @@
 
 {% block main_content %}
     <div class="row">
-        <div class="col-sm-12">
-            <h1>My Tasks
-{#                <small>(excluding {{ hide_statuses|join:", "|lower }})</small>#}
-            </h1>
-            {% include 'taskrabbit/task_table.html' %}
+        <div class="col-sm-12" style="margin-bottom: 10px;">
+            <h1>Overview for {{ user.first_name }}</h1>
+        </div>
+        <div class="col-sm-3">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3 class="panel-title">Task Info</h3></div>
+                <div class="panel-body">
+                    <ul style="margin-bottom: 0px;">
+                        {% for status in user_statuses %}
+                            <li>{{ status.name }}: {{ status.count }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3 class="panel-title">Time Clock</h3></div>
+                <div class="panel-body">
+
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

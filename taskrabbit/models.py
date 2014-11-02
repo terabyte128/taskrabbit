@@ -43,6 +43,7 @@ class Task(models.Model):
             return True
         return False
 
+
 class Note(models.Model):
     task = models.ForeignKey(Task, related_name='task')
     user = models.ForeignKey(User, related_name='user')
@@ -58,3 +59,18 @@ class UserProfile(models.Model):
     team = models.ForeignKey(Team)
 
 
+class TimeLog(models.Model):
+    user = models.ForeignKey(User)
+    entry_time = models.DateTimeField()
+    exit_time = models.DateTimeField(null=True)
+    valid = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.user.get_full_name()
+
+
+class NfcCard(models.Model):
+    user = models.ForeignKey(User)
+    card_name = models.CharField(max_length=64)
+    serial_number = models.CharField(max_length=64)
+    secret_key = models.CharField(max_length=64)

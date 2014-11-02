@@ -64,7 +64,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="{% if page == "index" %}active{% endif %}"><a href="{% url 'taskrabbit:index' %}">My Tasks</a></li>
+                <li class="{% if page == "index" %}active{% endif %}"><a href="{% url 'taskrabbit:index' %}">Home</a></li>
+                <li class="{% if page == "my_tasks" %}active{% endif %}"><a href="{% url 'taskrabbit:my_tasks' %}">My Tasks</a></li>
                 <li class="{% if page == "all_tasks" %}active{% endif %}"><a href="{% url 'taskrabbit:all_tasks' %}">All Tasks</a></li>
                 <li class="dropdown {% if page == "teams" %}active{% endif %}">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">By Team <span class="caret"></span></a>
