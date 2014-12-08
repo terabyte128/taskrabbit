@@ -259,7 +259,8 @@ def update_task(request):
 
         if name == "owner":
             value_as_object = User.objects.get(id=value)
-            note_description = task.owner.first_name + " → " + value_as_object.first_name + "."
+            note_description = "Transferred from " + task.owner.first_name + " to " \
+                               + value_as_object.first_name + " by " + request.user.first_name + "."
 
         elif name == "status":
             value_as_object = Status.objects.get(id=value)
