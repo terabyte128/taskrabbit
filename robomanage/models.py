@@ -28,3 +28,5 @@ class NfcCard(models.Model):
     card_name = models.CharField(max_length=64)
     serial_number = models.CharField(max_length=64)
     secret_key = models.CharField(max_length=64)
+
+# i am a comment
