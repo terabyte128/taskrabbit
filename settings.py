@@ -260,7 +260,6 @@ INSTALLED_APPS = (
     "mezzanine.twitter",
     "mezzanine_slides",
     'taskrabbit',
-    'robomanage',
     #"mezzanine.accounts",
     #"mezzanine.mobile",
 )
