@@ -62,7 +62,7 @@
                     {% if request.is_secure %}
                         <p><span style="color: #0D960F;" class="glyphicon glyphicon-ok"></span> &nbsp;Your connection is secure.</p>
                     {% else %}
-                        <p><span style="color: firebrick;" class="glyphicon glyphicon-remove"></span> Your connection is not secure. <strong><a href="#" onclick="$('#fixIt').slideToggle();">Fix it.</a></strong></p>
+                        <p><span style="color: firebrick;" class="glyphicon glyphicon-remove"></span> Your connection is not secure. <strong><a href="#" style="color: #B5B5B5;" onclick="$('#fixIt').slideToggle();">Fix it.</a></strong></p>
                         <p style="display: none;" id="fixIt">
                         Replace the <strong>http</strong> in the URL with <strong>https</strong> (or add <strong>https://</strong> to the beginning if you don't see either). When it prompts you that the certificate is invalid, choose to ignore.
                             Certificates cost money, and you trust me right?
