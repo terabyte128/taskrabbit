@@ -215,6 +215,29 @@ def clock_out_view(request):
         messages.error(request, "You must clock in first.")
         return HttpResponseRedirect(reverse('taskrabbit:index'))
 
+@login_required
+def time_history(request):
+
+    user = request.user
+
+    # Look up their time logs
+    time_logs = TimeLog.objects.filter(user=user)
+
+    if len(time_logs) > 0:
+        if time_logs.latest('id').exit_time:
+            currently_timed_in = True
+        else:
+            currently_timed_in = False
+    else:
+        currently_timed_in = False
+
+    context = {
+        'logs': time_logs,
+        'currently_timed_in': currently_timed_in
+    }
+    
+    return render(request, 'taskrabbit/time_history.html', context)
+
 
 # Views for working with NFC cards - these do not require sessions,
 # but auth the user by their card every time they are called

@@ -66,7 +66,7 @@ class TimeLog(models.Model):
     valid = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.user.get_full_name()
+        return self.user.get_full_name() + " @ " + str(self.entry_time)
 
 
 class NfcCard(models.Model):

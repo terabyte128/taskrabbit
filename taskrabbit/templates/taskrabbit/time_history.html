@@ -1,0 +1,18 @@
+{% extends "taskrabbit/base.html" %}
+
+{% block title %}Overview - TaskRabbit{% endblock %}
+
+{% block main_content %}
+
+{% if logs %}
+    {% if currently_timed_in %}
+        You're currently timed in. <br />
+    {% endif %}
+    {% for log in logs %}
+        time log: {{ log.entry_time }} to {{ log.exit_time }}<br />
+    {% endfor %}
+{% else %}
+    You haven't logged any time yet! For shame.
+{% endif %}
+
+{% endblock %}
