@@ -9,7 +9,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 import datetime
 
-from taskrabbit.models import Task, Note, Team, UserProfile, Status
+from taskrabbit.models import Task, Note, Team, UserProfile, Status, TimeLog
 
 # Create your views here.
 
@@ -34,7 +34,16 @@ def index(request):
             })
 
         context['user_statuses'] = tiny_package
+        
+        # find if they're timed in
+        raw_time_logs = TimeLog.objects.filter(user=request.user, valid=True)
+        latest_log = raw_time_logs.latest('id')
+        if not latest_log.exit_time:
+            currently_timed_in = True
+        else:
+            currently_timed_in = False
 
+        context['currently_timed_in'] = currently_timed_in
 
         return render(request, 'taskrabbit/index.html', context)
 

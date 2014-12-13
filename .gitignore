@@ -6,4 +6,6 @@
 local_settings.py
 static/
 venv/
+pip/
+*.swp
 .idea/

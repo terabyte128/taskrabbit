@@ -23,6 +23,9 @@ urlpatterns = patterns('',
     url(r'^task/$', views.view_task, name='view_task'),
     url(r'^task/(?P<task_id>[0-9]+)/$', views.view_task, name='view_task'),
 
+    # time clock
+    url(r'^in/$', views.clock_in_view, name='clock_in_view'),
+    url(r'^out/$', views.clock_out_view, name='clock_out_view'),
 
     # get things as json
     url(r'^json/statuses/$', views.get_statuses, name='get_statuses_as_json'),

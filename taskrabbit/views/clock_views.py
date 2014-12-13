@@ -10,10 +10,9 @@ from django.contrib.auth.models import User
 
 import json
 
-from robomanage.models import TimeLog, NfcCard
-from robomanage.forms import LoginForm
+from taskrabbit.models import TimeLog, NfcCard
 
-from robomanage.utils.time_utils import get_total_time, strfdelta
+from taskrabbit.utils.time_utils import get_total_time, strfdelta
 
 
 ENTRIES_PER_PAGE = 5
@@ -122,7 +121,7 @@ def login_view(request):
         return login_helper(request, user)
 
     else:
-        return HttpResponseRedirect(reverse('robomanage:index_view'))
+        return HttpResponseRedirect(reverse('taskrabbit:index'))
 
 
 # @csrf_exempt
@@ -155,25 +154,25 @@ def login_helper(request, user, using_nfc=False):
             if using_nfc:
                 return HttpResponse("200 Success")
             else:
-                return HttpResponseRedirect(reverse('robomanage:index_view'))
+                return HttpResponseRedirect(reverse('taskrabbit:index'))
         else:
             if using_nfc:
                return HttpResponse("Your user account has been deactivated. Please contact an administrator.")
             else:
                 messages.error(request, "Your user account has been deactivated. Please contact an administrator.")
-                return HttpResponseRedirect(reverse('robomanage:index_view'))
+                return HttpResponseRedirect(reverse('taskrabbit:index'))
     else:
         if using_nfc:
             return HttpResponse("Your tag is invalid.")
         else:
             messages.error(request, "Your username or password are incorrect.")
-            return HttpResponseRedirect(reverse('robomanage:index_view'))
+            return HttpResponseRedirect(reverse('taskrabbit:index'))
 
 
 def logout_view(request):
     logout(request)
     messages.success(request, "Logged out successfully.")
-    return HttpResponseRedirect(reverse('robomanage:index_view'))
+    return HttpResponseRedirect(reverse('taskrabbit:index'))
 
 
 @login_required
@@ -189,15 +188,15 @@ def clock_in_view(request):
             a_time = TimeLog(user=user, entry_time=timezone.now())
             a_time.save()
             # messages.success(request, "Clocked in successfully.")
-            return HttpResponseRedirect(reverse('robomanage:index_view'))
+            return HttpResponseRedirect(reverse('taskrabbit:index'))
         else:
             messages.error(request, "You must clock out first.")
-            return HttpResponseRedirect(reverse('robomanage:index_view'))
+            return HttpResponseRedirect(reverse('taskrabbit:index'))
     except TimeLog.DoesNotExist:
             a_time = TimeLog(user=user, entry_time=timezone.now())
             a_time.save()
             # messages.success(request, "Clocked in successfully.")
-            return HttpResponseRedirect(reverse('robomanage:index_view'))
+            return HttpResponseRedirect(reverse('taskrabbit:index'))
 
 
 @login_required
@@ -211,10 +210,10 @@ def clock_out_view(request):
         latest_log.exit_time = timezone.now()
         latest_log.save()
         # messages.success(request, "Clocked out successfully.")
-        return HttpResponseRedirect(reverse('robomanage:index_view'))
+        return HttpResponseRedirect(reverse('taskrabbit:index'))
     else:
         messages.error(request, "You must clock in first.")
-        return HttpResponseRedirect(reverse('robomanage:index_view'))
+        return HttpResponseRedirect(reverse('taskrabbit:index'))
 
 
 # Views for working with NFC cards - these do not require sessions,
