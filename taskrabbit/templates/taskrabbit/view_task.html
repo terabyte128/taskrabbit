@@ -9,6 +9,7 @@
         </div>
     </div>
     <div class="row">
+
         <div class="col-md-12">
             <table class="table table-striped table-bordered table-condensed">
                 <thead>
@@ -48,7 +49,7 @@
                     {% else %}
                         <div style="margin-bottom: -10px; color: teal;"><p>{{ note.content|linebreaks }}</p></div>
                         <div style="margin-bottom: 20px; color: teal;"><p><small><i>{{ note.user.first_name }} &mdash; {{ note.status }} &mdash; {{ note.timestamp }}</i></small></p></div>
-                   {% endif %}
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>

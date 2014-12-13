@@ -27,7 +27,7 @@
             {% endif %}
             <td>{% if task.last_worked_on %}{{ task.last_worked_on }}{% else %}--{% endif %}</td>
             <td>{{ task.creation_date }}</td>
-            <td>{% if task.due_date %}{% if task.overdue %}<span style="color: firebrick">{% endif %}{{ task.due_date }}{% if task.overdue %}</span>{% endif %}{% else %}--{% endif %}</td>
+            <td>{% if task.due_date %}{% if task.overdue %}<span style="color: #d90f00; font-weight: bolder;">{% endif %}{{ task.due_date }}{% if task.overdue %}</span>{% endif %}{% else %}--{% endif %}</td>
         </tr>
         {% endif %}
     {% endfor %}

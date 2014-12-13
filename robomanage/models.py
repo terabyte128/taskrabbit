@@ -14,15 +14,19 @@ from django.contrib.auth.models import User
 
 
 class TimeLog(models.Model):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, related_name="timelog_user")
     entry_time = models.DateTimeField()
     exit_time = models.DateTimeField(null=True)
     valid = models.BooleanField(default=True)
+
     def __str__(self):
         return self.user.get_full_name()
 
+
 class NfcCard(models.Model):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, related_name="nfccard_user")
     card_name = models.CharField(max_length=64)
     serial_number = models.CharField(max_length=64)
     secret_key = models.CharField(max_length=64)
+
+# i am a comment

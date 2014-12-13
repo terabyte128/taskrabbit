@@ -5,9 +5,8 @@
 {% block main_content %}
     <div class="row">
         <div class="col-sm-12">
-            <h1>My Tasks
-{#                <small>(excluding {{ hide_statuses|join:", "|lower }})</small>#}
-            </h1>
+            <h1>My Tasks</h1>
+            
             {% include 'taskrabbit/task_table.html' %}
         </div>
     </div>

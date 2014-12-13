@@ -68,6 +68,7 @@ def index(request):
         return render(request, 'taskrabbit/login.html')
 
     else:
+
         return render(request, 'taskrabbit/login.html')
 
 
@@ -202,7 +203,7 @@ def claim_task(request):
         except Task.DoesNotExist:
             raise Http404
 
-        return HttpResponseRedirect(reverse('taskrabbit:index'))
+        return HttpResponseRedirect(reverse('taskrabbit:my_tasks'))
 
     raise Http404
 
@@ -270,8 +271,14 @@ def update_task(request):
         task = Task.objects.get(id=pk)
 
         if name == "owner":
+
             value_as_object = User.objects.get(id=value)
-            note_description = "Owner changed to " + value_as_object.first_name + "."
+
+            if task.owner is not None:
+                note_description = "Transferred from " + task.owner.first_name + " to " \
+                               + value_as_object.first_name + " by " + request.user.first_name + "."
+            else:
+                note_description = "Assigned to " + value_as_object.first_name + " by " + request.user.first_name + "."
 
         elif name == "status":
             value_as_object = Status.objects.get(id=value)

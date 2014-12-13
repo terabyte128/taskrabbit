@@ -5,7 +5,7 @@
 {% block main_content %}
     <div class="row">
         <div class="col-sm-12" style="margin-bottom: 10px;">
-            <h1>Overview for {{ user.first_name }}</h1>
+            <h1>Overview for {% if user.first_name %}{{ user.first_name }}{% else %}{{ user.username }}{% endif %}</h1>
         </div>
         <div class="col-sm-3">
             <div class="panel panel-default">

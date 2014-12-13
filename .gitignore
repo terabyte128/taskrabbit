@@ -9,3 +9,4 @@ venv/
 pip/
 *.swp
 .idea/
+certs/

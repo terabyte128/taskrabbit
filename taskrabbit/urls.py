@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     url(r'^my_tasks/$', views.my_tasks, name='my_tasks'),
     url(r'^logout/$', views.log_out, name='log_out'),
     url(r'^search/$', views.search, name='search'),
-    url(r'^all/$', views.all_tasks, name='all_tasks'),
+    url(r'^active/$', views.all_tasks, name='all_tasks'),
 
     # sort by teams page
     url(r'^teams/$', views.teams, name='teams'),
