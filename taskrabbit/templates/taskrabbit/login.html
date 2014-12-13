@@ -56,22 +56,6 @@
                 <a class="btn btn-default form-control" style="margin-top: 20px;" href="{% url 'home' %}"><span class="glyphicon glyphicon-arrow-left"></span> Back to Ingraham Robotics</a></button>
             </form>
             <br>
-
-            <div class="panel panel-default" style="text-align: center;">
-                <div class="panel-body" style="padding-bottom: 8px;">
-                    {% if request.is_secure %}
-                        <p><span style="color: #0D960F;" class="glyphicon glyphicon-ok"></span> &nbsp;Your connection is secure.</p>
-                    {% else %}
-                        <p><span style="color: firebrick;" class="glyphicon glyphicon-remove"></span> Your connection is not secure. <strong><a href="#" style="color: #B5B5B5;" onclick="$('#fixIt').slideToggle();">Fix it.</a></strong></p>
-                        <p style="display: none;" id="fixIt">
-                            <button class="btn btn-sm btn-success" onclick='window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);'>Switch to HTTPS.</button>
-                            <br>
-                            When you are prompted that the certificate is invalid, choose to ignore.
-                            <strong>Do not make a habit of doing this, it is usually a bad idea!</strong>
-                        </p>
-                    {% endif %}
-                </div>
-            </div>
         </div>
     </div>
 </div>
