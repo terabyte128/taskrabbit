@@ -23,7 +23,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><h3 class="panel-title">Time Clock</h3></div>
                 <div class="panel-body">
-        {% if currently_timed_in %}
+        {% if not currently_timed_in %}
             <a href="{% url "taskrabbit:clock_in_view" %}" class="btn btn-lg">Clock in</a>
         {% else %}
             <a href="{% url "taskrabbit:clock_out_view" %}" class="btn btn-lg">Clock out</a>

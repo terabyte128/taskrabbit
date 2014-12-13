@@ -37,11 +37,14 @@ def index(request):
         
         # find if they're timed in
         raw_time_logs = TimeLog.objects.filter(user=request.user, valid=True)
-        latest_log = raw_time_logs.latest('id')
-        if not latest_log.exit_time:
-            currently_timed_in = True
-        else:
+        if len(raw_time_logs) == 0:
             currently_timed_in = False
+        else:
+            latest_log = raw_time_logs.latest('id')
+            if not latest_log.exit_time:
+                currently_timed_in = True
+            else:
+                currently_timed_in = False
 
         context['currently_timed_in'] = currently_timed_in
 
