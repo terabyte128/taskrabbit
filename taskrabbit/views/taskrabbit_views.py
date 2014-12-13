@@ -35,7 +35,6 @@ def index(request):
 
         context['user_statuses'] = tiny_package
 
-
         return render(request, 'taskrabbit/index.html', context)
 
     elif 'username' and 'password' in request.POST:
