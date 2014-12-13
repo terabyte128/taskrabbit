@@ -1,0 +1,29 @@
+<div class="nav nav-tabs">
+    <li role="presentation" id="calendar-tab" class="active" onclick="showCalendar();"><a href="#">Calendar</a></li>
+    <li role="presentation" id="table-tab" onclick="showTable();"><a href="#">Table</a></li>
+</div>
+<br>
+<div id="table-wrapper" style="display: none;">
+    {% include 'taskrabbit/task_table.html' %}
+</div>
+<div id="calendar-wrapper">
+    {% include 'taskrabbit/task_calendar.html' %}
+</div>
+
+<script type="text/javascript">
+    function showCalendar() {
+        $("#table-wrapper").hide();
+        $("#calendar-wrapper").show();
+
+        $("#table-tab").removeClass('active');
+        $("#calendar-tab").addClass('active');
+    }
+
+    function showTable() {
+        $("#calendar-wrapper").hide();
+        $("#table-wrapper").show();
+
+        $("#calendar-tab").removeClass('active');
+        $("#table-tab").addClass('active');
+    }
+</script>

@@ -1,0 +1,23 @@
+<div id="calendar">
+
+</div>
+
+<script type="text/javascript">
+    var events;
+    $(document).ready(function() {
+        events = '{{ events }}'
+        events = decodeURI(events);
+        events = events.replace(/&quot;/g, '"');
+        events = $.parseJSON(events);
+
+       $("#calendar").fullCalendar({
+
+        header: {
+            left: 'title',
+            center: 'month,basicWeek,basicDay',
+            right: 'today prev,next'
+        },
+           events: events
+       });
+    });
+</script>
