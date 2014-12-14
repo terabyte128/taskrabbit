@@ -27,6 +27,8 @@ urlpatterns = patterns('',
     url(r'^in/$', views.clock_in_view, name='clock_in_view'),
     url(r'^out/$', views.clock_out_view, name='clock_out_view'),
     url(r'^times/$', views.time_history, name='time_history'),
+    # hacky check-out-from-history thing
+    url(r'^times/out/$', views.clock_out_view, name='clock_out_from_history'),
 
     # get things as json
     url(r'^json/statuses/$', views.get_statuses, name='get_statuses_as_json'),

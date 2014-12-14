@@ -63,6 +63,7 @@ class TimeLog(models.Model):
     user = models.ForeignKey(User)
     entry_time = models.DateTimeField()
     exit_time = models.DateTimeField(null=True)
+    time_length = models.DateTimeField(null=True)
     valid = models.BooleanField(default=True)
 
     def __str__(self):

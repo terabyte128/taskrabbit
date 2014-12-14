@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
+from datetime import datetime
 
 import json
 
@@ -210,7 +211,11 @@ def clock_out_view(request):
         latest_log.exit_time = timezone.now()
         latest_log.save()
         # messages.success(request, "Clocked out successfully.")
-        return HttpResponseRedirect(reverse('taskrabbit:index'))
+        print(request.path)
+        if '/times' in request.path:
+            return HttpResponseRedirect(reverse('taskrabbit:time_history'))
+        else:
+            return HttpResponseRedirect(reverse('taskrabbit:index'))
     else:
         messages.error(request, "You must clock in first.")
         return HttpResponseRedirect(reverse('taskrabbit:index'))
@@ -221,21 +226,36 @@ def time_history(request):
     user = request.user
 
     # Look up their time logs
-    time_logs = TimeLog.objects.filter(user=user)
+    time_logs = TimeLog.objects.filter(user=user, valid=True)
 
+    current_time_length = 0
     if len(time_logs) > 0:
-        if time_logs.latest('id').exit_time:
+        if not time_logs.latest('id').exit_time:
             currently_timed_in = True
+            current_time_length = int((timezone.now() -
+                        time_logs.latest('id').entry_time).total_seconds())
+            time_logs = time_logs.exclude(exit_time=None)
         else:
             currently_timed_in = False
+        grand_total_time = get_total_time(time_logs)
     else:
         currently_timed_in = False
 
+    logs = []
+    for log in time_logs:
+        delta = log.exit_time - log.entry_time
+        logs.append({
+            'entry_time': log.entry_time,
+            'exit_time': log.exit_time,
+            'time_length': strfdelta(delta, "{HH}:{MM}")
+        })
+
     context = {
-        'logs': time_logs,
-        'currently_timed_in': currently_timed_in
+        'logs': logs,
+        'currently_timed_in': currently_timed_in,
+        'current_time_length': current_time_length
     }
-    
+
     return render(request, 'taskrabbit/time_history.html', context)
 
 

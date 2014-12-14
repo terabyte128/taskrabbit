@@ -19,12 +19,14 @@ def get_total_time(raw_time_logs):
 def strfdelta(tdelta, fmt):
     f = Formatter()
     d = {}
-    l = {'D': 86400, 'H': 3600, 'M': 60, 'S': 1}
-    k = map(lambda x: x[1], list(f.parse(fmt)))
+    l = {'D': 86400, 'H': 3600, 'M': 60, 'S': 1, 'HH': 3600, 'MM': 60, 'SS': 1}
+    k = [x[1] for x in f.parse(fmt)]
     rem = int(tdelta.total_seconds())
 
-    for i in ('D', 'H', 'M', 'S'):
-        if i in k and i in l.keys():
+    for i in l.keys():
+        if i in k:
             d[i], rem = divmod(rem, l[i])
+            if len(i) > 1 and len(str(d[i])) < 2:
+                d[i] = "0" + str(d[i])
 
-    return f.format(fmt, **d)
+    return fmt.format(**d)

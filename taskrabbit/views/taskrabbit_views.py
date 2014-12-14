@@ -35,7 +35,7 @@ def index(request):
             })
 
         context['user_statuses'] = tiny_package
-        
+
         # find if they're timed in
         raw_time_logs = TimeLog.objects.filter(user=request.user, valid=True)
         if len(raw_time_logs) == 0:

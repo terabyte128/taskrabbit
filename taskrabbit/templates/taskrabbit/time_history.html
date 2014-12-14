@@ -1,18 +1,56 @@
 {% extends "taskrabbit/base.html" %}
 
-{% block title %}Overview - TaskRabbit{% endblock %}
+{% block title %}Time history - TaskRabbit{% endblock %}
 
 {% block main_content %}
+    <div class="row">
+        <div class="col-sm-12" style="margin-bottom: 10px;">
+            <h1>Time History for {{ user.first_name }}</h1>
+            {% if logs %}
+                {% if currently_timed_in %}
+                    <div style="padding: 0 0 10px 2px">You've been clocked in for <span id="live_clock"></span>.
+                    <a href="{% url "taskrabbit:clock_out_from_history" %}">Clock out?</a></div>
+                {% endif %}
+            <table class="table table-striped table-bordered tablesorter" id="timetable">
+                <thead>
+                    <tr>
+                        <th>Start time</th>
+                        <th>End time</th>
+                        <th>Total time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for log in logs %}
+                    <tr>
+                        <td>{{ log.entry_time }}</td>
+                        <td>{{ log.exit_time }}</td>
+                        <td>{{ log.time_length }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <script type="text/javascript">
+                $(function() {
+                    $("#timetable").tablesorter();
+                    time_total = {{ current_time_length }};
+                    update_clock();
+                });
 
-{% if logs %}
-    {% if currently_timed_in %}
-        You're currently timed in. <br />
-    {% endif %}
-    {% for log in logs %}
-        time log: {{ log.entry_time }} to {{ log.exit_time }}<br />
-    {% endfor %}
-{% else %}
-    You haven't logged any time yet! For shame.
-{% endif %}
-
+                function update_clock() {
+                    time_sec = time_total % 60;
+                    if (time_sec.toString().length < 2) time_sec = "0"+time_sec;
+                    time_min = Math.floor(time_total / 60) % 60;
+                    if (time_min.toString().length < 2) time_min = "0"+time_min;
+                    time_hr = Math.floor(time_total / 3600);
+                    if (time_hr.toString().length < 2) time_hr = "0"+time_hr;
+                    $('#live_clock').text(time_hr + ':' + time_min + ':' + time_sec);
+                    time_total++;
+                    setTimeout(update_clock, 1000);
+                }
+            </script>
+            {% else %}
+                You haven't logged any time yet! :(
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}
