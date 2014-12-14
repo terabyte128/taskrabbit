@@ -3,11 +3,12 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.urlresolvers import reverse
+from django.utils import timezone
 from django.db.models.query_utils import Q
 from django.http.response import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth.models import User
-import datetime
+from datetime import datetime
 
 from taskrabbit.models import Task, Note, Team, UserProfile, Status, TimeLog
 
@@ -42,11 +43,16 @@ def index(request):
         else:
             latest_log = raw_time_logs.latest('id')
             if not latest_log.exit_time:
+                current_time_length = timezone.now() - latest_log.entry_time
                 currently_timed_in = True
             else:
                 currently_timed_in = False
 
         context['currently_timed_in'] = currently_timed_in
+        if currently_timed_in:
+            context['current_time_length'] = int(current_time_length.total_seconds())
+        else:
+            context['current_time_length'] = 0
 
         return render(request, 'taskrabbit/index.html', context)
 
@@ -290,7 +296,7 @@ def update_task(request):
 
         if note_description is not None:
             note_update = Note(task=task, user=request.user, status=task.status, content=note_description,
-                               timestamp=datetime.datetime.now(), automatic_note=True)
+                               timestamp=datetime.now(), automatic_note=True)
             note_update.save()
 
         setattr(task, name, value_as_object)
@@ -309,11 +315,11 @@ def add_note(request):
 
     task = Task.objects.get(id=task_id)
 
-    new_note = Note(task=task, user=request.user, status=task.status, content=content, timestamp=datetime.datetime.now())
+    new_note = Note(task=task, user=request.user, status=task.status, content=content, timestamp=datetime.now())
 
     new_note.save()
 
-    task.last_worked_on = datetime.datetime.now()
+    task.last_worked_on = datetime.now()
 
     task.save()
 

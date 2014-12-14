@@ -8,5 +8,6 @@ static/
 venv/
 pip/
 *.swp
+*.swo
 .idea/
 certs/

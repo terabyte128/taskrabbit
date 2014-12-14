@@ -23,10 +23,11 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><h3 class="panel-title">Time Clock</h3></div>
                 <div class="panel-body" style="text-align:center;">
-        {% if currently_timed_in %}
-            <a href="{% url "taskrabbit:clock_in_view" %}" class="btn btn-lg">Clock in</a>
+        {% if not currently_timed_in %}
+            <a href="{% url "taskrabbit:clock_in_view" %}" class="btn btn-success">Clock in</a>
         {% else %}
-            <a href="{% url "taskrabbit:clock_out_view" %}" class="btn btn-lg">Clock out</a>
+            <h3><div id="live_clock"></div></h3>
+            <a href="{% url "taskrabbit:clock_out_view" %}" class="btn btn-success">Clock out</a>
         {% endif %}
         <br />
         <a href="{% url "taskrabbit:time_history" %}">View your time clock history</a>
@@ -34,4 +35,22 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        $(function() {
+            time_total = {{ current_time_length }};
+            update_clock();
+        });
+
+        function update_clock() {
+            time_sec = time_total % 60;
+            if (time_sec.toString().length < 2) time_sec = "0"+time_sec;
+            time_min = Math.floor(time_total / 60) % 60;
+            if (time_min.toString().length < 2) time_min = "0"+time_min;
+            time_hr = Math.floor(time_total / 3600);
+            if (time_hr.toString().length < 2) time_hr = "0"+time_hr;
+            $('#live_clock').text(time_hr + ':' + time_min + ':' + time_sec);
+            time_total++;
+            setTimeout(update_clock, 1000);
+        }
+    </script>
 {% endblock %}
