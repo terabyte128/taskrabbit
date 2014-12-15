@@ -1,5 +1,6 @@
 from datetime import datetime
 from string import Formatter
+from collections import OrderedDict
 
 
 def get_total_time(raw_time_logs):
@@ -19,13 +20,19 @@ def get_total_time(raw_time_logs):
 def strfdelta(tdelta, fmt):
     f = Formatter()
     d = {}
-    l = {'D': 86400, 'H': 3600, 'M': 60, 'S': 1, 'HH': 3600, 'MM': 60, 'SS': 1}
+    # this dict needs to be ordered, otherwise the result is dependent
+    # on the order that it gets iterated through (01:02 vs. 00:62)
+    l = OrderedDict([('D', 86400), ('H', 3600), ('M', 60), ('S', 1),
+            ('HH', 3600), ('MM', 60), ('SS', 1)])
     k = [x[1] for x in f.parse(fmt)]
     rem = int(tdelta.total_seconds())
+    print(rem)
 
     for i in l.keys():
+        print(i)
         if i in k:
             d[i], rem = divmod(rem, l[i])
+            print(d[i], " + ", rem)
             if len(i) > 1 and len(str(d[i])) < 2:
                 d[i] = "0" + str(d[i])
 

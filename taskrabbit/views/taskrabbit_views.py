@@ -11,6 +11,7 @@ from django.contrib.auth.models import User
 from datetime import datetime
 
 from taskrabbit.models import Task, Note, Team, UserProfile, Status, TimeLog
+from taskrabbit.utils.time_utils import get_total_time, strfdelta
 
 # Create your views here.
 
@@ -40,8 +41,10 @@ def index(request):
         raw_time_logs = TimeLog.objects.filter(user=request.user, valid=True)
         if len(raw_time_logs) == 0:
             currently_timed_in = False
+            grand_total_time = 0
         else:
             latest_log = raw_time_logs.latest('id')
+            grand_total_time = get_total_time(raw_time_logs)
             if not latest_log.exit_time:
                 current_time_length = timezone.now() - latest_log.entry_time
                 currently_timed_in = True
@@ -49,6 +52,7 @@ def index(request):
                 currently_timed_in = False
 
         context['currently_timed_in'] = currently_timed_in
+        context['grand_total_time'] = strfdelta(grand_total_time, "{HH}:{MM}")
         if currently_timed_in:
             context['current_time_length'] = int(current_time_length.total_seconds())
         else:
