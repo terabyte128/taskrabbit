@@ -229,6 +229,7 @@ def time_history(request):
     time_logs = TimeLog.objects.filter(user=user, valid=True)
 
     current_time_length = 0
+    grand_total_time = 0
     if len(time_logs) > 0:
         if not time_logs.latest('id').exit_time:
             currently_timed_in = True
@@ -237,7 +238,7 @@ def time_history(request):
             time_logs = time_logs.exclude(exit_time=None)
         else:
             currently_timed_in = False
-        grand_total_time = get_total_time(time_logs)
+        grand_total_time = int(get_total_time(time_logs).total_seconds())
     else:
         currently_timed_in = False
 
@@ -253,7 +254,8 @@ def time_history(request):
     context = {
         'logs': logs,
         'currently_timed_in': currently_timed_in,
-        'current_time_length': current_time_length
+        'current_time_length': current_time_length,
+        'total_time': grand_total_time
     }
 
     return render(request, 'taskrabbit/time_history.html', context)
