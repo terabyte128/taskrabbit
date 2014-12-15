@@ -239,6 +239,8 @@ def time_history(request):
         else:
             currently_timed_in = False
         grand_total_time = int(get_total_time(time_logs).total_seconds())
+        if currently_timed_in:
+            grand_total_time += current_time_length
     else:
         currently_timed_in = False
 
