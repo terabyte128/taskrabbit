@@ -26,13 +26,10 @@ def strfdelta(tdelta, fmt):
             ('HH', 3600), ('MM', 60), ('SS', 1)])
     k = [x[1] for x in f.parse(fmt)]
     rem = int(tdelta.total_seconds())
-    print(rem)
 
     for i in l.keys():
-        print(i)
         if i in k:
             d[i], rem = divmod(rem, l[i])
-            print(d[i], " + ", rem)
             if len(i) > 1 and len(str(d[i])) < 2:
                 d[i] = "0" + str(d[i])
 
