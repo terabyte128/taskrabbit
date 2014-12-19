@@ -213,7 +213,7 @@ def clock_out_view(request):
         # messages.success(request, "Clocked out successfully.")
         print(request.path)
         if '/times' in request.path:
-            return HttpResponseRedirect(reverse('taskrabbit:time_history'))
+            return HttpResponseRedirect(reverse('taskrabbit:time_history_page'))
         else:
             return HttpResponseRedirect(reverse('taskrabbit:index'))
     else:
@@ -221,12 +221,26 @@ def clock_out_view(request):
         return HttpResponseRedirect(reverse('taskrabbit:index'))
 
 @login_required
-def time_history(request):
+def time_history(request, page="1"):
 
     user = request.user
+    page = int(page)
 
     # Look up their time logs
     time_logs = TimeLog.objects.filter(user=user, valid=True)
+
+    begin_entries = ENTRIES_PER_PAGE * (page - 1)
+    end_entries = ENTRIES_PER_PAGE * (page)
+
+    if len(time_logs.exclude(exit_time=None)) <= end_entries:
+        next_page = 0
+    else:
+        next_page = page+1
+
+    if begin_entries == 0:
+        prev_page = 0
+    else:
+        prev_page = page-1
 
     current_time_length = 0
     grand_total_time = 0
@@ -244,6 +258,8 @@ def time_history(request):
     else:
         currently_timed_in = False
 
+    time_logs = time_logs.order_by('-id')[begin_entries:end_entries]
+
     logs = []
     for log in time_logs:
         delta = log.exit_time - log.entry_time
@@ -257,7 +273,10 @@ def time_history(request):
         'logs': logs,
         'currently_timed_in': currently_timed_in,
         'current_time_length': current_time_length,
-        'total_time': grand_total_time
+        'total_time': grand_total_time,
+        'next_page': next_page,
+        'prev_page': prev_page,
+        'page': page
     }
 
     return render(request, 'taskrabbit/time_history.html', context)

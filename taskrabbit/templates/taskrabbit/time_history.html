@@ -32,6 +32,21 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <div style="text-align: center">
+            <div style="float:left; display:inline-block">
+            {% if prev_page %}
+            <a href="{% url "taskrabbit:time_history_page" prev_page %}" class="btn btn-success">&larr; Previous page</a>
+            {% endif %}
+            </div>
+            <div style="margin: auto; width: 100%; margin-top:10px; display:inline-block; position:absolute; right:0;">Page {{ page }}</div>
+            <div style="float:right; display:inline-block;">
+            {% if next_page %}
+            <a href="{% url "taskrabbit:time_history_page" next_page %}" class="btn btn-success">Next page &rarr;</a>
+            {% endif %}
+            </div>
+            <div style="clear:both">
+            </div>
+            </div>
             <script type="text/javascript">
                 $(function() {
                     $("#timetable").tablesorter();
