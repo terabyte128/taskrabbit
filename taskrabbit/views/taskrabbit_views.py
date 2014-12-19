@@ -93,7 +93,7 @@ def index(request):
 @login_required
 def my_tasks(request):
 
-    tasks = Task.objects.filter(owner=request.user)
+    tasks = Task.objects.filter(owner=request.user, status__show_in_table=True)
 
     context = {
         'page': 'my_tasks',
@@ -143,8 +143,9 @@ def teams(request, team_id=None):
         raise Http404
 
     try:
-        tasks = Task.objects.filter(team=team)
+        tasks = Task.objects.filter(team=team, status__show_in_table=True)
         context['tasks'] = tasks
+        context['events'] = format_tasks_as_events(tasks)
 
     except Task.DoesNotExist:
         context['errors'] = "No tasks found."
@@ -383,11 +384,19 @@ def format_tasks_as_events(tasks):
     events = []
 
     for task in tasks:
-        events.append({
-            'title': task.name,
-            'allDay': True,
-            'start': task.creation_date.isoformat(),
-        })
+        if task.due_date:
+            events.append({
+                'title': task.name,
+                'allDay': True,
+                'start': task.creation_date.isoformat(),
+                'end': task.due_date.isoformat(),
+            })
+        else:
+            events.append({
+                'title': task.name,
+                'allDay': True,
+                'start': task.creation_date.isoformat(),
+            })
 
     return json.dumps(events)
 

@@ -3,6 +3,7 @@
 </div>
 
 <script type="text/javascript">
+
     var events;
     $(document).ready(function() {
         events = '{{ events }}'
@@ -10,14 +11,21 @@
         events = events.replace(/&quot;/g, '"');
         events = $.parseJSON(events);
 
-       $("#calendar").fullCalendar({
+        $("#calendar").fullCalendar({
 
-        header: {
-            left: 'title',
-            center: 'month,basicWeek,basicDay',
-            right: 'today prev,next'
-        },
-           events: events
-       });
+            header: {
+                left: 'title',
+                center: 'month,basicWeek,basicDay',
+                right: 'today prev,next'
+            },
+            events: events
+        });
+
+        $(".fc-today").css("border", "1px solid");
+        $(".fc-today").css("border-bottom", "0px solid");
+
+        $(".fc-today").prev('.fc-day-number').css("border", "1px solid");
+        $(".fc-today").prev('.fc-day-number').css("border-bottom", "0px solid");
     });
+
 </script>
