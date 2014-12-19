@@ -25,18 +25,16 @@
                 <div class="panel-body" style="text-align:center;">
         {% if not currently_timed_in %}
             <div style="padding-bottom: 10px">You have logged {{ grand_total_time }} in total.</div>
-            <a href="{% url "taskrabbit:clock_in_view" %}" class="btn btn-success">Clock in</a>
+            <a href="{% url "taskrabbit:clock_in_view" %}" class="btn btn-success" style="margin-bottom: 10px">Clock in</a>
         {% else %}
             <h3><div id="live_clock"></div></h3>
-            <a href="{% url "taskrabbit:clock_out_view" %}" class="btn btn-success">Clock out</a>
+            <a href="{% url "taskrabbit:clock_out_view" %}" class="btn btn-success" style="margin-bottom: 10px">Clock out</a>
         {% endif %}
         <br />
         <a href="{% url "taskrabbit:time_history_page" %}">View your time clock history</a>
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-=======
     </div>
     <script type="text/javascript">
         $(function() {
@@ -56,5 +54,4 @@
             setTimeout(update_clock, 1000);
         }
     </script>
->>>>>>> integrate_robomanage
 {% endblock %}
