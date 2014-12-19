@@ -18,7 +18,16 @@
                 center: 'month,basicWeek,basicDay',
                 right: 'today prev,next'
             },
-            events: events
+            events: events,
+            aspectRatio: 2,
+
+            eventRender: function (event, element) {
+                element.attr('href', 'javascript:void(0);');
+                element.click(function() {
+                    window.location = '{% url 'taskrabbit:view_task' %}' + event.id;
+                });
+
+            }
         });
 
         $(".fc-today").css("border", "1px solid");

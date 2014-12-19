@@ -390,12 +390,16 @@ def format_tasks_as_events(tasks):
                 'allDay': True,
                 'start': task.creation_date.isoformat(),
                 'end': task.due_date.isoformat(),
+                'id': task.id,
+                'owner': task.owner.first_name
             })
         else:
             events.append({
                 'title': task.name,
                 'allDay': True,
                 'start': task.creation_date.isoformat(),
+                'id': task.id,
+                'owner': task.owner.first_name
             })
 
     return json.dumps(events)
