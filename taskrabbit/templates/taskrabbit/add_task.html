@@ -14,8 +14,11 @@
             <label>Description (optional)</label>
             <textarea name="description" class="form-control" rows="3"></textarea>
             <br>
-            <label>Due Date (optional)</label>
-            <input type="date" name="due_date" placeholder="Due Date" class="form-control">
+            <label>Start Date</label>
+            <input type="date" name="start_date" placeholder="Start date" class="form-control" required>
+            <br>
+            <label>End Date</label>
+            <input type="date" name="end_date" placeholder="End date" class="form-control" required>
             <br>
             <label>Team</label>
             <select name="team" class="form-control">
@@ -33,7 +36,11 @@
             </select>
             <br>
             <br>
-            <button class="btn btn-success form-control">Add</button>
+            <div style="width:100%">
+            <button name="add" class="btn btn-success" style="float:right; margin-left:5px">Save and view task</button>
+            <button name="add-another" class="btn btn-default" style="float:right">Save and add another</button>
+            <div style="clear:both"></div>
+            </div>
         </form>
     </div>
 </div>

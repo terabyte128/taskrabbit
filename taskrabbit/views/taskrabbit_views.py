@@ -182,7 +182,8 @@ def add_task(request):
     if 'name' and 'team' in request.POST:
         name = request.POST['name']
         description = request.POST['description']
-        due_date = request.POST['due_date']
+        start_date = request.POST['start_date']
+        end_date = request.POST['end_date']
         team = request.POST['team']
         owner = request.POST['owner']
 
@@ -191,12 +192,17 @@ def add_task(request):
         if not owner == "":
             new_task.owner = User.objects.get(id=owner)
 
-        if not due_date == "":
-            new_task.due_date = due_date
+        if not start_date == "":
+            new_task.start_date = start_date
+
+        new_task.end_date = end_date
 
         new_task.save()
 
-        return HttpResponseRedirect(reverse('taskrabbit:index'))
+        if 'add' in request.POST:
+            return HttpResponseRedirect(reverse('taskrabbit:view_task', args=(new_task.id,)))
+        else:
+            return render(request, 'taskrabbit/add_task.html', {'page': 'add_task', 'users': User.objects.all(), 'teams': Team.objects.all()})
 
     context = {
         'page': 'add_task',
