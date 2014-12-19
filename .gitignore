@@ -5,5 +5,8 @@
 .coverage
 local_settings.py
 venv/
+pip/
+*.swp
+*.swo
 .idea/
 certs/

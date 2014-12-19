@@ -5,7 +5,7 @@
 {% block main_content %}
     <div class="row">
         <div class="col-sm-12" style="margin-bottom: 10px;">
-            <h1>Overview for {% if user.first_name %}{{ user.first_name }}{% else %}{{ user.username }}{% endif %}</h1>
+            <h1>Overview for {{ user.first_name }}</h1>
         </div>
         <div class="col-sm-3">
             <div class="panel panel-default">
@@ -22,9 +22,39 @@
         <div class="col-sm-3">
             <div class="panel panel-default">
                 <div class="panel-heading"><h3 class="panel-title">Time Clock</h3></div>
-                <div class="panel-body">
-
+                <div class="panel-body" style="text-align:center;">
+        {% if not currently_timed_in %}
+            <div style="padding-bottom: 10px">You have logged {{ grand_total_time }} in total.</div>
+            <a href="{% url "taskrabbit:clock_in_view" %}" class="btn btn-success">Clock in</a>
+        {% else %}
+            <h3><div id="live_clock"></div></h3>
+            <a href="{% url "taskrabbit:clock_out_view" %}" class="btn btn-success">Clock out</a>
+        {% endif %}
+        <br />
+        <a href="{% url "taskrabbit:time_history_page" %}">View your time clock history</a>
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+=======
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            time_total = {{ current_time_length }};
+            update_clock();
+        });
+
+        function update_clock() {
+            time_sec = time_total % 60;
+            if (time_sec.toString().length < 2) time_sec = "0"+time_sec;
+            time_min = Math.floor(time_total / 60) % 60;
+            if (time_min.toString().length < 2) time_min = "0"+time_min;
+            time_hr = Math.floor(time_total / 3600);
+            if (time_hr.toString().length < 2) time_hr = "0"+time_hr;
+            $('#live_clock').text(time_hr + ':' + time_min + ':' + time_sec);
+            time_total++;
+            setTimeout(update_clock, 1000);
+        }
+    </script>
+>>>>>>> integrate_robomanage
 {% endblock %}

@@ -23,6 +23,13 @@ urlpatterns = patterns('',
     url(r'^task/$', views.view_task, name='view_task'),
     url(r'^task/(?P<task_id>[0-9]+)/$', views.view_task, name='view_task'),
 
+    # time clock
+    url(r'^in/$', views.clock_in_view, name='clock_in_view'),
+    url(r'^out/$', views.clock_out_view, name='clock_out_view'),
+    url(r'^times/$', views.time_history, name='time_history_page'),
+    url(r'^times/(?P<page>\d+)/$', views.time_history,  name='time_history_page'),
+    # hacky check-out-from-history thing
+    url(r'^times/out/$', views.clock_out_view, name='clock_out_from_history'),
 
     # get things as json
     url(r'^json/statuses/$', views.get_statuses, name='get_statuses_as_json'),

@@ -15,6 +15,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='note',
             name='timestamp',
-            field=models.DateTimeField(default=datetime.datetime(2014, 10, 8, 22, 18, 44, 404433)),
+            field=models.DateTimeField(default=datetime.datetime(2014, 12, 12, 17, 22, 41, 563853)),
+            preserve_default=True,
         ),
     ]
