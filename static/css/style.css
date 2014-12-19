@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -2.5em;
+}
+.footer, .push {
+    height: 2.5em;
+}
+
+.fc-event {
+    text-decoration: none !important;
+}
+
+.fc-today {
+    background-color: #333333 !important;
+}
+
+.editable-highlight-body {
+    border-bottom: none !important;
+    color: #ffffff;
+}
+
+.editable-no-underline {
+    text-decoration: none;
+    border-bottom: none;
+}
