@@ -65,6 +65,7 @@ def index(request):
                 'grand_total_time': '00:00',
                 'current_time_length': 0
             }
+
         return render(request, 'taskrabbit/index.html', context)
 
     elif 'username' and 'password' in request.POST:
