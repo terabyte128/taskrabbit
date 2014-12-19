@@ -37,8 +37,6 @@ def index(request):
 
         context['user_statuses'] = tiny_package
 
-<<<<<<< HEAD
-=======
         # find if they're timed in
         try:
             raw_time_logs = TimeLog.objects.filter(user=request.user, valid=True)
@@ -68,7 +66,6 @@ def index(request):
                 'current_time_length': 0
             }
 
->>>>>>> integrate_robomanage
         return render(request, 'taskrabbit/index.html', context)
 
     elif 'username' and 'password' in request.POST:
