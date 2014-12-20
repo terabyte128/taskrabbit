@@ -401,7 +401,7 @@ def format_tasks_as_events(tasks):
                 'start': task.start_date.isoformat(),
                 'end': task.end_date.isoformat(),
                 'id': task.id,
-                'owner': task.owner.first_name
+                'owner': task.owner.first_name if task.owner else '--'
             })
         else:
             events.append({
@@ -409,7 +409,7 @@ def format_tasks_as_events(tasks):
                 'allDay': True,
                 'start': task.start_date.isoformat(),
                 'id': task.id,
-                'owner': task.owner.first_name
+                'owner': task.owner.first_name if task.owner else '--'
             })
 
     return json.dumps(events)
