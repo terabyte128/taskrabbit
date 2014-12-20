@@ -34,15 +34,17 @@
             </select>
             <br>
             <label>Owner (optional)</label>
-            <select name="owner" class="form-control">
+            <select name="owner" id="owner" class="form-control" onchange="check_email()">
                 <option value="">-- None --</option>
                 {% for user in users %}
                     <option value="{{ user.id }}">{{ user.first_name }}</option>
                 {% endfor %}
             </select>
             <br>
-            <br>
             <div style="width:100%">
+            <div id="email_checkbox" style="float:left; margin:10px 0 0 5px; display:none">
+            <input type="checkbox" name="email" id="email" style="margin-right:10px" /><label for="email">Email owner</label>
+            </div>
             <button name="add" class="btn btn-success" style="float:right; margin-left:5px">Save and view task</button>
             <button name="add-another" class="btn btn-default" style="float:right">Save and add another</button>
             <div style="clear:both"></div>
@@ -71,7 +73,16 @@
             console.log(e.format('yyyy-mm-dd'));
             $("#end_date").val(e.format('yyyy-mm-dd'));
         });
+        check_email();
     });
+
+    function check_email() {
+        if ($("#owner").val() === "") {
+            $("#email_checkbox").hide();
+        } else {
+            $("#email_checkbox").show();
+        }
+    }
 </script>
 
 {% endblock %}

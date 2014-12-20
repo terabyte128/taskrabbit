@@ -205,6 +205,9 @@ def add_task(request):
 
         new_task.save()
 
+        if 'email' in request.POST:
+            print("(Emailing "+new_task.owner.first_name+" about "+name+"...)")
+
         if 'add' in request.POST:
             return HttpResponseRedirect(reverse('taskrabbit:view_task', args=(new_task.id,)))
         else:
