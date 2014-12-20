@@ -14,11 +14,17 @@
             <label>Description (optional)</label>
             <textarea name="description" class="form-control" rows="3"></textarea>
             <br>
+            <div style="float:left">
             <label>Start Date</label>
-            <input type="date" name="start_date" placeholder="Start date" class="form-control" required>
-            <br>
+            <input type="text" name="start_date" id="start_date" placeholder="Start date" class="form-control" style="display:none;">
+            <div id="start_datepicker"></div>
+            </div>
+            <div style="float:right">
             <label>End Date</label>
-            <input type="date" name="end_date" placeholder="End date" class="form-control" required>
+            <input type="date" name="end_date" id="end_date" placeholder="End date" class="form-control datepicker" required style="display:none">
+            <div id="end_datepicker"></div>
+            </div>
+            <div style="clear:both"></div>
             <br>
             <label>Team</label>
             <select name="team" class="form-control">
@@ -44,5 +50,28 @@
         </form>
     </div>
 </div>
+
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script type="text/javascript">
+    $(function() {
+        $("#start_datepicker").datepicker().on('changeDate', function(e) {
+            console.log(e.format('yyyy-mm-dd'));
+            $("#start_date").val(e.format('yyyy-mm-dd'));
+            $("#end_datepicker").datepicker('setStartDate', e.format());
+        });
+        $("#start_datepicker").datepicker('update', new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()));
+        $("#end_datepicker").datepicker('setStartDate', $("#start_datepicker").datepicker('getDate'));
+        $("#start_datepicker").datepicker('show');
+        $("#end_datepicker").datepicker('show');
+        $("#end_datepicker").datepicker().on('changeDate', function(e) {
+            console.log(e.format('yyyy-mm-dd'));
+            $("#end_date").val(e.format('yyyy-mm-dd'));
+        });
+    });
+</script>
 
 {% endblock %}

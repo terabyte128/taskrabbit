@@ -16,8 +16,8 @@
                 <tr>
                     <th>Owner</th>
                     <th>Status</th>
-                    <th>Creation Date</th>
-                    <th>Due Date</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
                     <th>Last Worked On</th>
                 </tr>
                 </thead>
@@ -25,8 +25,8 @@
                 <tr>
                     <td><a style="text-decoration: none; border-bottom: none;" class="editable editable-no-underline" href="#" data-type="select" data-source="{% url 'taskrabbit:get_users_as_json' %}" data-pk="{{ task.id }}" data-name="owner" data-value="{{ task.owner.id }}">{% if task.owner %}{{ task.owner.first_name }}{% else %}--{% endif %}</a></td>
                     <td><a style="text-decoration: none; border-bottom: none;" class="editable editable-no-underline" href="#" data-type="select" data-source="{% url 'taskrabbit:get_statuses_as_json' %}" data-pk="{{ task.id }}" data-name="status" data-value="{{ task.status.id }}">{{ task.status }}</a></td>
-                    <td>{{ task.creation_date }}</td>
-                    <td>{% if task.due_date %}{{ task.due_date }}{% else %}--{% endif %}</td>
+                    <td>{{ task.start_date }}</td>
+                    <td>{% if task.end_date %}{{ task.end_date }}{% else %}--{% endif %}</td>
                     <td>{% if task.last_worked_on %}{{ task.last_worked_on }}{% else %}--{% endif %}</td>
                 </tr>
                 </tbody>

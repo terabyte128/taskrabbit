@@ -39,7 +39,7 @@ class Task(models.Model):
         return self.name
 
     def overdue(self):
-        if self.due_date < datetime.date.today():
+        if self.end_date < datetime.date.today():
             return True
         return False
 
