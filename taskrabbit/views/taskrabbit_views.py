@@ -8,6 +8,7 @@ from django.db.models.query_utils import Q
 from django.http.response import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth.models import User
+from django.core.mail import send_mail
 from datetime import datetime
 
 from taskrabbit.models import Task, Note, Team, UserProfile, Status, TimeLog
@@ -188,7 +189,8 @@ def add_task(request):
     if 'name' and 'team' in request.POST:
         name = request.POST['name']
         description = request.POST['description']
-        due_date = request.POST['due_date']
+        start_date = request.POST['start_date']
+        end_date = request.POST['end_date']
         team = request.POST['team']
         owner = request.POST['owner']
 
@@ -197,12 +199,20 @@ def add_task(request):
         if not owner == "":
             new_task.owner = User.objects.get(id=owner)
 
-        if not due_date == "":
-            new_task.due_date = due_date
+        if not start_date == "":
+            new_task.start_date = start_date
+
+        new_task.end_date = end_date
 
         new_task.save()
 
-        return HttpResponseRedirect(reverse('taskrabbit:index'))
+        if 'email' in request.POST and new_task.owner is not None:
+            print('Sending email to %s.' % new_task.owner.email)
+
+        if 'add' in request.POST:
+            return HttpResponseRedirect(reverse('taskrabbit:view_task', args=(new_task.id,)))
+        else:
+            return render(request, 'taskrabbit/add_task.html', {'page': 'add_task', 'users': User.objects.all(), 'teams': Team.objects.all()})
 
     context = {
         'page': 'add_task',
@@ -384,12 +394,12 @@ def format_tasks_as_events(tasks):
     events = []
 
     for task in tasks:
-        if task.due_date:
+        if task.end_date:
             events.append({
                 'title': task.name,
                 'allDay': True,
-                'start': task.creation_date.isoformat(),
-                'end': task.due_date.isoformat(),
+                'start': task.start_date.isoformat(),
+                'end': task.end_date.isoformat(),
                 'id': task.id,
                 'owner': task.owner.first_name
             })
@@ -397,7 +407,7 @@ def format_tasks_as_events(tasks):
             events.append({
                 'title': task.name,
                 'allDay': True,
-                'start': task.creation_date.isoformat(),
+                'start': task.start_date.isoformat(),
                 'id': task.id,
                 'owner': task.owner.first_name
             })

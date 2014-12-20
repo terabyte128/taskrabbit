@@ -14,8 +14,17 @@
             <label>Description (optional)</label>
             <textarea name="description" class="form-control" rows="3"></textarea>
             <br>
-            <label>Due Date (optional)</label>
-            <input type="date" name="due_date" placeholder="Due Date" class="form-control">
+            <div style="float:left">
+            <label>Start Date</label>
+            <input type="text" name="start_date" id="start_date" placeholder="Start date" class="form-control" style="display:none;">
+            <div id="start_datepicker"></div>
+            </div>
+            <div style="float:right">
+            <label>End Date</label>
+            <input type="date" name="end_date" id="end_date" placeholder="End date" class="form-control datepicker" required style="display:none">
+            <div id="end_datepicker"></div>
+            </div>
+            <div style="clear:both"></div>
             <br>
             <label>Team</label>
             <select name="team" class="form-control">
@@ -25,17 +34,55 @@
             </select>
             <br>
             <label>Owner (optional)</label>
-            <select name="owner" class="form-control">
+            <select name="owner" id="owner" class="form-control" onchange="check_email()">
                 <option value="">-- None --</option>
                 {% for user in users %}
                     <option value="{{ user.id }}">{{ user.first_name }}</option>
                 {% endfor %}
             </select>
             <br>
-            <br>
-            <button class="btn btn-success form-control">Add</button>
+            <div style="width:100%">
+            <div id="email_checkbox" style="float:left; margin:10px 0 0 5px; display:none">
+            <input type="checkbox" name="email" id="email" style="margin-right:10px" /><label for="email">Email owner</label>
+            </div>
+            <button name="add" class="btn btn-success" style="float:right; margin-left:5px">Save and view task</button>
+            <button name="add-another" class="btn btn-default" style="float:right">Save and add another</button>
+            <div style="clear:both"></div>
+            </div>
         </form>
     </div>
 </div>
+
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script type="text/javascript">
+    $(function() {
+        $("#start_datepicker").datepicker().on('changeDate', function(e) {
+            console.log(e.format('yyyy-mm-dd'));
+            $("#start_date").val(e.format('yyyy-mm-dd'));
+            $("#end_datepicker").datepicker('setStartDate', e.format());
+        });
+        $("#start_datepicker").datepicker('update', new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()));
+        $("#end_datepicker").datepicker('setStartDate', $("#start_datepicker").datepicker('getDate'));
+        $("#start_datepicker").datepicker('show');
+        $("#end_datepicker").datepicker('show');
+        $("#end_datepicker").datepicker().on('changeDate', function(e) {
+            console.log(e.format('yyyy-mm-dd'));
+            $("#end_date").val(e.format('yyyy-mm-dd'));
+        });
+        check_email();
+    });
+
+    function check_email() {
+        if ($("#owner").val() === "") {
+            $("#email_checkbox").hide();
+        } else {
+            $("#email_checkbox").show();
+        }
+    }
+</script>
 
 {% endblock %}

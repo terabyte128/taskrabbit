@@ -3,11 +3,11 @@
     <tr>
         <th>Name</th>
         {% if page != "index" %}<th>Owner</th>{% endif %}
-        <th>Category</th>
+        <th>Team</th>
         {% if page != "statuses" %}<th>Status</th>{% endif %}
         <th>Last Worked On</th>
-        <th>Created</th>
-        <th>Due</th>
+        <th>Start</th>
+        <th>End</th>
 {#        <th>Latest Note</th>#}
     </tr>
     </thead>
@@ -18,7 +18,7 @@
             <td><a href="{% url 'taskrabbit:view_task' %}{{ task.id }}">{{ task.name }}</a></td>
             {% if page != "index" %}
                 <td>{% if task.owner %}{{ task.owner.first_name }}{% else %}<i>None</i>
-                            <a href="#" onclick="confirmClaim({{ task.id }}); return false;">(claim task)</a>{% endif %}
+                            (<a href="#" onclick="confirmClaim({{ task.id }}); return false;">claim</a>){% endif %}
                 </td>
             {% endif %}
             <td>{{ task.team }}</td>
@@ -26,8 +26,8 @@
                 <td>{{ task.status }}</td>
             {% endif %}
             <td>{% if task.last_worked_on %}{{ task.last_worked_on }}{% else %}--{% endif %}</td>
-            <td>{{ task.creation_date }}</td>
-            <td>{% if task.due_date %}{% if task.overdue %}<span style="color: #d90f00; font-weight: bolder;">{% endif %}{{ task.due_date }}{% if task.overdue %}</span>{% endif %}{% else %}--{% endif %}</td>
+            <td>{{ task.start_date }}</td>
+            <td>{% if task.end_date %}{% if task.overdue %}<span style="color: #d90f00; font-weight: bolder;">{% endif %}{{ task.end_date }}{% if task.overdue %}</span>{% endif %}{% else %}--{% endif %}</td>
         </tr>
         {% endif %}
     {% endfor %}

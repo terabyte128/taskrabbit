@@ -28,9 +28,9 @@ class Task(models.Model):
     name = models.TextField(max_length=256)
     description = models.TextField(max_length=500, blank=True)
 
-    creation_date = models.DateField(default=datetime.date.today())
+    start_date = models.DateField(default=datetime.date.today())
     last_worked_on = models.DateTimeField(blank=True, null=True)
-    due_date = models.DateField(blank=True, null=True)
+    end_date = models.DateField(blank=True, null=True)
 
     team = models.ForeignKey(Team)
     status = models.ForeignKey(Status, related_name='status')
@@ -39,7 +39,7 @@ class Task(models.Model):
         return self.name
 
     def overdue(self):
-        if self.due_date < datetime.date.today():
+        if self.end_date < datetime.date.today():
             return True
         return False
 
