@@ -92,9 +92,13 @@ def index(request):
 
 @login_required
 def my_tasks(request):
+
+    tasks = Task.objects.filter(owner=request.user, status__show_in_table=True)
+
     context = {
         'page': 'my_tasks',
-        'tasks': Task.objects.filter(owner=request.user),
+        'tasks': tasks,
+        'events': format_tasks_as_events(tasks),
         'hide_statuses': Status.objects.filter(show_in_table=False)
     }
 
@@ -139,10 +143,12 @@ def teams(request, team_id=None):
         raise Http404
 
     try:
-        context['tasks'] = Task.objects.filter(team=team)
+        tasks = Task.objects.filter(team=team, status__show_in_table=True)
+        context['tasks'] = tasks
+        context['events'] = format_tasks_as_events(tasks)
+
     except Task.DoesNotExist:
         context['errors'] = "No tasks found."
-
 
     add_context(context, request)
 
@@ -372,3 +378,29 @@ def all_tasks(request):
     add_context(context, request)
 
     return render(request, 'taskrabbit/all_tasks.html', context)
+
+
+def format_tasks_as_events(tasks):
+    events = []
+
+    for task in tasks:
+        if task.due_date:
+            events.append({
+                'title': task.name,
+                'allDay': True,
+                'start': task.creation_date.isoformat(),
+                'end': task.due_date.isoformat(),
+                'id': task.id,
+                'owner': task.owner.first_name
+            })
+        else:
+            events.append({
+                'title': task.name,
+                'allDay': True,
+                'start': task.creation_date.isoformat(),
+                'id': task.id,
+                'owner': task.owner.first_name
+            })
+
+    return json.dumps(events)
+

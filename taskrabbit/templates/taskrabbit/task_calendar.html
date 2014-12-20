@@ -1,0 +1,40 @@
+<div id="calendar">
+
+</div>
+
+<script type="text/javascript">
+
+    var events;
+    $(document).ready(function() {
+        events = '{{ events }}'
+        events = decodeURI(events);
+        events = events.replace(/&quot;/g, '"');
+        events = $.parseJSON(events);
+
+        $("#calendar").fullCalendar({
+
+            header: {
+                left: 'title',
+                center: 'month,basicWeek,basicDay',
+                right: 'today prev,next'
+            },
+            events: events,
+            aspectRatio: 2,
+
+            eventRender: function (event, element) {
+                element.attr('href', 'javascript:void(0);');
+                element.click(function() {
+                    window.location = '{% url 'taskrabbit:view_task' %}' + event.id;
+                });
+
+            }
+        });
+
+        $(".fc-today").css("border", "1px solid");
+        $(".fc-today").css("border-bottom", "0px solid");
+
+        $(".fc-today").prev('.fc-day-number').css("border", "1px solid");
+        $(".fc-today").prev('.fc-day-number').css("border-bottom", "0px solid");
+    });
+
+</script>
