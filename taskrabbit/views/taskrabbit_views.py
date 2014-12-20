@@ -390,12 +390,12 @@ def format_tasks_as_events(tasks):
     events = []
 
     for task in tasks:
-        if task.due_date:
+        if task.end_date:
             events.append({
                 'title': task.name,
                 'allDay': True,
-                'start': task.creation_date.isoformat(),
-                'end': task.due_date.isoformat(),
+                'start': task.start_date.isoformat(),
+                'end': task.end_date.isoformat(),
                 'id': task.id,
                 'owner': task.owner.first_name
             })
@@ -403,7 +403,7 @@ def format_tasks_as_events(tasks):
             events.append({
                 'title': task.name,
                 'allDay': True,
-                'start': task.creation_date.isoformat(),
+                'start': task.start_date.isoformat(),
                 'id': task.id,
                 'owner': task.owner.first_name
             })
