@@ -10,6 +10,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from datetime import datetime
+import local_settings
 
 from taskrabbit.models import Task, Note, Team, UserProfile, Status, TimeLog
 from taskrabbit.utils.time_utils import get_total_time, strfdelta
@@ -208,6 +209,19 @@ def add_task(request):
 
         if 'email' in request.POST and new_task.owner is not None:
             print('Sending email to %s.' % new_task.owner.email)
+            
+            email_url = local_settings.SITE_URL + reverse('taskrabbit:view_task', kwargs={'task_id': new_task.id})
+
+            email_content = format("Greetings," \
+                                    "" \
+                                    "You have been assigned a new task on TaskRabbit by %s." \
+                                    "Name: %s" \
+                                    "<a href='%s' target='_blank'>Click here for more info!</a>" \
+                                    "" \
+                                    "Sincerely," \
+                                    "The Rabbit" % request.user.get_full_name(), email_url)
+
+            new_task.owner.email_user("New task on TaskRabbit", email_content)
 
         if 'add' in request.POST:
             return HttpResponseRedirect(reverse('taskrabbit:view_task', args=(new_task.id,)))
