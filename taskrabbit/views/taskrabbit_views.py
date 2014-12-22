@@ -212,16 +212,25 @@ def add_task(request):
             
             email_url = local_settings.SITE_URL + reverse('taskrabbit:view_task', kwargs={'task_id': new_task.id})
 
-            email_content = format("Greetings," \
-                                    "" \
-                                    "You have been assigned a new task on TaskRabbit by %s." \
-                                    "Name: %s" \
-                                    "<a href='%s' target='_blank'>Click here for more info!</a>" \
-                                    "" \
-                                    "Sincerely," \
-                                    "The Rabbit" % (request.user.get_full_name(), new_task.name, email_url))
+            plaintext_email_content = format("Greetings,\n" \
+                                                "\n" \
+                                                "You have been assigned a new task on TaskRabbit by %s.\n" \
+                                                "Name: %s\n" \
+                                                "More info at: %s\n" \
+                                                "\n" \
+                                                "Sincerely,\n" \
+                                                "The Rabbit" % (request.user.get_full_name(), new_task.name, email_url))
 
-            new_task.owner.email_user("New task on TaskRabbit", email_content)
+            html_email_content = format("Greetings,<br>" \
+                                        "<br>" \
+                                        "You have been assigned a new task on TaskRabbit by %s.<br>" \
+                                        "Name: %s<br>" \
+                                        "<a href='%s' target='_blank'>Click here for more info!</a><br>" \
+                                        "<br>" \
+                                        "Sincerely,<br>" \
+                                        "The Rabbit" % (request.user.get_full_name(), new_task.name, email_url))
+
+            new_task.owner.email_user("New task on TaskRabbit", plaintext_email_content, html_message=html_email_content)
 
         if 'add' in request.POST:
             return HttpResponseRedirect(reverse('taskrabbit:view_task', args=(new_task.id,)))
