@@ -37,12 +37,12 @@
     </div>
     <div class="row">
         <div class="col-md-6">
-            <h3>Description <a class="btn btn-default" style="margin-left: 10px;" href="{% url 'taskrabbit:edit_task' task_id=task.id %}">Edit</a></h3>
+            <h3>Description <a class="btn btn-default" style="margin-left: 10px;" href="{% url 'taskrabbit:edit_task' task_id=task.id %}"><span class="glyphicon glyphicon-edit"></span>&nbsp; Edit</a></h3>
             <p>{{ task.description|markdown }}</p>
 {#            <a class="editable editable-highlight-body" data-type="textarea" href="#" data-pk="{{ task.id }}" data-name="description" data-emptytext="Click to add">{{ task.description|markdown }}</a>#}
         </div>
         <div class="col-md-6">
-            <h3>Notes <button class="btn btn-default" style="margin-left: 10px;" data-toggle="modal" data-target="#addNoteModal">Add</button></h3>
+            <h3>Notes <button class="btn btn-default" style="margin-left: 10px;" data-toggle="modal" data-target="#addNoteModal"><span class="glyphicon glyphicon-plus"></span>&nbsp; Add</button></h3>
             <div style="height: 300px; overflow-y: auto;">
                 {% for note in notes %}
                     {% if not note.automatic_note %}
