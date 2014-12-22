@@ -260,6 +260,7 @@ INSTALLED_APPS = (
     "mezzanine.twitter",
     "mezzanine_slides",
     'taskrabbit',
+    'markdown_deux',
     #"mezzanine.accounts",
     #"mezzanine.mobile",
 )

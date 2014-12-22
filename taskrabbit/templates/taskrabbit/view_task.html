@@ -2,6 +2,8 @@
 
 {% block title %}{{ task.name }}{% endblock %}
 
+{% load markdown_deux_tags %}
+
 {% block main_content %}
     <div class="row">
         <div class="col-md-12">
@@ -35,9 +37,9 @@
     </div>
     <div class="row">
         <div class="col-md-6">
-            <h3>Description</h3>
-
-            <a class="editable editable-highlight-body" data-type="textarea" href="#" data-pk="{{ task.id }}" data-name="description" data-emptytext="Click to add">{{ task.description }}</a>
+            <h3>Description <a class="btn btn-default" style="margin-left: 10px;" href="{% url 'taskrabbit:edit_task' task_id=task.id %}">Edit</a></h3>
+            <p>{{ task.description|markdown }}</p>
+{#            <a class="editable editable-highlight-body" data-type="textarea" href="#" data-pk="{{ task.id }}" data-name="description" data-emptytext="Click to add">{{ task.description|markdown }}</a>#}
         </div>
         <div class="col-md-6">
             <h3>Notes <button class="btn btn-default" style="margin-left: 10px;" data-toggle="modal" data-target="#addNoteModal">Add</button></h3>
@@ -81,7 +83,7 @@
     <script type="text/javascript">
         // set up prerequisites
         $.fn.editable.defaults.mode = 'inline';
-        $.fn.editable.defaults.url = '{% url "taskrabbit:update_task" %}';
+        $.fn.editable.defaults.url = '{% url 'taskrabbit:update_task_inline' %}';
 
         $(".editable").editable({
             params: {
