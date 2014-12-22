@@ -219,7 +219,7 @@ def add_task(request):
                                     "<a href='%s' target='_blank'>Click here for more info!</a>" \
                                     "" \
                                     "Sincerely," \
-                                    "The Rabbit" % request.user.get_full_name(), email_url)
+                                    "The Rabbit" % (request.user.get_full_name(), email_url))
 
             new_task.owner.email_user("New task on TaskRabbit", email_content)
 
