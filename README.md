@@ -36,4 +36,4 @@ DATABASES = {
 SSLIFY_DISABLE = True
 
 SITE_URL = 'localhost'
-
+````
