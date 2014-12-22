@@ -8,9 +8,9 @@ from django.db.models.query_utils import Q
 from django.http.response import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from django.core.mail import send_mail
 from datetime import datetime
 import local_settings
+import re
 
 from taskrabbit.models import Task, Note, Team, UserProfile, Status, TimeLog
 from taskrabbit.utils.time_utils import get_total_time, strfdelta
@@ -458,7 +458,7 @@ def format_tasks_as_events(tasks):
     for task in tasks:
         if task.end_date:
             events.append({
-                'title': task.name,
+                'title': task.name.replace('"', '\\"'),
                 'allDay': True,
                 'start': task.start_date.isoformat(),
                 'end': task.end_date.isoformat(),
@@ -467,7 +467,7 @@ def format_tasks_as_events(tasks):
             })
         else:
             events.append({
-                'title': task.name,
+                'title': task.name.replace('"', '\\"'),
                 'allDay': True,
                 'start': task.start_date.isoformat(),
                 'id': task.id,
