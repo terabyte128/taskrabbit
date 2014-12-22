@@ -22,6 +22,7 @@ urlpatterns = patterns('',
 
     url(r'^task/$', views.view_task, name='view_task'),
     url(r'^task/(?P<task_id>[0-9]+)/$', views.view_task, name='view_task'),
+    url(r'^task/(?P<task_id>[0-9]+)/edit/$', views.edit_task, name='edit_task'),
 
     # time clock
     url(r'^in/$', views.clock_in_view, name='clock_in_view'),
@@ -36,9 +37,10 @@ urlpatterns = patterns('',
     url(r'^json/users/$', views.get_users, name='get_users_as_json'),
 
     # updates db objects
-    url(r'^update/task/$', views.update_task, name='update_task'),
+    url(r'^update/task/inline/$', views.update_task_inline, name='update_task_inline'),
+    url(r'^update/task/form/$', views.update_task_form, name='update_task_form'),
 
-    #add things
+    # add things
     url(r'^add/task/$', views.add_task, name='add_task'),
     url(r'^add/note/$', views.add_note, name='add_note'),
 )

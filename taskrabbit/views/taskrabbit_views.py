@@ -295,8 +295,9 @@ def get_users(request):
     return HttpResponse(json.dumps(json_user), content_type='application/json')
 
 
+# update a task using x-editable
 @login_required
-def update_task(request):
+def update_task_inline(request):
     name = request.POST['name']
     pk = request.POST['pk']
     value = request.POST['value']
@@ -335,6 +336,26 @@ def update_task(request):
 
     return HttpResponse(status=200)
 
+
+# update a task using a form
+@login_required
+def update_task_form(request):
+
+    if 'task_id' in request.POST:
+        try:
+            task = Task.objects.get(id=request.POST['task_id'])
+        except Task.DoesNotExist:
+            raise Http404
+
+        for data in request.POST:
+            if data not in ['csrfmiddlewaretoken', 'task_id']:
+                setattr(task, data, request.POST[data])
+
+        task.save()
+
+        return HttpResponseRedirect(reverse('taskrabbit:view_task', kwargs={'task_id': request.POST['task_id']}))
+    else:
+        raise Http404
 
 @login_required
 def add_note(request):
@@ -388,6 +409,24 @@ def all_tasks(request):
     add_context(context, request)
 
     return render(request, 'taskrabbit/all_tasks.html', context)
+
+
+@login_required
+def edit_task(request, task_id):
+    if not task_id:
+        raise Http404
+
+    try:
+        task = Task.objects.get(id=task_id)
+
+    except Task.DoesNotExist:
+        raise Http404
+
+    context = {
+        'task': task,
+    }
+
+    return render(request, 'taskrabbit/edit_task.html', context)
 
 
 def format_tasks_as_events(tasks):

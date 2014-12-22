@@ -1,0 +1,30 @@
+{% extends 'taskrabbit/base.html' %}
+
+{% block title %}Edit: {{ task.name }}{% endblock %}
+
+{% load markdown_deux_tags %}
+
+{% block main_content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Edit: {{ task.name }} &nbsp;<small>{{ task.team }}</small></h1>
+        </div>
+    </div>
+    <form action="{% url 'taskrabbit:update_task_form' %}" method="post">
+    <input type="hidden" name="task_id" value="{{ task.id }}">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Edit Description <small><a href="#" onclick="$('#markdown_cheatsheet_wrapper').slideToggle(200);">(markdown supported)</a></small></h3>
+            <textarea class="form-control" rows="10" name="description" style="margin-bottom: 10px;">{{ task.description }}</textarea>
+            <br>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </div>
+        <div class="col-md-6">
+            <div style="display: none;" id="markdown_cheatsheet_wrapper">
+                {% markdown_cheatsheet %}
+            </div>
+        </div>
+    </div>
+    </form>
+{% endblock %}
