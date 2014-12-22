@@ -4,7 +4,7 @@ Django code for website.
 
 If you want to set this up in your own computer, you will need:
 - everything in requirements.txt which can be installed with pip
-- Python 3 (probably)
+- Python 3 (probably) (I haven't tested it with anything else)
 
 Rename the project directory to IngrahamRobotics.
 
