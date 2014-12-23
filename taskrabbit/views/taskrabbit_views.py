@@ -429,15 +429,27 @@ def search(request):
 
 
 @login_required
-def all_tasks(request):
+def all_tasks(request, page="1"):
 
     context = {
         'page': 'all_tasks',
         'hide_statuses': Status.objects.filter(show_in_table=False)
     }
 
+    page = int(page)
+    begin_entries = TABLE_ENTRIES_PER_PAGE * (page-1)
+    end_entries = TABLE_ENTRIES_PER_PAGE * page
+
     try:
-        context['tasks'] = Task.objects.all()
+        if len(Task.objects.all()) <= end_entries:
+            next_page = 0
+        else:
+            next_page = page+1
+        prev_page = page-1
+        context['next_page'] = next_page
+        context['prev_page'] = prev_page
+        context['page_num'] = page
+        context['tasks'] = Task.objects.all()[begin_entries:end_entries]
     except Task.DoesNotExist:
         context['errors'] = "No tasks found."
 

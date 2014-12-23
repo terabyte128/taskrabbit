@@ -33,17 +33,25 @@
     {% endfor %}
     </tbody>
 </table>
-{% if page == "statuses" %}
+{% if page == "statuses" or page == "all_tasks" %}
 <div style="text-align: center">
     <div style="float:left; display:inline-block">
         {% if prev_page %}
+        {% if page == "statuses" %}
         <a href="{% url "taskrabbit:statuses" status_id prev_page %}" class="btn btn-success">&larr; Previous page</a>
+        {% else %}
+        <a href="{% url "taskrabbit:all_tasks" prev_page %}" class="btn btn-success">&larr; Previous page</a>
+        {% endif %}
         {% endif %}
     </div>
     <div style="margin: auto; width: 100%; margin-top:10px; display:inline-block; position:absolute; right:0;">Page {{ page_num }}</div>
     <div style="float:right; display:inline-block;">
         {% if next_page %}
+        {% if page == "statuses" %}
         <a href="{% url "taskrabbit:statuses" status_id next_page %}" class="btn btn-success">Next page &rarr;</a>
+        {% else %}
+        <a href="{% url "taskrabbit:all_tasks" next_page %}" class="btn btn-success">Next page &rarr;</a>
+        {% endif %}
         {% endif %}
     </div>
     <div style="clear:both">
