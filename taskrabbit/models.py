@@ -1,3 +1,4 @@
+from django.core.cache.backends.db import Options
 from django.db import models
 from django.contrib.auth.models import User
 import datetime
@@ -15,11 +16,15 @@ class Team(models.Model):
 
 
 class Status(models.Model):
+
     name = models.TextField(max_length=100)
-    show_in_table = models.BooleanField(default=True)
+    show_in_table = models.BooleanField(default=True, verbose_name="Show as active")
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name_plural = "Statuses"
 
 
 class Task(models.Model):
