@@ -16,7 +16,7 @@ from taskrabbit.models import Task, Note, Team, UserProfile, Status, TimeLog
 from taskrabbit.utils.time_utils import get_total_time, strfdelta
 
 # Create your views here.
-
+TABLE_ENTRIES_PER_PAGE = 10
 
 def index(request):
 
@@ -158,14 +158,15 @@ def teams(request, team_id=None):
 
 
 @login_required
-def statuses(request, status_id=None):
+def statuses(request, status_id=None, page="1"):
 
     if not status_id:
         raise Http404
 
     context = {
         'page': 'statuses',
-        'hide_statuses': Status.objects.filter(show_in_table=False)
+        'hide_statuses': Status.objects.filter(show_in_table=False),
+        'status_id': status_id
     }
 
     try:
@@ -175,7 +176,18 @@ def statuses(request, status_id=None):
         raise Http404
 
     try:
-        context['tasks'] = Task.objects.filter(status=status)
+        page = int(page)
+        begin_entries = TABLE_ENTRIES_PER_PAGE * (page-1)
+        end_entries = TABLE_ENTRIES_PER_PAGE * page
+        if len(Task.objects.filter(status=status)) <= end_entries:
+            next_page = 0
+        else:
+            next_page = page+1
+        prev_page = page-1
+        context['next_page'] = next_page
+        context['prev_page'] = prev_page
+        context['page_num'] = page
+        context['tasks'] = Task.objects.filter(status=status)[begin_entries:end_entries]
     except Task.DoesNotExist:
         context['errors'] = "No tasks found."
 
@@ -209,7 +221,7 @@ def add_task(request):
 
         if 'email' in request.POST and new_task.owner is not None:
             print('Sending email to %s.' % new_task.owner.email)
-            
+
             email_url = local_settings.SITE_URL + reverse('taskrabbit:view_task', kwargs={'task_id': new_task.id})
 
             plaintext_email_content = format("Greetings,\n" \

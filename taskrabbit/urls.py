@@ -16,6 +16,7 @@ urlpatterns = patterns('',
 
     url(r'^status/$', views.statuses, name='statuses'),
     url(r'^status/(?P<status_id>[0-9]+)/$', views.statuses, name='statuses'),
+    url(r'^status/(?P<status_id>[0-9]+)/(?P<page>[0-9]+)/$', views.statuses, name='statuses'),
 
     url(r'^claim/$', views.claim_task, name='claim_task'),
 
