@@ -476,6 +476,33 @@ def edit_task(request, task_id):
     return render(request, 'taskrabbit/edit_task.html', context)
 
 
+@login_required
+def email_task_owner(request):
+    if 'task_id' and 'content' in request.POST:
+        task_id = request.POST['task_id']
+        email_content = request.POST['content']
+
+        try:
+            task = Task.objects.get(id=task_id)
+            email_url = local_settings.SITE_URL + reverse('taskrabbit:view_task', kwargs={'task_id': task.id})
+
+            html_email = email_content + format("<br><a href='%s' target='_blank'>View task on TaskRabbit</a>" %
+                                                email_url)
+            plaintext_email = email_content + "View task on TaskRabbit: " + email_url
+
+            task.owner.email_user("New alert on TaskRabbit: " + task.name, plaintext_email, request.user.email,
+                                  html_message=html_email)
+
+        except Task.DoesNotExist:
+            raise Http404
+
+    else:
+        raise Http404
+
+    messages.success("Email sent successfully.")
+    return HttpResponseRedirect(reverse('taskrabbit:view_task', kwargs={'task_id': task.id}))
+
+
 def format_tasks_as_events(tasks):
     events = []
 
