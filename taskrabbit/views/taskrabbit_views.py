@@ -10,13 +10,13 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from datetime import datetime
 import local_settings
-import re
 
 from taskrabbit.models import Task, Note, Team, UserProfile, Status, TimeLog
 from taskrabbit.utils.time_utils import get_total_time, strfdelta
 
 # Create your views here.
 TABLE_ENTRIES_PER_PAGE = 10
+
 
 def index(request):
 
@@ -135,7 +135,7 @@ def teams(request, team_id=None):
 
     context = {
         'page': 'teams',
-        'hide_statuses': Status.objects.filter(show_in_table=False)
+        # 'hide_statuses': Status.objects.filter(show_in_table=False)
     }
 
     try:
@@ -165,7 +165,7 @@ def statuses(request, status_id=None, page="1"):
 
     context = {
         'page': 'statuses',
-        'hide_statuses': Status.objects.filter(show_in_table=False),
+        # 'hide_statuses': Status.objects.filter(show_in_table=False),
         'status_id': status_id
     }
 
@@ -433,7 +433,7 @@ def all_tasks(request, page="1"):
 
     context = {
         'page': 'all_tasks',
-        'hide_statuses': Status.objects.filter(show_in_table=False)
+        # 'hide_statuses': Status.objects.filter(show_in_table=False)
     }
 
     page = int(page)
@@ -441,7 +441,7 @@ def all_tasks(request, page="1"):
     end_entries = TABLE_ENTRIES_PER_PAGE * page
 
     try:
-        if len(Task.objects.all()) <= end_entries:
+        if len(Task.objects.filter(status__show_in_table=True)) <= end_entries:
             next_page = 0
         else:
             next_page = page+1
@@ -449,7 +449,7 @@ def all_tasks(request, page="1"):
         context['next_page'] = next_page
         context['prev_page'] = prev_page
         context['page_num'] = page
-        context['tasks'] = Task.objects.all()[begin_entries:end_entries]
+        context['tasks'] = Task.objects.filter(status__show_in_table=True)[begin_entries:end_entries]
     except Task.DoesNotExist:
         context['errors'] = "No tasks found."
 
@@ -492,8 +492,11 @@ def email_task_owner(request):
             plaintext_email = email_content + "\n\n--" + request.user.get_full_name() + "\n\n"\
                                             + "View task on TaskRabbit: " + email_url
 
-            task.owner.email_user("New alert on TaskRabbit: " + task.name, plaintext_email,
-                                  html_message=html_email)
+            if not local_settings.DEBUG:
+                task.owner.email_user("New alert on TaskRabbit: " + task.name, plaintext_email, html_message=html_email)
+
+            messages.success(request, "Email sent successfully.")
+            return HttpResponseRedirect(reverse('taskrabbit:view_task', kwargs={'task_id': task.id}))
 
         except Task.DoesNotExist:
             raise Http404
@@ -501,8 +504,6 @@ def email_task_owner(request):
     else:
         raise Http404
 
-    messages.success(request, "Email sent successfully.")
-    return HttpResponseRedirect(reverse('taskrabbit:view_task', kwargs={'task_id': task.id}))
 
 
 def format_tasks_as_events(tasks):
