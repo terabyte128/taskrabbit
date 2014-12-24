@@ -486,11 +486,11 @@ def email_task_owner(request):
             task = Task.objects.get(id=task_id)
             email_url = local_settings.SITE_URL + reverse('taskrabbit:view_task', kwargs={'task_id': task.id})
 
-            html_email = email_content + format("<br><a href='%s' target='_blank'>View task on TaskRabbit</a>" %
+            html_email = email_content + format("<br><br><a href='%s' target='_blank'>View task on TaskRabbit</a>" %
                                                 email_url)
-            plaintext_email = email_content + "View task on TaskRabbit: " + email_url
+            plaintext_email = email_content + "\n\nView task on TaskRabbit: " + email_url
 
-            task.owner.email_user("New alert on TaskRabbit: " + task.name, plaintext_email, request.user.email,
+            task.owner.email_user("New alert on TaskRabbit: " + task.name, plaintext_email,
                                   html_message=html_email)
 
         except Task.DoesNotExist:
