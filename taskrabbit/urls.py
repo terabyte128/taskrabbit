@@ -45,4 +45,7 @@ urlpatterns = patterns('',
     # add things
     url(r'^add/task/$', views.add_task, name='add_task'),
     url(r'^add/note/$', views.add_note, name='add_note'),
+
+    # email user
+    url(r'email/owner/$', views.email_task_owner, name='email_task_owner')
 )
