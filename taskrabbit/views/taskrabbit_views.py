@@ -499,7 +499,7 @@ def email_task_owner(request):
     else:
         raise Http404
 
-    messages.success("Email sent successfully.")
+    messages.success(request, "Email sent successfully.")
     return HttpResponseRedirect(reverse('taskrabbit:view_task', kwargs={'task_id': task.id}))
 
 
