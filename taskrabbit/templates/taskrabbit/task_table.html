@@ -13,7 +13,7 @@
     </thead>
     <tbody>
     {% for task in tasks %}
-        {% if task.status.show_in_table or page == "statuses" or page == "search" %}
+{#        {% if task.status.show_in_table or page == "statuses" or page == "search" %}#}
         <tr>
             <td><a href="{% url 'taskrabbit:view_task' %}{{ task.id }}">{{ task.name }}</a></td>
             {% if page != "index" %}
@@ -29,7 +29,7 @@
             <td>{{ task.start_date }}</td>
             <td>{% if task.end_date %}{% if task.overdue %}<span style="color: #d90f00; font-weight: bolder;">{% endif %}{{ task.end_date }}{% if task.overdue %}</span>{% endif %}{% else %}--{% endif %}</td>
         </tr>
-        {% endif %}
+{#        {% endif %}#}
     {% endfor %}
     </tbody>
 </table>
@@ -38,9 +38,9 @@
     <div style="float:left; display:inline-block">
         {% if prev_page %}
         {% if page == "statuses" %}
-        <a href="{% url "taskrabbit:statuses" status_id prev_page %}" class="btn btn-success">&larr; Previous page</a>
+        <a href="{% url "taskrabbit:statuses" status_id prev_page %}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span> Previous page</a>
         {% else %}
-        <a href="{% url "taskrabbit:all_tasks" prev_page %}" class="btn btn-success">&larr; Previous page</a>
+        <a href="{% url "taskrabbit:all_tasks" prev_page %}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span> Previous page</a>
         {% endif %}
         {% endif %}
     </div>
@@ -48,9 +48,9 @@
     <div style="float:right; display:inline-block;">
         {% if next_page %}
         {% if page == "statuses" %}
-        <a href="{% url "taskrabbit:statuses" status_id next_page %}" class="btn btn-success">Next page &rarr;</a>
+        <a href="{% url "taskrabbit:statuses" status_id next_page %}" class="btn btn-success">Next page <span class="glyphicon glyphicon-arrow-right"></span></a>
         {% else %}
-        <a href="{% url "taskrabbit:all_tasks" next_page %}" class="btn btn-success">Next page &rarr;</a>
+        <a href="{% url "taskrabbit:all_tasks" next_page %}" class="btn btn-success">Next page <span class="glyphicon glyphicon-arrow-right"></span></a>
         {% endif %}
         {% endif %}
     </div>
