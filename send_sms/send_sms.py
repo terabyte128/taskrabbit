@@ -16,7 +16,7 @@ def send_text_message(user, subject, message):
         phone_email
     ]
 
-    send_mail(subject, message, local_settings.EMAIL_HOST_USER, recipient_list)
+    send_mail(subject, message, local_settings.SERVER_EMAIL, recipient_list)
 
 
 def has_email(user):
