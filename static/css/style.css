@@ -35,3 +35,11 @@ html, body {
 .fc-state-highlight {
     border-top: 1px solid;
 }
+
+
+
+@media screen and (max-width: 871px) and (min-width: 768px) {
+	body {
+		padding-top: 120px;
+	}
+}
