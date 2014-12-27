@@ -10,8 +10,10 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from datetime import datetime
 import local_settings
+from send_sms.models import PhoneNumber
+from send_sms.send_sms import send_text_message, has_email
 
-from taskrabbit.models import Task, Note, Team, UserProfile, Status, TimeLog
+from taskrabbit.models import Task, Note, Team, Status, TimeLog
 from taskrabbit.utils.time_utils import get_total_time, strfdelta
 
 # Create your views here.
@@ -290,7 +292,8 @@ def view_task(request, task_id=None):
 
     context = {
         'task': task,
-        'notes': Note.objects.filter(task=task).order_by('-timestamp')
+        'notes': Note.objects.filter(task=task).order_by('-timestamp'),
+        'has_phone_number': has_email(task.owner)
     }
 
     add_context(context, request)
@@ -492,8 +495,7 @@ def email_task_owner(request):
             plaintext_email = email_content + "\n\n--" + request.user.get_full_name() + "\n\n"\
                                             + "View task on TaskRabbit: " + email_url
 
-            if not local_settings.DEBUG:
-                task.owner.email_user("New alert on TaskRabbit: " + task.name, plaintext_email, html_message=html_email)
+            task.owner.email_user("New alert on TaskRabbit: " + task.name, plaintext_email, html_message=html_email)
 
             messages.success(request, "Email sent successfully.")
             return HttpResponseRedirect(reverse('taskrabbit:view_task', kwargs={'task_id': task.id}))
@@ -504,6 +506,31 @@ def email_task_owner(request):
     else:
         raise Http404
 
+
+def send_text_to_owner(request):
+    if 'task_id' and 'content' in request.POST:
+        task_id = request.POST['task_id']
+        email_content = request.POST['content']
+
+        try:
+            task = Task.objects.get(id=task_id)
+            email_url = local_settings.SITE_URL + reverse('taskrabbit:view_task', kwargs={'task_id': task.id})
+
+            email_body = format("%s: %s [%s]" % (request.user.first_name, email_content, email_url))
+
+            try:
+                send_text_message(task.owner, "taskrabbit", email_body)
+                messages.success(request, "Text sent successfully.")
+            except PhoneNumber.DoesNotExist:
+                messages.error(request, "User does not have a phone number.")
+
+            return HttpResponseRedirect(reverse('taskrabbit:view_task', kwargs={'task_id': task.id}))
+
+        except Task.DoesNotExist:
+            raise Http404
+
+    else:
+        raise Http404
 
 
 def format_tasks_as_events(tasks):
