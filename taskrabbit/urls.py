@@ -46,6 +46,8 @@ urlpatterns = patterns('',
     url(r'^add/task/$', views.add_task, name='add_task'),
     url(r'^add/note/$', views.add_note, name='add_note'),
 
-    # email user
-    url(r'email/owner/$', views.email_task_owner, name='email_task_owner')
+    # send things to user
+    url(r'send/email/$', views.email_task_owner, name='email_task_owner'),
+    url(r'send/text/$', views.send_text_to_owner, name='text_task_owner')
+
 )
