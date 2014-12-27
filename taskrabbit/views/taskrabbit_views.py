@@ -505,6 +505,11 @@ def email_task_owner(request):
         raise Http404
 
 
+def send_text_to_owner(request):
+    u = request.user
+    u.text_
+
+
 
 def format_tasks_as_events(tasks):
     events = []
