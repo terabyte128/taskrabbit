@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 from datetime import datetime
 import local_settings
 from send_sms.models import PhoneNumber
-from send_sms.send_sms import send_text_message, has_email
+from send_sms.send_sms import send_text_message, has_phone_number
 
 from taskrabbit.models import Task, Note, Team, Status, TimeLog
 from taskrabbit.utils.time_utils import get_total_time, strfdelta
@@ -293,7 +293,7 @@ def view_task(request, task_id=None):
     context = {
         'task': task,
         'notes': Note.objects.filter(task=task).order_by('-timestamp'),
-        'has_phone_number': has_email(task.owner)
+        'has_phone_number': has_phone_number(task.owner)
     }
 
     add_context(context, request)

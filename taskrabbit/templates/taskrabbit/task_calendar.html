@@ -9,8 +9,10 @@
         events = '{{ events }}'
         events = decodeURI(events);
         events = events.replace(/&quot;/g, '"');
-        events = $.parseJSON(events);
+		events = events.replace(/&#(\d+);/g, function (m, n) { return String.fromCharCode(n); })
 
+        events = $.parseJSON(events);
+		
         $("#calendar").fullCalendar({
 
             header: {

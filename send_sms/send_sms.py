@@ -19,9 +19,11 @@ def send_text_message(user, subject, message):
     send_mail(subject, message, local_settings.SERVER_EMAIL, recipient_list)
 
 
-def has_email(user):
-    try:
-        num = user.phonenumber
-        return True
-    except PhoneNumber.DoesNotExist:
-        return False
+def has_phone_number(user):
+	if user is not None:
+	    try:
+	        num = user.phonenumber
+	        return True
+	    except PhoneNumber.DoesNotExist:
+	        return False
+	return False
