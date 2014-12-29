@@ -41,7 +41,9 @@
             <p>{{ task.description|markdown }}</p>
 {#            <a class="editable editable-highlight-body" data-type="textarea" href="#" data-pk="{{ task.id }}" data-name="description" data-emptytext="Click to add">{{ task.description|markdown }}</a>#}
             <h3>Actions</h3>
-            <button class="btn btn-default" data-toggle="modal" data-target="#emailOwnerModal"><span class="glyphicon glyphicon-send"></span>&nbsp; Email Owner</button>
+			{% if task.owner %}
+            	<button class="btn btn-default" data-toggle="modal" data-target="#emailOwnerModal"><span class="glyphicon glyphicon-send"></span>&nbsp; Email Owner</button>
+			{% endif %}
             {% if has_phone_number %}
                 <button class="btn btn-default" data-toggle="modal" data-target="#textOwnerModal"><span class="glyphicon glyphicon-envelope"></span>&nbsp; Text Owner</button>
             {% endif %}
