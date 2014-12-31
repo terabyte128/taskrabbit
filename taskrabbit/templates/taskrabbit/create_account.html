@@ -1,0 +1,104 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% load pages_tags mezzanine_tags i18n future staticfiles %}
+
+    <title>Create Account</title>
+    {% compress css %}
+
+        {#        <link rel="stylesheet" href="{% static "responsiveslides/responsiveslides.css" %}"/>#}
+
+        <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+        <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
+        {#<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">#}
+
+        {# additional styles #}
+        <link rel="stylesheet" href="{% static "css/darkly.theme.min.css" %}">
+        <link rel="stylesheet" href="{% static "css/fullcalendar.min.css" %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap-editable.css' %}">
+
+        <link rel="stylesheet" href="{% static "css/style.css" %}">
+
+        <link rel="stylesheet" href="{% static "css/tablesorter.css" %}">
+
+        <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+
+    {% endcompress %}
+
+    {% compress js %}
+        <script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
+        <script src="{% static "js/bootstrap.js" %}"></script>
+        <script src="{% static "js/bootstrap-extras.js" %}"></script>
+
+        <script src="{% static "js/jquery.cookie.js" %}"></script>
+        <script src="{% static 'js/bootstrap-editable.min.js' %}"></script>
+
+        <script src="{% static 'js/jquery.tablesorter.min.js' %}"></script>
+
+        <script src="{% static "js/moment.min.js" %}"></script>
+        <script src="{% static "js/fullcalendar.min.js" %}"></script>
+        <script src="{% static "js/gcal.js" %}"></script>
+
+        <script src="{% static "js/bootstrap-datepicker.js" %}"></script>
+        {##}
+        {#        <script src="{% static "responsiveslides/responsiveslides.min.js" %}"></script>#}
+
+        {% block extra_js %}{% endblock %}
+    {% endcompress %}
+</head>
+<body>
+<div class="container">
+    <h1>TaskRabbit <small>Create User Account</small></h1>
+    <div class="row">
+        <div class="col-md-6" style="margin-bottom: 10px;">
+            <form method="post" id="create_account_form">
+                {% csrf_token %}
+                <label for="username">Username: </label>
+                <input type="text" name="username" class="form-control" required>
+                <br>
+                <label for="first_name">First Name: </label>
+                <input type="text" name="first_name" class="form-control" required>
+                <br>
+                <label for="last_name">Last Name: </label>
+                <input type="text" name="last_name" class="form-control" required>
+                <br>
+                <label for="email">Email: </label>
+                <input type="email" name="email" class="form-control" required>
+                <br>
+        </div>
+        <div class="col-md-6">
+            <label for="phone_number">Phone Number: </label>
+            <input type="number" name="phone_number" class="form-control">
+            <br>
+            <label for="carrier">Carrier: </label>
+            <select name="carrier" class="form-control">
+                {% for carrier in carriers %}
+                    <option value="{{ carrier.id }}">{{ carrier.name }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <label for="password">Password: </label>
+            <input type="password" name="password" id="password" class="form-control" required>
+            <br>
+            <label for="password_confirm">Confirm Password: </label>
+            <input type="password" name="password_confirm" id="password_confirm" class="form-control" required>
+            <br>
+            <button class="btn btn-success" type="submit">Create</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $("#create_account_form").submit(function() {
+        if ($("#password").val() !== $("#password_confirm").val()) {
+            alert("Your passwords did not match, please try again.")
+            return false;
+        }
+    });
+</script>
+</body>
+</html>
+

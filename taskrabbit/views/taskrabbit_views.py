@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.urlresolvers import reverse
+from django.db.utils import IntegrityError
 from django.utils import timezone
 from django.db.models.query_utils import Q
 from django.http.response import HttpResponse, Http404, HttpResponseRedirect
@@ -10,10 +11,11 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from datetime import datetime
 import local_settings
+from mezzanine.core.management import create_user
 from send_sms.models import PhoneNumber, Carrier
 from send_sms.send_sms import send_text_message, has_phone_number
 
-from taskrabbit.models import Task, Note, Team, Status, TimeLog
+from taskrabbit.models import Task, Note, Team, Status, TimeLog, AccountCreationID
 from taskrabbit.utils.time_utils import get_total_time, strfdelta
 
 # Create your views here.
@@ -632,3 +634,50 @@ def update_user_password(request):
     context = {}
     add_context(context, request)
     return render(request, 'taskrabbit/change_password.html', context)
+
+
+def create_account(request, creation_id):
+
+    try:
+        token = AccountCreationID.objects.get(uuid=creation_id)
+        if token.expire_date > timezone.now():
+            if 'csrfmiddlewaretoken' not in request.POST:
+                context = {
+                    'email_address': token.email_address,
+                    'carriers': Carrier.objects.all()
+                }
+                return render(request, 'taskrabbit/create_account.html', context)
+            else:
+                username = request.POST['username']
+                first_name = request.POST['first_name']
+                last_name = request.POST['last_name']
+                email = request.POST['email']
+                password = request.POST['password']
+                phone_number = request.POST['phone_number']
+                carrier = request.POST['carrier']
+
+                try:
+                    new_user = User.objects.create_user(username, email, password, first_name=first_name, last_name=last_name)
+
+                    phone = PhoneNumber(user=new_user, phone_number=phone_number, carrier=Carrier.objects.get(id=carrier))
+
+                    phone.save()
+
+                    messages.success(request, "Account created successfully. You may now log in.")
+
+                    token.delete()
+
+                    return HttpResponseRedirect(reverse('taskrabbit:index'))
+                except IntegrityError:
+                    context = {
+                    'email_address': token.email_address,
+                    'carriers': Carrier.objects.all()
+                    }
+                messages.error(request, "That username already exists, please try again.")
+                return render(request, 'taskrabbit/create_account.html', context)
+                
+        else:
+            raise Http404
+
+    except AccountCreationID.DoesNotExist:
+        raise Http404

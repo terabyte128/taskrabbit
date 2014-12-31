@@ -54,6 +54,9 @@ urlpatterns = patterns('',
 
     # user preferences
     url(r'profile/$', views.update_user_profile, name='update_user_profile'),
-    url(r'profile/password/$', views.update_user_password, name='update_user_password')
+    url(r'profile/password/$', views.update_user_password, name='update_user_password'),
+
+    # account creation
+    url(r'create/(?P<creation_id>\w+)/$', views.create_account, name='create_account')
 
 )
