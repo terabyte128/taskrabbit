@@ -1,0 +1,39 @@
+{% extends "taskrabbit/base.html" %}
+
+{% block title %}Update User Profile{% endblock %}
+
+{% block main_content %}
+    <div class="row">
+        <div class="col-sm-6" style="margin-bottom: 10px;">
+            <h1>Update Profile</h1>
+            <p><i>Click to edit</i></p>
+            <label for="first_name">First Name: </label>
+            <a class="editable" href="#" data-name="first_name" data-pk="{{ user.id }}" data-value="{{ user.first_name }}" id="first_name">{{ user.first_name }}</a>
+            <br>
+            <label for="last_name">Last Name: </label>
+            <a class="editable" href="#" data-name="last_name" data-pk="{{ user.id }}" data-value="{{ user.last_name }}" id="last_name">{{ user.last_name }}</a>
+            <br>
+            <label for="email">Email: </label>
+            <a class="editable" data-type="email" data-name="email" data-pk="{{ user.id }}" data-value="{{ user.email }}" href="#" id="email">{{ user.email }}</a>
+            <br>
+            <label for="phone_number">Phone Number: </label>
+            <a class="editable" data-type="number" href="#" data-name="phone_number" data-pk="{{ user.id }}" data-value="{{ user.phonenumber.phone_number }}" id="phone_number">{{ user.phonenumber.phone_number }}</a>
+            <br>
+            <label for="carrier">Carrier: </label>
+            <a class="editable" href="#" data-type="select" data-name="carrier" data-pk="{{ user.id }}" data-source="{% url 'taskrabbit:get_carriers_as_json' %}"  data-value="{{ user.phonenumber.carrier.id }}">{{ user.phonenumber.carrier }}</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        // set up prerequisites
+        $.fn.editable.defaults.mode = 'inline';
+        $.fn.editable.defaults.url = '{% url 'taskrabbit:update_user_profile' %}';
+
+        $(".editable").editable({
+            params: {
+                csrfmiddlewaretoken: $.cookie("csrftoken")
+            }
+        });
+    </script>
+{% endblock %}
+
+

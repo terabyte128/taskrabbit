@@ -10,7 +10,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from datetime import datetime
 import local_settings
-from send_sms.models import PhoneNumber
+from send_sms.models import PhoneNumber, Carrier
 from send_sms.send_sms import send_text_message, has_phone_number
 
 from taskrabbit.models import Task, Note, Team, Status, TimeLog
@@ -333,6 +333,26 @@ def get_users(request):
     return HttpResponse(json.dumps(json_user), content_type='application/json')
 
 
+@login_required
+def get_carriers(request):
+
+    json_carriers = []
+
+    try:
+        carriers = Carrier.objects.all()
+        for a_carrier in carriers:
+            carrier_package = {
+                'value': a_carrier.id,
+                'text': a_carrier.name
+            }
+            json_carriers.append(carrier_package)
+
+    except Carrier.DoesNotExist:
+        pass
+
+    return HttpResponse(json.dumps(json_carriers), content_type='application/json')
+
+
 # update a task using x-editable
 @login_required
 def update_task_inline(request):
@@ -557,3 +577,58 @@ def format_tasks_as_events(tasks):
 
     return json.dumps(events)
 
+
+def update_user_profile(request):
+    if 'csrfmiddlewaretoken' not in request.POST:
+        context = {
+
+        }
+
+        add_context(context, request)
+        return render(request, 'taskrabbit/edit_profile.html', context)
+    else:
+        user = request.user
+
+        name = request.POST['name']
+        pk = request.POST['pk']
+        value = request.POST['value']
+
+        # Update user normally
+        if name not in ('phone_number', 'carrier'):
+            setattr(user, name, value)
+            user.save()
+
+        # Otherwise go into the user's phone number object
+        else:
+            try:
+                phone_number = user.phonenumber
+            except PhoneNumber.DoesNotExist:
+                phone_number = PhoneNumber(user=user)
+
+            if name == "carrier":
+                value = Carrier.objects.get(id=value)
+
+            setattr(phone_number, name, value)
+            phone_number.save()
+
+        return HttpResponse(status=200)
+
+
+def update_user_password(request):
+    if 'csrfmiddlewaretoken'  in request.POST:
+
+        old_password = request.POST['old_password']
+        password = request.POST['password']
+
+        if request.user.check_password(old_password):
+            user = request.user
+            user.set_password(password)
+            user.save()
+            messages.success(request, "Password changed successfully.")
+
+        else:
+            messages.error(request, "Your old password was entered incorrectly, please try again.")
+
+    context = {}
+    add_context(context, request)
+    return render(request, 'taskrabbit/change_password.html', context)

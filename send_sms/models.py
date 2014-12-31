@@ -9,7 +9,7 @@ class Carrier(models.Model):
     email_extension = models.TextField(max_length=100, verbose_name="Email extension (not including @)")
 
     def __str__(self):
-        return "%s: %s" % (self.name, self.email_extension)
+        return self.name
 
 
 class PhoneNumber(models.Model):

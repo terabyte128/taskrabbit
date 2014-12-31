@@ -37,6 +37,8 @@ urlpatterns = patterns('',
     # get things as json
     url(r'^json/statuses/$', views.get_statuses, name='get_statuses_as_json'),
     url(r'^json/users/$', views.get_users, name='get_users_as_json'),
+    url(r'^json/carriers/$', views.get_carriers, name='get_carriers_as_json'),
+
 
     # updates db objects
     url(r'^update/task/inline/$', views.update_task_inline, name='update_task_inline'),
@@ -48,6 +50,10 @@ urlpatterns = patterns('',
 
     # send things to user
     url(r'send/email/$', views.email_task_owner, name='email_task_owner'),
-    url(r'send/text/$', views.send_text_to_owner, name='text_task_owner')
+    url(r'send/text/$', views.send_text_to_owner, name='text_task_owner'),
+
+    # user preferences
+    url(r'profile/$', views.update_user_profile, name='update_user_profile'),
+    url(r'profile/password/$', views.update_user_password, name='update_user_password')
 
 )
