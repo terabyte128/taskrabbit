@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 
 import json
 
-from taskrabbit.models import TimeLog, NfcCard
+from taskrabbit.models import TimeLog
 
 from taskrabbit.utils.time_utils import get_total_time, strfdelta
 
