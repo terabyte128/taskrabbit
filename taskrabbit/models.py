@@ -106,6 +106,6 @@ class AccountCreationID(models.Model):
             send_mail("Invite to create TaskRabbit Account", "You have been invited to create an account on TaskRabbit!"
                                                              "\nTo get started, click the link below."
                                                              "\n\n"
-                                                             + email_url, local_settings.EMAIL_HOST_USER, [self.email_address])
+                                                             + email_url, local_settings.SERVER_EMAIL, [self.email_address])
             
         super(AccountCreationID, self).save()
