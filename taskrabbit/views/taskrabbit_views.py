@@ -654,7 +654,8 @@ def create_account(request, creation_id):
                 email = request.POST['email']
                 password = request.POST['password']
                 set_phone = False
-                if 'phone_number' in request.POST:
+
+                if request.POST['phone_number']:
                     phone_number = request.POST['phone_number']
                     carrier = request.POST['carrier']
                     set_phone = True
@@ -664,10 +665,7 @@ def create_account(request, creation_id):
 
                     if set_phone:
                         phone = PhoneNumber(user=new_user, phone_number=phone_number, carrier=Carrier.objects.get(id=carrier))
-                    else:
-                        phone = PhoneNumber(user=new_user, carrier=Carrier.objects.get(id=carrier))
-
-                    phone.save()
+                        phone.save()
 
                     messages.success(request, "Account created successfully. You may now log in.")
 
@@ -676,8 +674,8 @@ def create_account(request, creation_id):
                     return HttpResponseRedirect(reverse('taskrabbit:index'))
                 except IntegrityError:
                     context = {
-                    'email_address': token.email_address,
-                    'carriers': Carrier.objects.all()
+                        'email_address': token.email_address,
+                        'carriers': Carrier.objects.all()
                     }
                 messages.error(request, "That username already exists, please try again.")
                 return render(request, 'taskrabbit/create_account.html', context)
