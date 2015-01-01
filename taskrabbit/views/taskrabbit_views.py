@@ -653,20 +653,20 @@ def create_account(request, creation_id):
                 last_name = request.POST['last_name']
                 email = request.POST['email']
                 password = request.POST['password']
-				set_phone = False
-				if 'phone_number' in request.POST:
-	                phone_number = request.POST['phone_number']
-	                carrier = request.POST['carrier']
-					set_phone = True
+                set_phone = False
+                if 'phone_number' in request.POST:
+                    phone_number = request.POST['phone_number']
+                    carrier = request.POST['carrier']
+                    set_phone = True
 
                 try:
                     new_user = User.objects.create_user(username, email, password, first_name=first_name, last_name=last_name)
 
-					if set_phone:
-                    	phone = PhoneNumber(user=new_user, phone_number=phone_number, carrier=Carrier.objects.get(id=carrier))
-					else:
-						phone = PhoneNumber(user=new_user, carrier=Carrier.objects.get(id=carrier))
-												
+                    if set_phone:
+                        phone = PhoneNumber(user=new_user, phone_number=phone_number, carrier=Carrier.objects.get(id=carrier))
+                    else:
+                        phone = PhoneNumber(user=new_user, carrier=Carrier.objects.get(id=carrier))
+
                     phone.save()
 
                     messages.success(request, "Account created successfully. You may now log in.")
