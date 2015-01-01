@@ -66,11 +66,11 @@
                 <input type="text" name="last_name" class="form-control" required>
                 <br>
                 <label for="email">Email: </label>
-                <input type="email" name="email" class="form-control" required>
+                <input type="email" name="email" class="form-control" value="{{ email_address }}" required>
                 <br>
         </div>
         <div class="col-md-6">
-            <label for="phone_number">Phone Number: </label>
+            <label for="phone_number">Phone Number: (no spaces or dashes)</label>
             <input type="number" name="phone_number" class="form-control">
             <br>
             <label for="carrier">Carrier: </label>
@@ -94,9 +94,13 @@
 <script type="text/javascript">
     $("#create_account_form").submit(function() {
         if ($("#password").val() !== $("#password_confirm").val()) {
-            alert("Your passwords did not match, please try again.")
+            alert("Your passwords did not match, please try again.");
             return false;
-        }
+        } 
+		if($('[name=phone_number]').val() !== Number($('[name=phone_number]').val()))) {
+			alert("Your phone number is formatted incorrectly.");
+			return false;
+		}
     });
 </script>
 </body>
