@@ -70,7 +70,7 @@
                 <br>
         </div>
         <div class="col-md-6">
-            <label for="phone_number">Phone Number (no spaces or dashes):</label>
+            <label for="phone_number">Phone Number (10 digits, no spaces or dashes):</label>
             <input type="number" name="phone_number" class="form-control">
             <br>
             <label for="carrier">Carrier: </label>
@@ -97,7 +97,7 @@
             alert("Your passwords did not match, please try again.");
             return false;
         } 
-		if($('[name=phone_number]').val() !== Number($('[name=phone_number]').val()))) {
+		if($('[name=phone_number]').val() != Number($('[name=phone_number]').val()) || $('[name=phone_number]').val().length !== 10) {
 			alert("Your phone number is formatted incorrectly.");
 			return false;
 		}
