@@ -14,7 +14,7 @@ class Carrier(models.Model):
 
 class PhoneNumber(models.Model):
     user = models.OneToOneField(User)
-    phone_number = models.IntegerField(max_length=10)
+    phone_number = models.IntegerField(max_length=10, null=True)
     carrier = models.ForeignKey(Carrier, null=True)
 
     def __str__(self):

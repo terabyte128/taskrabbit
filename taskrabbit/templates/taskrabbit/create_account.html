@@ -56,16 +56,16 @@
         <div class="col-md-6" style="margin-bottom: 10px;">
             <form method="post" id="create_account_form">
                 {% csrf_token %}
-                <label for="username">Username: </label>
+                <label for="username"><span style="color: firebrick;">*</span> Username: </label>
                 <input type="text" name="username" class="form-control" required>
                 <br>
-                <label for="first_name">First Name: </label>
+                <label for="first_name"><span style="color: firebrick;">*</span> First Name: </label>
                 <input type="text" name="first_name" class="form-control" required>
                 <br>
-                <label for="last_name">Last Name: </label>
+                <label for="last_name"><span style="color: firebrick;">*</span> Last Name: </label>
                 <input type="text" name="last_name" class="form-control" required>
                 <br>
-                <label for="email">Email: </label>
+                <label for="email"><span style="color: firebrick;">*</span> Email: </label>
                 <input type="email" name="email" class="form-control" value="{{ email_address }}" required>
                 <br>
         </div>
@@ -80,10 +80,10 @@
                 {% endfor %}
             </select>
             <br>
-            <label for="password">Password: </label>
+            <label for="password"><span style="color: firebrick;">*</span> Password: </label>
             <input type="password" name="password" id="password" class="form-control" required>
             <br>
-            <label for="password_confirm">Confirm Password: </label>
+            <label for="password_confirm"><span style="color: firebrick;">*</span> Confirm Password: </label>
             <input type="password" name="password_confirm" id="password_confirm" class="form-control" required>
             <br>
             <button class="btn btn-success" type="submit">Create</button>
@@ -97,9 +97,11 @@
             alert("Your passwords did not match, please try again.");
             return false;
         } 
-		if($('[name=phone_number]').val() != Number($('[name=phone_number]').val()) || $('[name=phone_number]').val().length !== 10) {
-			alert("Your phone number is formatted incorrectly.");
-			return false;
+		if($('[name=phone_number]').val() !== "") {
+			if($('[name=phone_number]').val() != Number($('[name=phone_number]').val()) || $('[name=phone_number]').val().length !== 10) {
+				alert("Your phone number is formatted incorrectly.");
+				return false;
+			}
 		}
     });
 </script>
