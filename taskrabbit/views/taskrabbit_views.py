@@ -11,7 +11,6 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from datetime import datetime
 import local_settings
-from mezzanine.core.management import create_user
 from send_sms.models import PhoneNumber, Carrier
 from send_sms.send_sms import send_text_message, has_phone_number
 
@@ -20,6 +19,18 @@ from taskrabbit.utils.time_utils import get_total_time, strfdelta
 
 # Create your views here.
 TABLE_ENTRIES_PER_PAGE = 10
+
+
+def show_login(request):
+    if request.user.is_authenticated():
+        return HttpResponseRedirect(reverse('taskrabbit:index'))
+    else:
+        context = {}
+        if 'next' in request.GET:
+            redirect = request.GET['next']
+            context['redirect'] = redirect
+
+        return render(request, 'taskrabbit/login.html', context)
 
 
 def index(request):
@@ -83,17 +94,19 @@ def index(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect(reverse('taskrabbit:index'))
+                if 'redirect' in request.POST:
+                    return HttpResponseRedirect(request.POST['redirect'])
+                else:
+                    return HttpResponseRedirect(reverse('taskrabbit:index'))
             else:
                 messages.error(request, "Your account has been deactivated.")
         else:
             messages.error(request, "Account not found. Make sure your credentials are entered correctly.")
 
-        return render(request, 'taskrabbit/login.html')
+        return HttpResponseRedirect(reverse('taskrabbit:login'))
 
     else:
-
-        return render(request, 'taskrabbit/login.html')
+        return HttpResponseRedirect(reverse('taskrabbit:login'))
 
 
 @login_required
@@ -580,6 +593,7 @@ def format_tasks_as_events(tasks):
     return json.dumps(events)
 
 
+@login_required
 def update_user_profile(request):
     if 'csrfmiddlewaretoken' not in request.POST:
         context = {
@@ -616,6 +630,7 @@ def update_user_profile(request):
         return HttpResponse(status=200)
 
 
+@login_required
 def update_user_password(request):
     if 'csrfmiddlewaretoken'  in request.POST:
 

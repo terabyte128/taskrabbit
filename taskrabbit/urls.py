@@ -5,6 +5,7 @@ from taskrabbit import views
 urlpatterns = patterns('',
     # universal patterns
     url(r'^$', views.index, name='index'),
+    url(r'^login/$', views.show_login, name='login'),
     url(r'^my_tasks/$', views.my_tasks, name='my_tasks'),
     url(r'^logout/$', views.log_out, name='log_out'),
     url(r'^search/$', views.search, name='search'),

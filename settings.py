@@ -381,3 +381,5 @@ else:
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
+
+LOGIN_URL = '/taskrabbit/login/'

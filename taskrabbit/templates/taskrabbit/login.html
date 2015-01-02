@@ -50,6 +50,7 @@
             {% endfor %}
             <form method="post" action="{% url 'taskrabbit:index' %}" role="form">
                 {% csrf_token %}
+                <input type="hidden" name="redirect" value="{{ redirect }}">
                 <input style="border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; margin-bottom: 0px; border-bottom: 1px solid #464545;" type="text" placeholder="Username" name="username" class="form-control" required="true">
                 <input style="border-top-left-radius: 0px; border-top-right-radius: 0px; margin-bottom: 10px;" type="password" placeholder="Password" name="password" class="form-control" required="true">
                 <button class="btn btn-info form-control">Sign In</button>
