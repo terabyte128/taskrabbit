@@ -224,7 +224,8 @@ def add_task(request):
         team = request.POST['team']
         owner = request.POST['owner']
 
-        new_task = Task(name=name, description=description, team=Team.objects.get(id=team), status=Status.objects.get(id=1))
+        new_task = Task(name=name, description=description,
+                        team=Team.objects.get(id=team), status=Status.objects.get(id=1), created_by=request.user)
 
         if not owner == "":
             new_task.owner = User.objects.get(id=owner)
