@@ -21,6 +21,7 @@
                     <th>Start Date</th>
                     <th>End Date</th>
                     <th>Last Worked On</th>
+                    <th>Created By</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -30,6 +31,7 @@
                     <td>{{ task.start_date }}&nbsp; <a href="{% url 'taskrabbit:edit_task' task_id=task.id %}"><span class="glyphicon glyphicon-edit"></span></a></td>
                     <td>{% if task.end_date %}{{ task.end_date }}{% else %}--{% endif %}&nbsp; <a href="{% url 'taskrabbit:edit_task' task_id=task.id %}"><span class="glyphicon glyphicon-edit"></span></a></td>
                     <td>{% if task.last_worked_on %}{{ task.last_worked_on }}{% else %}--{% endif %}</td>
+                    <td>{% if task.created_by %}{{ task.created_by }}{% else %}Unknown{% endif %}</td>
                 </tr>
                 </tbody>
             </table>
