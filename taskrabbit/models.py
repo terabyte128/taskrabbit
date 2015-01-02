@@ -32,6 +32,7 @@ class Status(models.Model):
 
 class Task(models.Model):
     owner = models.ForeignKey(User, related_name='owner', blank=True, null=True)
+    created_by = models.ForeignKey(User, null=True)
 
     name = models.TextField(max_length=256)
     description = models.TextField(max_length=500, blank=True)
