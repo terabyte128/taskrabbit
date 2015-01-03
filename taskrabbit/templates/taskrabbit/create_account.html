@@ -75,10 +75,11 @@
         <div class="col-md-6">
             <label for="phone_number">Phone Number (10 digits, no spaces or dashes):</label>
             <input type="number" name="phone_number" class="form-control">
-            <div style="display: none;" id="carrier_wrapper">
+            <div id="carrier_wrapper">
             <br>
             <label for="carrier">Carrier: </label>
             <select name="carrier" class="form-control" disabled="true">
+                <option value="">Please select</option>
                 {% for carrier in carriers %}
                     <option value="{{ carrier.id }}">{{ carrier.name }}</option>
                 {% endfor %}
@@ -111,7 +112,6 @@
     });
 
     $("[name=phone_number]").keypress(function() {
-        $("#carrier_wrapper").slideDown(200);
         $("[name=carrier]").prop('disabled', false);
     });
 </script>
