@@ -14,7 +14,7 @@ import local_settings
 from send_sms.models import PhoneNumber, Carrier
 from send_sms.send_sms import send_text_message, has_phone_number
 
-from taskrabbit.models import Task, Note, Team, Status, TimeLog, AccountCreationID
+from taskrabbit.models import Task, Note, Team, Status, TimeLog, AccountCreationID, PasswordResetID
 from taskrabbit.utils.time_utils import get_total_time, strfdelta
 
 # Create your views here.
@@ -706,3 +706,62 @@ def create_account(request, creation_id):
 
     except AccountCreationID.DoesNotExist:
         raise Http404
+
+
+def forgot_password(request, password_id=False):
+    if request.user.is_authenticated():
+        logout(request)
+
+    # If there's no ID
+    if not password_id:
+        if 'username' and 'email' in request.POST:
+            username = request.POST['username']
+            email_address = request.POST['email']
+
+            try:
+                user = User.objects.get(username=username, email=email_address)
+                reset_id = PasswordResetID(user=user)
+                email_url = local_settings.SITE_URL + reverse('taskrabbit:forgot_password',
+                                                              kwargs={'password_id': reset_id.uuid})
+                reset_id.save()
+
+                user.email_user("TaskRabbit Password Reset", "You requested a password reset on TaskRabbit."
+                                                             "\nTo continue, click the link below "
+                                                             "(which will expire in 24 hours)."
+                                                             "\n\n" + email_url, local_settings.SERVER_EMAIL)
+
+                messages.success(request, "Request send successfully. Please check your email.")
+
+            except User.DoesNotExist:
+                messages.error(request, "Your information did not match any accounts, please try again.")
+
+        return render(request, 'taskrabbit/forgot.html')
+
+    # If there's an ID
+    else:
+        try:
+            password_request = PasswordResetID.objects.get(uuid=password_id)
+            if not password_request.expire_date > timezone.now():
+                raise Http404
+
+        except PasswordResetID.DoesNotExist:
+            raise Http404
+
+        if 'password' and 'password_verify' in request.POST:
+            password = request.POST['password']
+            password_verify = request.POST['password_verify']
+
+            if password == password_verify:
+                password_request.user.set_password(password)
+                password_request.user.save()
+
+                password_request.delete()
+
+                messages.success(request, "Password reset successfully. You may now log in.")
+                return HttpResponseRedirect(reverse('taskrabbit:login'))
+            else:
+                messages.error(request, "Your passwords did not match.")
+                return render(request, 'taskrabbit/forgot_reset_form.html')
+
+        else:
+            return render(request, 'taskrabbit/forgot_reset_form.html')

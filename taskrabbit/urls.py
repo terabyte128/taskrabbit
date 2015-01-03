@@ -57,7 +57,12 @@ urlpatterns = patterns('',
     url(r'profile/$', views.update_user_profile, name='update_user_profile'),
     url(r'profile/password/$', views.update_user_password, name='update_user_password'),
 
-    # account creation
-    url(r'create/(?P<creation_id>\w+)/$', views.create_account, name='create_account')
+    # account things
+    url(r'create/(?P<creation_id>\w+)/$', views.create_account, name='create_account'),
+
+    url(r'forgot/$', views.forgot_password, name='forgot_password'),
+    url(r'forgot/(?P<password_id>\w+)/$', views.forgot_password, name='forgot_password')
 
 )
+
+

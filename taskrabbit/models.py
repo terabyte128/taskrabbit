@@ -110,3 +110,9 @@ class AccountCreationID(models.Model):
                                                              + email_url, local_settings.SERVER_EMAIL, [self.email_address])
             
         super(AccountCreationID, self).save()
+
+
+class PasswordResetID(models.Model):
+    user = models.ForeignKey(User)
+    uuid = models.TextField(default=get_random_id)
+    expire_date = models.DateTimeField(default=add_1_day)
