@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 
 {% load i18n %}
+{% load staticfiles %}
 
 {% block meta_title %}
-{% trans "Page not found" %}
+{% trans "404" %}
 {% endblock %}
 
 {% block title %}
-{% trans "Page not found" %}
+{% trans "Page Not Found" %}
 {% endblock %}
 
 {% block main %}
@@ -17,20 +18,27 @@
 
 {#</div>#}
 
-<pre>
-congrats! you've found a page that doesn't exist.
-  ____________
- (    moo     )
-  ------------
-       O
-        O   ^__^
-         o  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-
-server cow disapproves.
-
-(if you don't think it's your fault, <a href="https://github.com/terabyte128/ingrahamrobotics.org/issues/new">please file a bug report</a>.)
-</pre>
+{#<pre>#}
+{#congrats! you've found a page that doesn't exist.#}
+{#  ____________#}
+{# (    moo     )#}
+{#  ------------#}
+{#       O#}
+{#        O   ^__^#}
+{#         o  (oo)\_______#}
+{#            (__)\       )\/\#}
+{#                ||----w |#}
+{#                ||     ||#}
+{##}
+{#server cow disapproves.#}
+{##}
+{#(if you don't think it's your fault, <a href="https://github.com/terabyte128/ingrahamrobotics.org/issues/new">please file a bug report</a>.)#}
+{#</pre>#}
+    <br>
+    <img src="{% static 'img/tb_sign1.png' %}" style="max-width: 350px; display: block; margin: auto; margin-top: -20px;">
+    <p style="text-align: center; margin-top: 10px;">
+        Oh no! A page that doesn't exist!
+        <br>
+        If you think it should &mdash; <a href="https://github.com/terabyte128/ingrahamrobotics.org/issues/new">please file a bug report and include what you did to get here.</a>
+    </p>
 {% endblock %}

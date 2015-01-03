@@ -1,36 +1,44 @@
 {% extends "base.html" %}
 
 {% load i18n %}
+{% load staticfiles %}
 
 {% block meta_title %}
-{% trans "Error" %}
+    {% trans "500" %}
 {% endblock %}
 
 {% block title %}
-{% trans "Error" %}
+    {% trans "Internal Server Error" %}
 {% endblock %}
 
 {% block main %}
-{#<div class="panel panel-danger">#}
-{#	<div class="panel-heading"><h3 class="panel-title">{% trans "Error" %}</h3></div>#}
-{#	<div class="panel-body">{% trans "Sorry, an error occurred." %}</div>#}
-{#</div>#}
+    {#<div class="panel panel-danger">#}
+    {#	<div class="panel-heading"><h3 class="panel-title">{% trans "Error" %}</h3></div>#}
+    {#	<div class="panel-body">{% trans "Sorry, an error occurred." %}</div>#}
+    {#</div>#}
 
-
-<pre>
-congrats! you've caused an internal server error. i bet you're really proud of yourself.
-  ____________
- (    moo     )
-  ------------
-       O
-        O   ^__^
-         o  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-
-server cow disapproves.
-
-(if you don't think it's your fault, <a href="https://github.com/terabyte128/ingrahamrobotics.org/issues/new">please file a bug report</a>.)
-</pre>
+    {##}
+    {#<pre>#}
+    {#congrats! you've caused an internal server error. i bet you're really proud of yourself.#}
+    {#  ____________#}
+    {# (    moo     )#}
+    {#  ------------#}
+    {#       O#}
+    {#        O   ^__^#}
+    {#         o  (oo)\_______#}
+    {#            (__)\       )\/\#}
+    {#                ||----w |#}
+    {#                ||     ||#}
+    {##}
+    {#server cow disapproves.#}
+    {##}
+    {#(if you don't think it's your fault, <a href="https://github.com/terabyte128/ingrahamrobotics.org/issues/new">please file a bug report</a>.)#}
+    {#</pre>#}
+    <br>
+    <img src="{% static 'img/tbservers.png' %}" style="max-width: 600px; display: block; margin: auto;">
+    <p style="margin-top: -10px; text-align: center;">
+        Oh no! An internal server error!
+        <br>
+        <a href="https://github.com/terabyte128/ingrahamrobotics.org/issues/new">Please file a bug report and include what you did to get here.</a>
+    </p>
 {% endblock %}

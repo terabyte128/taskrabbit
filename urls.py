@@ -3,6 +3,8 @@ from __future__ import unicode_literals
 from django.conf.urls import patterns, include, url
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
+from django.views.generic.base import TemplateView
+import local_settings
 
 from mezzanine.core.views import direct_to_template
 
@@ -20,6 +22,12 @@ urlpatterns = i18n_patterns("",
     url(r'^taskrabbit/', include('taskrabbit.urls', namespace="taskrabbit")),
     url(r'^robomanage/', include('robomanage.urls', namespace="robomanage"))
 )
+
+if local_settings.DEBUG:
+    urlpatterns += patterns('',
+        (r'^500/$', TemplateView.as_view(template_name="errors/500.html")),
+        (r'^404/$', TemplateView.as_view(template_name="errors/404.html")),
+    )
 
 urlpatterns += patterns('',
 
@@ -89,6 +97,7 @@ urlpatterns += patterns('',
 
     # ("^%s/" % settings.SITE_PREFIX, include("mezzanine.urls"))
 )
+
 
 # Adds ``STATIC_URL`` to the context of error pages, so that error
 # pages can use JS, CSS and images.
