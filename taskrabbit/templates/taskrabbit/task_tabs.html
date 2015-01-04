@@ -1,29 +1,18 @@
-<div class="nav nav-tabs">
-    <li role="presentation" id="calendar-tab" class="active" onclick="showCalendar();"><a href="#">Calendar</a></li>
-    <li role="presentation" id="table-tab" onclick="showTable();"><a href="#">List</a></li>
-</div>
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#calendar">Calendar</a></li>
+    <li><a data-toggle="tab" href="#list">List</a></li>
+</ul>
 <br>
-<div id="table-wrapper" style="display: none;">
-    {% include 'taskrabbit/task_table.html' %}
+<div class="tab-content">
+    <div id="calendar" class="tab-pane fade in active">
+        <div id="calendar-wrapper">
+            {% include 'taskrabbit/task_calendar.html' %}
+        </div>
+    </div>
+    <div id="list" class="tab-pane fade">
+        <div id="table-wrapper">
+            {% include 'taskrabbit/task_table.html' %}
+        </div>
+
+    </div>
 </div>
-<div id="calendar-wrapper">
-    {% include 'taskrabbit/task_calendar.html' %}
-</div>
-
-<script type="text/javascript">
-    function showCalendar() {
-        $("#table-wrapper").hide();
-        $("#calendar-wrapper").show();
-
-        $("#table-tab").removeClass('active');
-        $("#calendar-tab").addClass('active');
-    }
-
-    function showTable() {
-        $("#calendar-wrapper").hide();
-        $("#table-wrapper").show();
-
-        $("#calendar-tab").removeClass('active');
-        $("#table-tab").addClass('active');
-    }
-</script>
