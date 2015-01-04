@@ -14,7 +14,7 @@ import local_settings
 from send_sms.models import PhoneNumber, Carrier
 from send_sms.send_sms import send_text_message, has_phone_number
 
-from taskrabbit.models import Task, Note, Team, Status, TimeLog, AccountCreationID, PasswordResetID
+from taskrabbit.models import Task, Note, Team, Status, TimeLog, AccountCreationID, PasswordResetID, Theme, UserProfile
 from taskrabbit.utils.time_utils import get_total_time, strfdelta
 
 # Create your views here.
@@ -369,6 +369,26 @@ def get_carriers(request):
     return HttpResponse(json.dumps(json_carriers), content_type='application/json')
 
 
+@login_required
+def get_themes(request):
+
+    json_themes = []
+
+    try:
+        themes = Theme.objects.all()
+        for a_theme in themes:
+            carrier_package = {
+                'value': a_theme.id,
+                'text': a_theme.name
+            }
+            json_themes.append(carrier_package)
+
+    except Carrier.DoesNotExist:
+        pass
+
+    return HttpResponse(json.dumps(json_themes), content_type='application/json')
+
+
 # update a task using x-editable
 @login_required
 def update_task_inline(request):
@@ -468,27 +488,18 @@ def search(request):
 
 
 @login_required
-def all_tasks(request, page="1"):
+def all_tasks(request):
 
     context = {
         'page': 'all_tasks',
         # 'hide_statuses': Status.objects.filter(show_in_table=False)
     }
 
-    page = int(page)
-    begin_entries = TABLE_ENTRIES_PER_PAGE * (page-1)
-    end_entries = TABLE_ENTRIES_PER_PAGE * page
-
     try:
-        if len(Task.objects.filter(status__show_in_table=True)) <= end_entries:
-            next_page = 0
-        else:
-            next_page = page+1
-        prev_page = page-1
-        context['next_page'] = next_page
-        context['prev_page'] = prev_page
-        context['page_num'] = page
-        context['tasks'] = Task.objects.filter(status__show_in_table=True)[begin_entries:end_entries]
+        tasks = Task.objects.filter(status__show_in_table=True)
+        context['tasks'] = tasks
+        context['events'] = format_tasks_as_events(tasks)
+
     except Task.DoesNotExist:
         context['errors'] = "No tasks found."
 
@@ -611,12 +622,13 @@ def update_user_profile(request):
         value = request.POST['value']
 
         # Update user normally
-        if name not in ('phone_number', 'carrier'):
+        if name not in ('phone_number', 'carrier', 'theme'):
             setattr(user, name, value)
             user.save()
 
-        # Otherwise go into the user's phone number object
-        else:
+        # Otherwise check if theme
+
+        elif name != 'theme':
             try:
                 phone_number = user.phonenumber
             except PhoneNumber.DoesNotExist:
@@ -627,6 +639,21 @@ def update_user_profile(request):
 
             setattr(phone_number, name, value)
             phone_number.save()
+
+        else:
+            try:
+                profile = user.userprofile
+            except UserProfile.DoesNotExist:
+                profile = UserProfile(user=user)
+
+            setattr(profile, name, Theme.objects.get(id=value))
+            profile.save()
+
+            json_response = {
+                'status': 'notify',
+            }
+
+            return HttpResponse(json.dumps(json_response), content_type='application/json')
 
         return HttpResponse(status=200)
 
@@ -765,3 +792,5 @@ def forgot_password(request, password_id=False):
 
         else:
             return render(request, 'taskrabbit/forgot_reset_form.html')
+
+

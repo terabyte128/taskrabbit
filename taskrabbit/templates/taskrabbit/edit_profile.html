@@ -21,6 +21,10 @@
             <br>
             <label for="carrier">Carrier: </label>
             <a class="editable" href="#" data-type="select" data-name="carrier" data-pk="{{ user.id }}" data-source="{% url 'taskrabbit:get_carriers_as_json' %}"  data-value="{{ user.phonenumber.carrier.id }}">{{ user.phonenumber.carrier }}</a>
+            <br>
+            <label for="theme">Theme: </label>
+            <a class="editable" href="#" data-type="select" data-name="theme" data-pk="{{ user.id }}" data-source="{% url 'taskrabbit:get_themes_as_json' %}"  data-value="{{ user.userprofile.theme.id }}">{{ user.userprofile.theme }}</a>
+            <p style="color: firebrick; display: none;" id="refresh_notice">Please refresh page for changes to take effect.</p>
         </div>
     </div>
     <script type="text/javascript">
@@ -31,6 +35,11 @@
         $(".editable").editable({
             params: {
                 csrfmiddlewaretoken: $.cookie("csrftoken")
+            },
+            success: function(response, newValue) {
+                if(response.status == 'notify') {
+                  $("#refresh_notice").show(200);
+                };
             }
         });
     </script>

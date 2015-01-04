@@ -39,6 +39,7 @@ urlpatterns = patterns('',
     url(r'^json/statuses/$', views.get_statuses, name='get_statuses_as_json'),
     url(r'^json/users/$', views.get_users, name='get_users_as_json'),
     url(r'^json/carriers/$', views.get_carriers, name='get_carriers_as_json'),
+    url(r'^json/themes/$', views.get_themes, name='get_themes_as_json'),
 
 
     # updates db objects

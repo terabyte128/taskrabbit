@@ -63,9 +63,18 @@ class Note(models.Model):
     automatic_note = models.BooleanField(default=False)
 
 
+class Theme(models.Model):
+    name = models.TextField(max_length=128)
+    filename = models.TextField(max_length=128)
+
+    def __str__(self):
+        return self.name
+
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     team = models.ForeignKey(Team)
+    theme = models.ForeignKey(Theme, null=True)
 
 
 class TimeLog(models.Model):
@@ -116,3 +125,4 @@ class PasswordResetID(models.Model):
     user = models.ForeignKey(User)
     uuid = models.TextField(default=get_random_id)
     expire_date = models.DateTimeField(default=add_1_day)
+

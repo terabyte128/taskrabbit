@@ -17,7 +17,13 @@
         {#<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">#}
 
         {# additional styles #}
-        <link rel="stylesheet" href="{% static "css/darkly.theme.min.css" %}">
+
+        {% if user.userprofile.theme %}
+            <link rel="stylesheet" href="{% static "css/"|add:user.userprofile.theme.filename %}">
+        {% else %}
+            <link rel="stylesheet" href="{% static "css/darkly.theme.min.css" %}">
+        {% endif %}
+
         <link rel="stylesheet" href="{% static "css/fullcalendar.min.css" %}">
         <link rel="stylesheet" href="{% static 'css/bootstrap-editable.css' %}">
 
@@ -106,6 +112,7 @@
     </div><!-- /.container-fluid -->
 </nav>
 <div class="container">
+    <div style="margin-top: 10px;"></div>
     {% if messages %}
         <br>
         {% for message in messages %}
