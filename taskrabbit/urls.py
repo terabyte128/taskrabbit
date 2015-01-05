@@ -13,8 +13,8 @@ urlpatterns = patterns('',
     url(r'^active/(?P<page>\d+)/$', views.all_tasks, name='all_tasks'),
 
     # sort by teams page
-    url(r'^teams/$', views.teams, name='teams'),
-    url(r'^teams/(?P<team_id>[0-9]+)/$', views.teams, name='teams'),
+    url(r'^team/$', views.teams, name='teams'),
+    url(r'^team/(?P<team_id>[0-9]+)/$', views.teams, name='teams'),
 
     url(r'^status/$', views.statuses, name='statuses'),
     url(r'^status/(?P<status_id>[0-9]+)/$', views.statuses, name='statuses'),
