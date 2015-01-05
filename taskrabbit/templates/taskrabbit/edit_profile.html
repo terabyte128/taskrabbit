@@ -38,7 +38,7 @@
             },
             success: function(response, newValue) {
                 if(response.status == 'notify') {
-                  $("#refresh_notice").show(200);
+                    location.reload();
                 };
             }
         });
