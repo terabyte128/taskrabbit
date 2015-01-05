@@ -111,7 +111,9 @@
     </div><!-- /.container-fluid -->
 </nav>
 <div class="container">
+    {% if user.userprofile.theme.name == "Paper" %}
     <div style="margin-top: 10px;"></div>
+    {% endif %}
     {% if messages %}
         <br>
         {% for message in messages %}
