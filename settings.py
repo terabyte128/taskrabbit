@@ -263,7 +263,8 @@ INSTALLED_APPS = (
     "mezzanine_slides",
     'taskrabbit',
     'markdown_deux',
-    'send_sms'
+    'send_sms',
+    'compressor'
     #"mezzanine.accounts",
     #"mezzanine.mobile",
 )
