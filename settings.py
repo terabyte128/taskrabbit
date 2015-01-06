@@ -235,6 +235,8 @@ ROOT_URLCONF = "%s.urls" % PROJECT_DIRNAME
 # Don't forget to use absolute paths, not relative paths.
 TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 
+JQUERY_FILENAME = 'jquery-1.11.2.min.js'
+
 
 ################
 # APPLICATIONS #
