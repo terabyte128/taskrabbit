@@ -386,4 +386,4 @@ MESSAGE_TAGS = {
 }
 
 LOGIN_URL = '/taskrabbit/login/'
-
+COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter',  'compressor.filters.cssmin.CSSMinFilter']
