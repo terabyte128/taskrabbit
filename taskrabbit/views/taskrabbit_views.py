@@ -405,9 +405,9 @@ def update_task_inline(request):
 
             if task.owner is not None:
                 note_description = "Transferred from " + task.owner.first_name + " to " \
-                               + value_as_object.first_name + " by " + request.user.first_name + "."
+                               + value_as_object.first_name + "."
             else:
-                note_description = "Assigned to " + value_as_object.first_name + " by " + request.user.first_name + "."
+                note_description = "Assigned to " + value_as_object.first_name + "."
 
         elif name == "status":
             value_as_object = Status.objects.get(id=value)
