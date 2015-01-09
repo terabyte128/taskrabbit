@@ -279,7 +279,7 @@ def time_history(request, page="1"):
     }
 
     add_context(context, request)
-    
+
     return render(request, 'taskrabbit/time_history.html', context)
 
 
