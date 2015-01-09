@@ -73,7 +73,6 @@ class Theme(models.Model):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
-    team = models.ForeignKey(Team)
     theme = models.ForeignKey(Theme, null=True)
 
 
