@@ -20,7 +20,6 @@ urlpatterns = i18n_patterns("",
     # admin interface, which would be marginally more secure.
     ("^admin/", include(admin.site.urls)),
     url(r'^taskrabbit/', include('taskrabbit.urls', namespace="taskrabbit")),
-    url(r'^robomanage/', include('robomanage.urls', namespace="robomanage"))
 )
 
 if local_settings.DEBUG:

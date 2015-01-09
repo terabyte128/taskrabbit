@@ -235,6 +235,8 @@ ROOT_URLCONF = "%s.urls" % PROJECT_DIRNAME
 # Don't forget to use absolute paths, not relative paths.
 TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 
+JQUERY_FILENAME = 'jquery-1.11.2.min.js'
+
 
 ################
 # APPLICATIONS #
@@ -261,7 +263,8 @@ INSTALLED_APPS = (
     "mezzanine_slides",
     'taskrabbit',
     'markdown_deux',
-    'send_sms'
+    'send_sms',
+    'compressor'
     #"mezzanine.accounts",
     #"mezzanine.mobile",
 )
@@ -383,4 +386,4 @@ MESSAGE_TAGS = {
 }
 
 LOGIN_URL = '/taskrabbit/login/'
-
+COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter',  'compressor.filters.cssmin.CSSMinFilter']
