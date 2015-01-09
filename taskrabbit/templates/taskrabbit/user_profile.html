@@ -16,7 +16,12 @@
                 <div class="panel-body">
                     <ul style="margin-bottom: 0px;">
                         {% for task in tasks %}
-                            <li><a href="{% url "taskrabbit:view_task" %}{{ task.id }}">{{ task.name }}</a></li>
+                            <li><a href="{% url "taskrabbit:view_task" %}{{ task.id }}">{{ task.name }}</a>:
+                            {% if not task.end_date or task.start_date == task.end_date %}
+                                {{ task.start_date }}
+                            {% else %}
+                                {{ task.start_date }} &mdash; {{ task.end_date }}
+                            {% endif %}</li>
                         {% endfor %}
                     </ul>
                 </div>

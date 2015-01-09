@@ -342,15 +342,14 @@ def user_profile(request, user_id=None):
             'id': a_status.id,
             'count': Task.objects.filter(owner=request.user, status=a_status).count()
         })
-    
-    events = format_tasks_as_events(tasks)
 
     context = {
         'user_statuses': tiny_package,
         'user': user,
-        'tasks': tasks,
-        'events': events
+        'tasks': tasks
     }
+
+    add_context(context, request)
 
     return render(request, 'taskrabbit/user_profile.html', context)
 
@@ -378,8 +377,11 @@ def user_status(request, user_id=None, status_id=None):
     context = {
         'status': status,
         'tasks': tasks,
-        'user': user
+        'user': user,
+        'events': format_tasks_as_events(tasks)
     }
+
+    add_context(context, request)
 
     return render(request, 'taskrabbit/user_status.html', context)
 
@@ -794,7 +796,7 @@ def create_account(request, creation_id):
                     }
                 messages.error(request, "That username already exists, please try again.")
                 return render(request, 'taskrabbit/create_account.html', context)
-                
+
         else:
             raise Http404
 
