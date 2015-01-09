@@ -318,6 +318,73 @@ def view_task(request, task_id=None):
 
 
 @login_required
+def user_profile(request, user_id=None):
+    if not user_id:
+        raise Http404
+
+    try:
+        user = User.objects.get(id=user_id)
+    except User.DoesNotExist:
+        raise Http404
+
+    try:
+        tasks = Task.objects.filter(owner=user_id, status__show_in_table=True)
+    except Task.DoesNotExist:
+        tasks = []
+
+    statuses = Status.objects.all()
+
+    tiny_package = []
+
+    for a_status in statuses:
+        tiny_package.append({
+            'name': a_status.name,
+            'id': a_status.id,
+            'count': Task.objects.filter(owner=request.user, status=a_status).count()
+        })
+    
+    events = format_tasks_as_events(tasks)
+
+    context = {
+        'user_statuses': tiny_package,
+        'user': user,
+        'tasks': tasks,
+        'events': events
+    }
+
+    return render(request, 'taskrabbit/user_profile.html', context)
+
+
+@login_required
+def user_status(request, user_id=None, status_id=None):
+    if not user_id:
+        raise Http404
+
+    try:
+        user = User.objects.get(id=user_id)
+    except User.DoesNotExist:
+        raise Http404
+
+    try:
+        status = Status.objects.get(id=status_id)
+    except Statue.DoesNotExist:
+        raise Http404
+
+    try:
+        tasks = Task.objects.filter(owner=user_id, status=status_id)
+    except Task.DoesNotExist:
+        tasks = []
+
+    context = {
+        'status': status,
+        'tasks': tasks,
+        'user': user
+    }
+
+    return render(request, 'taskrabbit/user_status.html', context)
+
+
+@login_required
 def get_statuses(request):
     status = Status.objects.all()
 
