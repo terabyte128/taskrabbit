@@ -443,7 +443,19 @@ def update_task_form(request):
 
         for data in request.POST:
             if data not in ['csrfmiddlewaretoken', 'task_id']:
-                setattr(task, data, request.POST[data])
+
+                # teams are objects :/
+                if data == 'team':
+                    team = Team.objects.get(id=request.POST[data])
+                    if task.team != team:
+                        content = "Team changed from %s to %s." % (task.team, team)
+                        note = Note(task=task, user=request.user, status=task.status, content=content, automatic_note=True)
+                        note.save()
+
+                        setattr(task, data, team)
+
+                else:
+                    setattr(task, data, request.POST[data])
 
         task.save()
 
@@ -458,7 +470,7 @@ def add_note(request):
 
     task = Task.objects.get(id=task_id)
 
-    new_note = Note(task=task, user=request.user, status=task.status, content=content, timestamp=datetime.now())
+    new_note = Note(task=task, user=request.user, status=task.status, content=content, timestamp=timezone.now())
 
     new_note.save()
 
@@ -521,6 +533,7 @@ def edit_task(request, task_id):
 
     context = {
         'task': task,
+        'teams': Team.objects.all()
     }
 
     return render(request, 'taskrabbit/edit_task.html', context)
@@ -660,7 +673,7 @@ def update_user_profile(request):
 
 @login_required
 def update_user_password(request):
-    if 'csrfmiddlewaretoken'  in request.POST:
+    if 'csrfmiddlewaretoken' in request.POST:
 
         old_password = request.POST['old_password']
         password = request.POST['password']
