@@ -14,6 +14,8 @@ from taskrabbit.models import TimeLog, NfcCard
 
 from taskrabbit.utils.time_utils import get_total_time, strfdelta
 
+from taskrabbit.views.taskrabbit_views import add_context
+
 
 ENTRIES_PER_PAGE = 5
 TIME_LOG_EXPIRATION_HOURS = 18
@@ -277,6 +279,8 @@ def time_history(request, page="1"):
         'prev_page': prev_page,
         'page': page
     }
+
+    add_context(context, request)
 
     return render(request, 'taskrabbit/time_history.html', context)
 

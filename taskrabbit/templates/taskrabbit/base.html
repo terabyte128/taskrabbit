@@ -93,6 +93,14 @@
                     </ul>
                 </li>
                 <li class="{% if page == "add_task" %}active{% endif %}"><a href="{% url 'taskrabbit:add_task' %}">Add Task</a></li>
+                <li class="dropdown {% if page == "users" %}active{% endif %}">
+                	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <span class="caret"></span></a>
+                	<ul class="dropdown-menu" role="menu">
+                		{% for list_user in users %}
+                			<li><a href="{% url 'taskrabbit:user_profile' list_user.id %}">{{ list_user.first_name }}</a></li>
+                		{% endfor %}
+                	</ul>
+                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% if user.first_name %}{{ user.first_name }}{% else %}{{ user.username }}{% endif %} <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">

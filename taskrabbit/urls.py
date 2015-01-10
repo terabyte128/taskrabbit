@@ -27,6 +27,10 @@ urlpatterns = patterns('',
     url(r'^task/(?P<task_id>[0-9]+)/$', views.view_task, name='view_task'),
     url(r'^task/(?P<task_id>[0-9]+)/edit/$', views.edit_task, name='edit_task'),
 
+    # user profile
+    url(r'^user/(?P<user_id>[0-9]+)/$', views.user_profile, name='user_profile'),
+    url(r'^user/(?P<user_id>[0-9]+)/status/(?P<status_id>[0-9]+)/$', views.user_status, name='user_status'),
+
     # time clock
     url(r'^in/$', views.clock_in_view, name='clock_in_view'),
     url(r'^out/$', views.clock_out_view, name='clock_out_view'),
