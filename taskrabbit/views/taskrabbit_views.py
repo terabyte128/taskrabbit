@@ -638,6 +638,34 @@ def email_task_owner(request):
         raise Http404
 
 
+@login_required
+def email_user(request, user_id=None):
+    if not user_id:
+        raise Http404
+
+    try:
+        email_content = request.POST['content']
+
+        if len(email_content) == 0:
+            messages.error("You must provide a message!")
+            return HttpResponseRedirect(reverse('taskrabbit:user_profile', kwargs={'user_id': user_id}))
+
+        html_email = format("%s<br><br>-- %s<br><br><a href='%s' target='_blank'>Taskrabbit</a>" %
+                (email_content, request.user.get_full_name, local_settings.SITE_URL))
+
+        plaintext_email = email_content + "\n\n-- " + request.user.get_full_name() + "\n\n"\
+                  + "Taskrabbit: " + local_settings.SITE_URL
+
+        User.objects.get(id=user_id).email_user(request.user.get_full_name() + " sent you a message on TaskRabbit",
+                plaintext_email, html_message=html_email)
+
+        messages.success(request, "Email sent successfully.")
+        return HttpResponseRedirect(reverse('taskrabbit:user_profile', kwargs={'user_id': user_id}))
+
+    except User.DoesNotExist:
+        raise Http404
+
+
 def send_text_to_owner(request):
     if 'task_id' and 'content' in request.POST:
         task_id = request.POST['task_id']
@@ -662,6 +690,23 @@ def send_text_to_owner(request):
 
     else:
         raise Http404
+
+
+def text_user(request, user_id=None):
+    if not user_id:
+        return Http404
+
+    message = request.POST['content']
+
+    sent_message = "%s: %s [%s]" % (request.user.first_name, message, local_settings.SITE_URL)
+
+    try:
+        send_text_message(User.objects.get(id=user_id), "taskrabbit", sent_message)
+        messages.success(request, "Text sent successfully.")
+    except PhoneNumber.DoesNotExist:
+        messages.error(request, "User does not have a phone number.")
+
+    return HttpResponseRedirect(reverse('taskrabbit:user_profile', kwargs={'user_id': user_id}))
 
 
 def format_tasks_as_events(tasks):

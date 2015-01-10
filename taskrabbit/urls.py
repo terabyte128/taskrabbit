@@ -30,6 +30,8 @@ urlpatterns = patterns('',
     # user profile
     url(r'^user/(?P<user_id>[0-9]+)/$', views.user_profile, name='user_profile'),
     url(r'^user/(?P<user_id>[0-9]+)/status/(?P<status_id>[0-9]+)/$', views.user_status, name='user_status'),
+    url(r'^user/(?P<user_id>[0-9]+)/email/$', views.email_user, name='email_user'),
+    url(r'^user/(?P<user_id>[0-9]+)/text/$', views.text_user, name='text_user'),
 
     # time clock
     url(r'^in/$', views.clock_in_view, name='clock_in_view'),

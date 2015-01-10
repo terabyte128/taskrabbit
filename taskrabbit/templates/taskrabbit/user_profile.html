@@ -76,7 +76,7 @@
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <h4 class="modal-title" id="addNoteModalLabel">Email {{ viewed_user.first_name }}</h4>
                 </div>
-                <form id="addNoteForm" action="{% url 'taskrabbit:email_task_owner' %}" method="post">
+                <form id="addNoteForm" action="{% url 'taskrabbit:email_user' user_id=viewed_user.id %}" method="post">
                     <div class="modal-body">
                         {% csrf_token %}
                         <input type="hidden" name="task_id" value="{{ task.id }}" autocomplete="on">
@@ -97,7 +97,7 @@
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <h4 class="modal-title" id="addNoteModalLabel">Text {{ viewed_user.first_name }}</h4>
                 </div>
-                <form id="addNoteForm" action="{% url 'taskrabbit:text_task_owner' %}" method="post">
+                <form id="addNoteForm" action="{% url 'taskrabbit:text_user' user_id=viewed_user.id %}" method="post">
                     <div class="modal-body">
                         {% csrf_token %}
                         <input type="hidden" name="task_id" value="{{ task.id }}" autocomplete="on">
