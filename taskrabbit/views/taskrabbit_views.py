@@ -604,6 +604,8 @@ def format_tasks_as_events(tasks):
                 'start': task.start_date.isoformat(),
                 'end': task.end_date.isoformat(),
                 'id': task.id,
+                'color': task.team.color,
+                'textColor': task.team.text_color,
                 'owner': task.owner.first_name if task.owner else '--'
             })
         else:
@@ -612,6 +614,8 @@ def format_tasks_as_events(tasks):
                 'allDay': True,
                 'start': task.start_date.isoformat(),
                 'id': task.id,
+                'color': task.team.color,
+                'textColor': task.team.text_color,
                 'owner': task.owner.first_name if task.owner else '--'
             })
 

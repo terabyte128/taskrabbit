@@ -12,7 +12,8 @@ import local_settings
 class Team(models.Model):
     name = models.TextField(max_length=128)
     description = models.TextField(max_length=500, blank=True)
-    color = models.TextField(blank=True)
+    color = models.TextField("event background color", blank=True, default="")
+    text_color = models.TextField("event text color", blank=True, default="")
 
     def __str__(self):
         return self.name
@@ -111,12 +112,12 @@ class AccountCreationID(models.Model):
     def save(self):
         if self.active:
             email_url = local_settings.SITE_URL + reverse('taskrabbit:create_account', kwargs={'creation_id': self.uuid})
-            
+
             send_mail("Invite to create TaskRabbit Account", "You have been invited to create an account on TaskRabbit!"
                                                              "\nTo get started, click the link below."
                                                              "\n\n"
                                                              + email_url, local_settings.SERVER_EMAIL, [self.email_address])
-            
+
         super(AccountCreationID, self).save()
 
 
