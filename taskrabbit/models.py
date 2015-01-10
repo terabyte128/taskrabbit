@@ -12,8 +12,8 @@ import local_settings
 class Team(models.Model):
     name = models.TextField(max_length=128)
     description = models.TextField(max_length=500, blank=True)
-    color = models.TextField(blank=True, default="")
-    text_color = models.TextField(blank=True, default="")
+    color = models.TextField("event background color", blank=True, default="")
+    text_color = models.TextField("event text color", blank=True, default="")
 
     def __str__(self):
         return self.name
