@@ -138,6 +138,7 @@ def add_context(context, request):
         context['teams'] = Team.objects.all()
         context['statuses'] = Status.objects.all()
         context['user'] = request.user
+        context['users'] = User.objects.filter(is_active=True)
     except Team.DoesNotExist:
         pass
 
@@ -340,12 +341,12 @@ def user_profile(request, user_id=None):
         tiny_package.append({
             'name': a_status.name,
             'id': a_status.id,
-            'count': Task.objects.filter(owner=request.user, status=a_status).count()
+            'count': Task.objects.filter(owner=user_id, status=a_status).count()
         })
 
     context = {
         'user_statuses': tiny_package,
-        'user': user,
+        'viewed_user': user,
         'tasks': tasks
     }
 

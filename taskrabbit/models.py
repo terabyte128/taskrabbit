@@ -111,12 +111,12 @@ class AccountCreationID(models.Model):
     def save(self):
         if self.active:
             email_url = local_settings.SITE_URL + reverse('taskrabbit:create_account', kwargs={'creation_id': self.uuid})
-            
+
             send_mail("Invite to create TaskRabbit Account", "You have been invited to create an account on TaskRabbit!"
                                                              "\nTo get started, click the link below."
                                                              "\n\n"
                                                              + email_url, local_settings.SERVER_EMAIL, [self.email_address])
-            
+
         super(AccountCreationID, self).save()
 
 
