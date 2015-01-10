@@ -49,7 +49,8 @@ def index(request):
         for a_status in statuses:
             tiny_package.append({
                 'name': a_status.name,
-                'count': Task.objects.filter(owner=request.user, status=a_status).count()
+                'count': Task.objects.filter(owner=request.user, status=a_status).count(),
+                'id': a_status.id
             })
 
         context['user_statuses'] = tiny_package

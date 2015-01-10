@@ -14,6 +14,8 @@ from taskrabbit.models import TimeLog, NfcCard
 
 from taskrabbit.utils.time_utils import get_total_time, strfdelta
 
+from taskrabbit.views.taskrabbit_views import add_context
+
 
 ENTRIES_PER_PAGE = 5
 TIME_LOG_EXPIRATION_HOURS = 18
