@@ -379,7 +379,7 @@ def user_status(request, user_id=None, status_id=None):
     context = {
         'status': status,
         'tasks': tasks,
-        'user': user,
+        'viewed_user': user,
         'events': format_tasks_as_events(tasks)
     }
 
