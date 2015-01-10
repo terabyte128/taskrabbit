@@ -138,7 +138,7 @@ def add_context(context, request):
         context['teams'] = Team.objects.all()
         context['statuses'] = Status.objects.all()
         context['user'] = request.user
-        context['users'] = User.objects.filter(is_active=True)
+        context['users'] = User.objects.filter(is_active=True).order_by('first_name')
     except Team.DoesNotExist:
         pass
 
@@ -269,8 +269,8 @@ def add_task(request):
             return render(request, 'taskrabbit/add_task.html', {'page': 'add_task', 'users': User.objects.all(), 'teams': Team.objects.all()})
 
     context = {
-        'page': 'add_task',
-        'users': User.objects.all()
+        'page': 'add_task'
+        #'users': User.objects.all()
     }
 
     add_context(context, request)
@@ -475,9 +475,9 @@ def update_task_inline(request):
 
             if task.owner is not None:
                 note_description = "Transferred from " + task.owner.first_name + " to " \
-                               + value_as_object.first_name + " by " + request.user.first_name + "."
+                               + value_as_object.first_name + "."
             else:
-                note_description = "Assigned to " + value_as_object.first_name + " by " + request.user.first_name + "."
+                note_description = "Assigned to " + value_as_object.first_name + "."
 
         elif name == "status":
             value_as_object = Status.objects.get(id=value)
