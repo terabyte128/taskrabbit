@@ -650,8 +650,8 @@ def email_user(request, user_id=None):
             messages.error("You must provide a message!")
             return HttpResponseRedirect(reverse('taskrabbit:user_profile', kwargs={'user_id': user_id}))
 
-        html_email = format("%s<br><br>-- %s<br><br><a href='%s' target='_blank'>Taskrabbit</a>" %
-                (email_content, request.user.get_full_name, local_settings.SITE_URL))
+        html_email = format("%s<br><br>-- %s<br><br><a href='%s' target='_blank'>TaskRabbit</a>" %
+                (email_content, request.user.get_full_name, local_settings.SITE_URL + reverse('taskrabbit:index')))
 
         plaintext_email = email_content + "\n\n-- " + request.user.get_full_name() + "\n\n"\
                   + "Taskrabbit: " + local_settings.SITE_URL
@@ -698,7 +698,7 @@ def text_user(request, user_id=None):
 
     message = request.POST['content']
 
-    sent_message = "%s: %s [%s]" % (request.user.first_name, message, local_settings.SITE_URL)
+    sent_message = "%s: %s [%s]" % (request.user.first_name, message, local_settings.SITE_URL + reverse('taskrabbit:index'))
 
     try:
         send_text_message(User.objects.get(id=user_id), "taskrabbit", sent_message)
