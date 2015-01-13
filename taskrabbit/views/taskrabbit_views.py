@@ -654,7 +654,7 @@ def email_user(request, user_id=None):
                 (email_content, request.user.get_full_name, local_settings.SITE_URL + reverse('taskrabbit:index')))
 
         plaintext_email = email_content + "\n\n-- " + request.user.get_full_name() + "\n\n"\
-                  + "Taskrabbit: " + local_settings.SITE_URL
+                  + "TaskRabbit: " + local_settings.SITE_URL
 
         User.objects.get(id=user_id).email_user(request.user.get_full_name() + " sent you a message on TaskRabbit",
                 plaintext_email, html_message=html_email)
