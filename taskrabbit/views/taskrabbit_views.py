@@ -348,7 +348,8 @@ def user_profile(request, user_id=None):
     context = {
         'user_statuses': tiny_package,
         'viewed_user': user,
-        'tasks': tasks
+        'tasks': tasks,
+        'has_phone_number': has_phone_number(user)
     }
 
     add_context(context, request)
@@ -606,6 +607,8 @@ def edit_task(request, task_id):
         'task': task,
         'teams': Team.objects.all()
     }
+
+    add_context(context, request)
 
     return render(request, 'taskrabbit/edit_task.html', context)
 
