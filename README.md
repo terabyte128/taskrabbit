@@ -1,6 +1,6 @@
-ingrahamrobotics.org
+TaskRabbit (beta!)
 =====
-Django code for website.
+Django code for Ingraham Robotics website, including the Mezzanine-based CMS and a custom application called TaskRabbit which allows robotics teams (and other groups) to easily keep track of tasks that they need to complete. It also includes a time clock so team members can track how much time they've spent working, and support for different teams (for instance, Programming, Build, etc.)
 
 If you want to set this up in your own computer, you will need:
 - everything in requirements.txt which can be installed with pip
